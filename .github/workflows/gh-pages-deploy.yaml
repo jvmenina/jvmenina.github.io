@@ -36,7 +36,8 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Add robots.txt
-        run:  echo -e "# https://www.robotstxt.org/robotstxt.html\nUser-agent: *\nDisallow:\n" > ./dist/robots.txt
+        run:  |
+          echo -e "# https://www.robotstxt.org/robotstxt.html\nUser-agent: *\nDisallow:\n" > ./dist/robots.txt
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
