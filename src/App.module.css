@@ -786,6 +786,11 @@ ul, ol {
   padding-top: 1rem;
 }
 
+.site-footer__credits a {
+  text-decoration: underline;
+  color: var(--color-footer-text);
+}
+
 /** 
  *  MOBILE
  */
