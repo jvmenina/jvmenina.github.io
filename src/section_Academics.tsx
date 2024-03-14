@@ -1,14 +1,22 @@
 import styles from "./App.module.css";
 import { NavigationAnchor } from "./NavigationAnchor.tsx";
+import useElementOnScreen from "./IntersectionObserver.tsx";
 
 import up_seal from "/images/up_seal.svg";
 import dostsei_seal from "/images/dostsei_seal.png";
 
 function UniversityComp() {
+  const { containerRef, isVisible } = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
   return (
-    <div className={[
+    <div ref={containerRef} className={[
       styles.__card, styles['academics__card'], 
-      styles['academics__card--big']
+      styles['academics__card--big'],
+      isVisible ? styles['__visible'] : styles['__not-visible']
     ].join(" ")}>
       <img
         src={up_seal}
@@ -38,12 +46,19 @@ function UniversityComp() {
 }
 
 function RecognitionsComp() {
+  const { containerRef, isVisible } = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
   return (
     <div>
       <h3>Recognitions</h3>
-      <div className={[
+      <div ref={containerRef} className={[
         styles.__card, 
-        styles['academics__card']
+        styles['academics__card'],
+        isVisible ? styles['__visible'] : styles['__not-visible']
       ].join(" ")}>
         <img
           src={dostsei_seal}
@@ -66,12 +81,19 @@ function RecognitionsComp() {
 }
 
 function ThesisComp() {
+  const { containerRef, isVisible } = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
   return (
     <div>
       <h3>Undergraduate Thesis</h3>
-      <div className={[
+      <div ref={containerRef} className={[
         styles.__card, 
-        styles['academics__thesis']
+        styles['academics__thesis'],
+        isVisible ? styles['__visible'] : styles['__not-visible']
       ].join(" ")}>
         <div className={styles.academics__thesis__title}>
           Spiking Neural P Systems in Generating Chain Code Pictures for Finite
@@ -98,7 +120,7 @@ function ThesisComp() {
   );
 }
 
-export function AcademicsSection() {
+export function AcademicsSection() { 
   return (
     <section className={styles.academics}>
       <NavigationAnchor id="Academics" />

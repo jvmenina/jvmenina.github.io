@@ -1,4 +1,5 @@
 import styles from "./App.module.css";
+import useElementOnScreen from "./IntersectionObserver.tsx";
 import { NavigationAnchor } from "./NavigationAnchor.tsx";
 
 type ExperienceProps = {
@@ -18,10 +19,17 @@ function ExperienceComp(props: ExperienceProps) {
     description,
   }: ExperienceProps = props;
 
+  const { containerRef, isVisible } = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
   return (
-    <div className={[
+    <div ref={containerRef} className={[
       styles.__card, 
-      styles.experiences__experience
+      styles.experiences__experience,
+      isVisible ? styles['__visible'] : styles['__not-visible']
     ].join(" ")}>
       <div className={styles.experiences__experience__details}>
         <span className={styles.experiences__experience__details__company}>

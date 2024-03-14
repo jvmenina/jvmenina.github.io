@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import { NavigationAnchor } from "./NavigationAnchor.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import useElementOnScreen from "./IntersectionObserver.tsx";
 
 import reimu_preview_1 from "/images/proj_reimu_1.jpg";
 import reimu_preview_2 from "/images/proj_reimu_2.jpg";
@@ -88,10 +89,17 @@ function ProjectComp(props: ProjectProps) {
     setPreviewVisibility((prev) => (!prev));
   };
 
+  const { containerRef, isVisible } = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0,
+  });
+
   return (
-    <div className={[
+    <div ref={containerRef} className={[
         styles.__card, 
-        styles.projects__project
+        styles.projects__project,
+        isVisible ? styles['__visible'] : styles['__not-visible']
     ].join(" ")}>
       <NavigationAnchor id={id} />
       <div className={styles.projects__project__details}>

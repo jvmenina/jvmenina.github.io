@@ -112,6 +112,11 @@ a {
   color: var(--color-text-highlight-p-alt);
 }
 
+strong {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
 code {
   font-family: var(--font-mono);
 }
@@ -164,6 +169,22 @@ ul, ol {
   display: block;
   visibility: hidden;
   scroll-margin-top: var(--nav-height);
+}
+
+.__not-visible {
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 
+    transform 500ms var(--easeOutCubic),
+    opacity 500ms var(--easeOutCubic);
+}
+
+.__visible {
+  transform: translateX(0px);
+  opacity: 1;
+  transition: 
+    transform 500ms var(--easeOutCubic),
+    opacity 500ms var(--easeOutCubic);
 }
 
 /** 
@@ -759,7 +780,7 @@ ul, ol {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .projects__project__preview figure img {

@@ -15,13 +15,13 @@ function AboutComponent() {
           Hello! I am a <strong>graduating B.S. Computer Science student</strong> from the University of the Philippines Diliman. I take passion in learning and sharing my knowledge when allowed to do so, especially those within my expertise.
         </p>
         <p className={styles['__indent-text']}>
-          As a developer, I enjoy building tools that enhances my workflow by making it more efficient and robust, possibly alleviating potential headaches in the process.
+          As a developer, I enjoy <strong>building tools</strong> that enhances my workflow by making it more efficient and robust, possibly alleviating potential headaches in the process.
         </p>
         <p className={styles['__indent-text']}>
-          For my hobby, I&apos;ve been doing motion graphics for people for 5 years. There, I bring life into static images and art, and I ensure it appeals to those viewing the animation. In my editor software of choice, I use Javascript to create dynamic movements and have more control over the elements in the canvas.
+          For my hobby, I&apos;ve been doing <strong>motion graphics</strong> for people for <strong>5 years</strong>. There, I bring life into static images and art, and I ensure it appeals to those viewing the animation. In my editor software of choice, I use Javascript to create dynamic movements and have more control over the elements in the canvas.
         </p>
         <p className={styles['__indent-text']}>
-          From being a student, one thing I am proud of is that I&apos;ve adopted a work ethic that lets me manage multiple tasks effectively, especially with various deadlines &ndash; by creating schedules. Taking into consideration that this strategy can be very fragile, I make it so that I give myself a lot of leeway so I can easily adapt whenever needed. Through this strategy, I had been able to manage reviewing for an exam, writing my thesis, and coding for a course project &ndash; all of which, I was able to perform successfully.
+          From being a student, one thing I am proud of is that I&apos;ve adopted a work ethic that lets me <strong>manage multiple tasks effectively</strong>, especially with various deadlines &ndash; by creating schedules. Taking into consideration that this strategy can be very fragile, I make it so that I give myself a lot of leeway so I can easily adapt whenever needed. Through this strategy, I had been able to manage reviewing for an exam, writing my thesis, and coding for a course project &ndash; all of which, I was able to perform successfully.
         </p>
       </div>
     </div>
