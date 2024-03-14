@@ -81,14 +81,14 @@ export function NavigationBar() {
             loading="lazy" 
           />
         </a>
+        <button
+          className={styles['site-nav__container__button']}
+          onClick={() => {toggleNav()}}
+          ref={nav_toggle_ref}
+        >
+          Menu
+        </button>
         <div className={styles['site-nav__container__nav']}>
-          <button
-            className={styles['site-nav__container__nav__button']}
-            onClick={() => {toggleNav()}}
-            ref={nav_toggle_ref}
-          >
-            Menu
-          </button>
           <ul
             className={[
               styles['site-nav__container__nav__nav-list--generic'],

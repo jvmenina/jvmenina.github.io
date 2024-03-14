@@ -170,7 +170,7 @@ export function ProjectsSection() {
           />
           <ProjectComp
             id={"Projects-NieR"}
-            title={"\"Song of the Ancients\" Music Video"}
+            title={"\"Song of the Ancients\" Music Video in C#"}
             subtitle={"A solo music video project built in C#"}
             year={"2023"}
             description={[
