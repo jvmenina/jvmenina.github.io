@@ -63,7 +63,7 @@ export function ExperiencesSection() {
             year={"2021 - Present"}
             description={[
               "Assisted in the development of \"WebSnapse v2\", a visual simulator for \"Spiking Neural P Systems\", as a software tester.",
-              "Developed systems capable of being run in parallel that can generate Hilbert and Sierpiński Curves."
+              "Developed parallel systems that can generate Hilbert and Sierpiński Space-Filling Curves."
             ]}
           />
           <ExperienceComp
@@ -75,7 +75,7 @@ export function ExperiencesSection() {
               "Determined proper practices and measures in ensuring safety and health inside workspaces.",
               "Modeled and designed 3D models of mechanical parts with varying complexities.",
               "Performed programming tasks as part of an introductory training to the C language.",
-              "Engaged in team activities requiring coordination and cooperation.",
+              "Engaged in team-building activities requiring coordination and cooperation.",
             ]}
           />
         </div>

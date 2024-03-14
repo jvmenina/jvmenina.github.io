@@ -9,7 +9,7 @@ import site_logo from "/images/site_logo.svg";
 function AboutComponent() {
   return (
     <div className={styles['about__about-me']}>
-      <img src={site_logo} alt="Site owner's logo" />
+      <img src={site_logo} alt="Site owner's logo" loading="lazy" />
       <div className={styles['about__about-me__text']}>
         <p className={styles['__indent-text']}>
           Hello! I am a <strong>graduating B.S. Computer Science student</strong> from the University of the Philippines Diliman. I take passion in learning and sharing my knowledge when allowed to do so, especially those within my expertise.
@@ -133,16 +133,18 @@ function SkillsComponent() {
   const skill_elements: JSX.Element[] = [];
   skill_list.forEach((skill, idx) => {
     const skill_element = (
-      <div className={styles.about__skills__skill} key={idx}>
+      <div className={styles.__dropdown} key={idx}>
         <div 
           className={[
-            styles.about__skills__skill__head
+            styles.__dropdown__head,
+            styles['__dropdown__head--style-skills'],
+            active_chips[idx] ? styles['__dropdown__head--inactive'] : ""
           ].join(" ")}
           onClick={() => {clickHandler(idx);}}
         >
-          <div className={styles.about__skills__skill__head__text}>
-            <span className={styles.about__skills__skill__head__text__title}>{skill.title}</span>
-            <span className={styles.about__skills__skill__head__text__tags}>
+          <div className={styles.__dropdown__head__text}>
+            <span className={styles.__dropdown__head__text__title}>{skill.title}</span>
+            <span className={styles.__dropdown__head__text__tags}>
               {skill.tags.map((tag, idx) => (<span key={idx}>{tag}</span>))}
             </span>
           </div>
@@ -150,16 +152,16 @@ function SkillsComponent() {
             <FontAwesomeIcon 
               icon={faChevronDown} 
               className={[
-                styles.about__skills__skill__head__icon, 
-                active_chips[idx] ? styles['about__skills__skill__head__icon--active'] : ""
+                styles.__dropdown__head__icon, 
+                active_chips[idx] ? styles['__dropdown__head__icon--active'] : ""
               ].join(" ")} />
           </span>
         </div>
         <div className={[
-          styles.about__skills__skill__body, 
-          active_chips[idx] ? styles['about__skills__skill__body--active'] : ""
+          styles.__dropdown__body, 
+          active_chips[idx] ? styles['__dropdown__body--active'] : ""
         ].join(" ")}>
-          <div className={styles.about__skills__skill__body__container}>
+          <div className={styles.__dropdown__body__container}>
             {skill.details}
           </div>
         </div>
@@ -190,7 +192,7 @@ export function AboutSection() {
         </div>
       </div>
       <div className={styles.about__bg}>
-        <img src={site_logo} alt="Site logo" />
+        <img src={site_logo} alt="Site logo" loading="lazy" />
       </div>
     </section>
   );

@@ -13,6 +13,7 @@ function UniversityComp() {
       <img
         src={up_seal}
         alt="University of the Philippines seal" 
+        loading="lazy" 
       />
       <dl className={styles.academics__card__details}>
         <dt className={styles.academics__card__details__head}>
@@ -46,7 +47,8 @@ function RecognitionsComp() {
       ].join(" ")}>
         <img
           src={dostsei_seal}
-          alt="Department of Science and Technology - Science Education Institute seal"
+          alt="Department of Science and Technology - Science Education Institute seal" 
+          loading="lazy" 
         />
         <dl className={styles.academics__card__details}>
           <dt className={styles.academics__card__details__head}>
