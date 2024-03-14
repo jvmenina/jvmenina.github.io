@@ -322,7 +322,6 @@ ul, ol {
 
 .site-header__chips > span {
   position: relative;
-  flex-shrink: 0;
   padding: 0.2rem 2rem;
   border: 0.15rem solid var(--color-header-chip-border);
   border-radius: 1rem;
