@@ -51,7 +51,8 @@
   
   --color-about-photo-bg: var(--color-bg-highlight-y-alt2);
 
-  --color-footer-text:    hsl(50, 10%, 50%);
+  --color-footer-credits:   hsl(50, 10%, 30%);
+  --color-footer-socials:   hsl(50, 10%, 50%);
 }
 
 /** 
@@ -440,7 +441,7 @@ ul, ol {
 
 .about__about-me {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: auto 1fr;
   column-gap: 2rem;
   padding: 0 1rem;
   min-height: 400px;
@@ -843,23 +844,36 @@ ul, ol {
 
 .site-footer {
   width: 100%;
-  color: var(--color-footer-text);
+  color: var(--color-footer-credits);
   background-color: var(--color-header-bg);
 }
 
 .site-footer__container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  column-gap: 1rem;
   min-height: 300px;
-  align-items: center;
+  align-content: center;
   padding: 2rem;
 }
 
 .site-footer__socials {
+  justify-self: center;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: xx-large;
+  border-right: 1px solid var(--color-footer-socials);
+}
+
+.site-footer__socials a {
+  color: var(--color-text-highlight-y-alt);
 }
 
 .site-footer__credits {
-  width: 100%;
+  display: block;
   text-align: center;
   font-size: 9pt;
 }
@@ -870,7 +884,7 @@ ul, ol {
 
 .site-footer__credits a {
   text-decoration: underline;
-  color: var(--color-footer-text);
+  color: var(--color-footer-credits);
 }
 
 /** 
@@ -894,11 +908,31 @@ ul, ol {
   }
   
   .site-nav__container__button {
-    grid-area: nav;
-    display: block;
-    padding: 0 1rem;
-    height: 100%;
     justify-self: right;
+    
+    grid-area: nav;
+    padding: 12px;
+    height: 44px;
+    width: 44px;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 5px;
+    
+    background-color: var(--color-bg-main-special);
+    border: 2px solid var(--color-bg-highlight-y);
+    border-radius: 100%;
+    transition: background-color 250ms var(--easeOutCubic);
+  }
+
+  .site-nav__container__button:hover,
+  .site-nav__container__button--active {
+    background-color: var(--color-bg-highlight-y);
+  }
+
+  .site-nav__container__button span {
+    background-color: var(--color-bg-highlight-y-alt2);
   }
 
   .site-nav__container__nav {
@@ -939,8 +973,6 @@ ul, ol {
   }
 
   .site-nav__container__nav__nav-list--mobile--active {
-    /* display: block; */
-
     grid-template-rows: 50px 50px 50px 50px 50px;
     opacity: 1;
   }

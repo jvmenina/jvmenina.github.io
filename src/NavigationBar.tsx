@@ -82,11 +82,16 @@ export function NavigationBar() {
           />
         </a>
         <button
-          className={styles['site-nav__container__button']}
+          className={[
+            styles['site-nav__container__button'],
+            check ? styles['site-nav__container__button--active'] : "",
+          ].join(" ")}
           onClick={() => {toggleNav()}}
           ref={nav_toggle_ref}
         >
-          Menu
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
         <div className={styles['site-nav__container__nav']}>
           <ul
