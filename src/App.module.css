@@ -917,18 +917,17 @@ ul, ol {
     
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
     row-gap: 5px;
     
     background-color: var(--color-bg-main-special);
-    border: 2px solid var(--color-bg-highlight-y);
+    border: 2px outset var(--color-bg-highlight-y);
     border-radius: 100%;
     transition: background-color 250ms var(--easeOutCubic);
   }
 
   .site-nav__container__button:hover,
   .site-nav__container__button--active {
-    background-color: var(--color-bg-highlight-y);
+    background-color: hsl(50, 10%, 20%);
   }
 
   .site-nav__container__button span {

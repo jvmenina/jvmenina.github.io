@@ -81,7 +81,7 @@ export function NavigationBar() {
             loading="lazy" 
           />
         </a>
-        <button
+        <div
           className={[
             styles['site-nav__container__button'],
             check ? styles['site-nav__container__button--active'] : "",
@@ -92,7 +92,7 @@ export function NavigationBar() {
           <span></span>
           <span></span>
           <span></span>
-        </button>
+        </div>
         <div className={styles['site-nav__container__nav']}>
           <ul
             className={[
