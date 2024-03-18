@@ -21,7 +21,7 @@ function AboutComponent() {
           For my hobby, I&apos;ve been doing <strong>motion graphics</strong> for people for <strong>5 years</strong>. There, I bring life into static images and art, and I ensure it appeals to those viewing the animation. In my editor software of choice, I use Javascript to create dynamic movements and have more control over the elements in the canvas.
         </p>
         <p className={styles['__indent-text']}>
-          From being a student, one thing I am proud of is that I&apos;ve adopted a work ethic that lets me <strong>manage tasks timely and effectively</strong>, especially with various deadlines &ndash; by creating schedules. I make sure that I give myself leeway so I can easily adapt whenever needed. For instance, through this strategy, I had been able to manage reviewing for an exam, writing my thesis, and coding for a course project &ndash; all of which, I was able to perform successfully.
+          I am a curious learner at heart. I ask questions and seek information when I am presented with situations or topics I know little or nothing about. I always make sure I know what I&apos;m doing to make sure I can contribute in the most meaninful way I can. In tackling tasks, I am flexible and timely. I create schedules to map out how I can do my tasks, with enough leeway for flexibility, For instance, it is through this method that I was able to successfully review for an exam, write my thesis, and code for a course project.
         </p>
       </div>
     </div>

@@ -177,16 +177,16 @@ ul, ol {
   transform: translateX(100px);
   opacity: 0;
   transition: 
-    transform 500ms var(--easeOutCubic),
-    opacity 500ms var(--easeOutCubic);
+    transform 1000ms var(--easeOutCubic),
+    opacity 1000ms var(--easeOutCubic);
 }
 
 .__visible {
   transform: translateX(0px);
   opacity: 1;
   transition: 
-    transform 500ms var(--easeOutCubic),
-    opacity 500ms var(--easeOutCubic);
+    transform 1000ms var(--easeOutCubic),
+    opacity 1000ms var(--easeOutCubic);
 }
 
 /** 
