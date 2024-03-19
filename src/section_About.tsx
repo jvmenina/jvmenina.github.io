@@ -47,7 +47,7 @@ function SkillsComponent() {
         <>
           <ul>
             <li>
-              Have <strong>great understanding</strong> of the core processes surrounding softwares and operating systems (i.e. what happens &quot;under the hood&quot;).
+              Have <strong>great understanding</strong> of the core processes behind software and operating systems (i.e. what happens &quot;under the hood&quot;).
               <ul>
                 <li>
                   Supporting this, I am proficient in <strong>C</strong>, the most dominant language used in the Linux kernel codebase, and I have knowledge in <strong>MIPS</strong>, an assembly language.
