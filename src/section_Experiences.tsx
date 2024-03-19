@@ -68,7 +68,7 @@ export function ExperiencesSection() {
             company={"Algorithms and Complexity Laboratory, University of the Philippines Diliman"}
             work={"Research Work"}
             location={"Quezon City, Philippines"}
-            year={"2021 - Present"}
+            year={"2021 - 2023"}
             description={[
               "Assisted in the development of \"WebSnapse v2\", a visual simulator for \"Spiking Neural P Systems\", as a software tester.",
               "Developed parallel systems that can generate Hilbert and Sierpiński Space-Filling Curves."

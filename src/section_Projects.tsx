@@ -224,7 +224,7 @@ export function ProjectsSection() {
           <ProjectComp
             id={"Projects-Chopsticks"}
             title={"LAN Chopsticks"}
-            subtitle={"A solo project built in C++"}
+            subtitle={"A remix of a classic game built in C++"}
             year={"2019"}
             description={[
               'A spinoff of the classic game "Chopsticks" with new mechanics with LAN-play capabilities.',
