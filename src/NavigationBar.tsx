@@ -78,7 +78,7 @@ export function NavigationBar() {
             className={styles['site-nav__container__logo__img']} 
             src={site_logo} 
             alt="Site logo" 
-            loading="lazy" 
+            // loading="lazy" 
           />
         </a>
         <div
