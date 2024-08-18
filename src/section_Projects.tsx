@@ -143,26 +143,26 @@ export function ProjectsSection() {
         <div className={styles['__section-contents']}>
           <ProjectComp
             id={"Projects-Reimu"}
-            title={"Reimu's Rhythm Strike"}
+            title={"Rhythm Strike"}
             subtitle={"A WebGL rhythm game built in TypeScript"}
             year={"2024"}
             description={[
-              "\"Reimu's Rhythm Strike\" is a two-lane rhythm game based on \"Reimu no Oharai Daisakusen\" (霊夢のお祓い大作戦), a mini-game from the mobile game \"Touhou LostWord\" (東方LostWord).",
+              "\"Rhythm Strike\" is a two-lane rhythm game based on \"Reimu no Oharai Daisakusen\" (霊夢のお祓い大作戦), a mini-game from the mobile game \"Touhou LostWord\" (東方LostWord).",
               "The player has a selection of songs to play. Once the player has chosen, notes start to rush towards the player and they must be struck to the beat to earn points. Depending on the accuracy of the player, each note hit awards the player with points; it is the player's task to earn as many points as they can."
             ]}
             preview={
               <>
                 <p style={{textAlign: "center", fontWeight: "bolder"}}>In-development preview</p>
                 <figure>
-                  <img src={reimu_preview_1} alt="Reimu's Rhythm Strike Preview #1" loading="lazy" />
+                  <img src={reimu_preview_1} alt="Rhythm Strike Preview #1" loading="lazy" />
                   {/* <figcaption>Preview #1</figcaption> */}
                 </figure>
                 <figure>
-                  <img src={reimu_preview_2} alt="Reimu's Rhythm Strike Preview #2" loading="lazy" />
+                  <img src={reimu_preview_2} alt="Rhythm Strike Preview #2" loading="lazy" />
                   {/* <figcaption>Preview #1</figcaption> */}
                 </figure>
                 <figure>
-                  <img src={reimu_preview_3} alt="Reimu's Rhythm Strike Preview #3" loading="lazy" />
+                  <img src={reimu_preview_3} alt="Rhythm Strike Preview #3" loading="lazy" />
                   {/* <figcaption>Preview #1</figcaption> */}
                 </figure>
               </>

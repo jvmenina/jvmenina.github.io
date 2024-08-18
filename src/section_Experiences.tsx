@@ -65,24 +65,34 @@ export function ExperiencesSection() {
         <h2>Experiences</h2>
         <div className={styles['__section-contents']}>
           <ExperienceComp
+            company={"Navagis Asia Pacific PTE Ltd. - Philippine Branch Office"}
+            work={"Software Engineer Intern"}
+            location={"Taguig City, Philippines"}
+            year={"July 2024 - August 2024"}
+            description={[
+              "Completed the Google Cloud Digital Leader course.",
+              "Attained credentials on Google Maps Platform Technical and Sales Fundamentals.",
+              "Built a full-stack geospatial web application using Google Maps Platform APIs."
+            ]}
+          />
+          <ExperienceComp
             company={"Algorithms and Complexity Laboratory, University of the Philippines Diliman"}
             work={"Research Work"}
             location={"Quezon City, Philippines"}
-            year={"2021 - 2023"}
+            year={"September 2021 - May 2022"}
             description={[
-              "Assisted in the development of \"WebSnapse v2\", a visual simulator for \"Spiking Neural P Systems\", as a software tester.",
-              "Developed parallel systems that can generate Hilbert and Sierpiński Space-Filling Curves."
+              "Developed Spiking Neural P Systems, systems capable of being maximally parallel, that can generate Space-Filling Curves.",
+              "Assisted in the development of \"WebSnapse v2\", a visual simulator for Spiking Neural P Systems, as a software tester.",
+              "Cooperated with fellow researchers by evaluating each others' research projects."
             ]}
           />
           <ExperienceComp
             company={"University of Perpetual Help System DALTA Las Piñas"}
-            work={"Work Immersion"}
+            work={"Engineering Work Immersion Student"}
             location={"Las Piñas City, Philippines"}
-            year={"2017"}
+            year={"Novermber 2017 - December 2017"}
             description={[
-              "Determined proper practices and measures in ensuring safety and health inside workspaces.",
-              "Modeled and designed 3D models of mechanical parts with varying complexities.",
-              "Performed programming tasks as part of an introductory training to the C language.",
+              "Engaged in multiple projects involving various fields of Engineering, like Surveying, 3D Designing and Modeling, Computer Programming in C, and Electronics and Circuitry.",
               "Engaged in team-building activities requiring coordination and cooperation.",
             ]}
           />
