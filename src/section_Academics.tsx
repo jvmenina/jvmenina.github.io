@@ -3,14 +3,10 @@ import { NavigationAnchor } from "./NavigationAnchor.tsx";
 import useElementOnScreen from "./IntersectionObserver.tsx";
 
 import up_seal from "/images/up_seal.svg";
-import dostsei_seal from "/images/dostsei_seal.png";
+// import dostsei_seal from "/images/dostsei_seal.png";
 
 function UniversityComp() {
-  const { containerRef, isVisible } = useElementOnScreen({
-    root: null,
-    rootMargin: "0px",
-    threshold: 0,
-  });
+  const { containerRef, isVisible } = useElementOnScreen({});
 
   return (
     <div ref={containerRef} className={[
@@ -33,7 +29,7 @@ function UniversityComp() {
         ].join(" ")}>
           <span>Bachelor of Science in Computer Science</span>
           <hr className={styles['academics__card__details__body--multi-col--line']} />
-          <span className={styles['academics__card__details__body--multi-col--it']}>2024 (Expected)</span>
+          <span className={styles['academics__card__details__body--multi-col--it']}>October 2024</span>
         </dd>
         <dd className={styles['academics__card__details__other-info']}>
           <ul>
@@ -45,47 +41,8 @@ function UniversityComp() {
   );
 }
 
-function RecognitionsComp() {
-  const { containerRef, isVisible } = useElementOnScreen({
-    root: null,
-    rootMargin: "0px",
-    threshold: 0,
-  });
-
-  return (
-    <div>
-      <h3>Recognitions</h3>
-      <div ref={containerRef} className={[
-        styles.__card, 
-        styles['academics__card'],
-        isVisible ? styles['__visible'] : styles['__not-visible']
-      ].join(" ")}>
-        <img
-          src={dostsei_seal}
-          alt="Department of Science and Technology - Science Education Institute seal" 
-          loading="lazy" 
-        />
-        <dl className={styles.academics__card__details}>
-          <dt className={styles.academics__card__details__head}>
-            <abbr title="Department of Science and Technology - Science Education Institute">
-              DOST-SEI
-            </abbr>
-          </dt>
-          <dd className={styles['academics__card__details__body--important']}>
-            <span><abbr title="Science and Technology">S&T</abbr> Undergraduate Scholarship Awardee</span>
-          </dd>
-        </dl>
-      </div>
-    </div>
-  );
-}
-
 function ThesisComp() {
-  const { containerRef, isVisible } = useElementOnScreen({
-    root: null,
-    rootMargin: "0px",
-    threshold: 0,
-  });
+  const { containerRef, isVisible } = useElementOnScreen({});
 
   return (
     <div>
@@ -100,7 +57,7 @@ function ThesisComp() {
           Approximations of Hilbert and Sierpin&#769;ski Curves
         </div>
         <dl className={styles.academics__thesis__details}>
-          <dt>Adviser:</dt>
+          <dt>Research Adviser:</dt>
           <dd>Dr. Francis George Cabarle</dd>
           <dt>Research Department:</dt>
           <dd>Algorithms and Complexity Laboratory, Department of Computer Science</dd>
@@ -109,9 +66,9 @@ function ThesisComp() {
           <dt>Description:</dt>
           <dd>
             <p>
-              Generating space-filling curves using a relatively new and unexplored
-              computing model, inspired by biological systems, that is capable of
-              maximizing parallelization.
+              Generating space-filling curves using a relatively unexplored
+              computing model inspired by biological systems that is capable of
+              maximizing parallelization in hopes of improving computational efficiency in solving difficult computing problems.
             </p>
           </dd>
         </dl>
@@ -131,7 +88,6 @@ export function AcademicsSection() {
         <h2>Academic Background</h2>
         <div className={styles['__section-contents']}>
           <UniversityComp />
-          <RecognitionsComp />
           <ThesisComp />
         </div>
       </div>

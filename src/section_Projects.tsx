@@ -89,11 +89,7 @@ function ProjectComp(props: ProjectProps) {
     setPreviewVisibility((prev) => (!prev));
   };
 
-  const { containerRef, isVisible } = useElementOnScreen({
-    root: null,
-    rootMargin: "0px",
-    threshold: 0,
-  });
+  const { containerRef, isVisible } = useElementOnScreen({});
 
   return (
     <div ref={containerRef} className={[
@@ -142,9 +138,18 @@ export function ProjectsSection() {
         <h2>Projects</h2>
         <div className={styles['__section-contents']}>
           <ProjectComp
-            id={"Projects-Reimu"}
+            id={"Projects-Geospatial-Intern"}
+            title={"Choice Places Near Me"}
+            subtitle={"A full-stack geospatial web application built using React"}
+            year={"2024"}
+            description={[
+              'lorem ipsum',
+            ]}
+          />
+          <ProjectComp
+            id={"Projects-Rhythm-Game"}
             title={"Rhythm Strike"}
-            subtitle={"A WebGL rhythm game built in TypeScript"}
+            subtitle={"A WebGL rhythm game built using TypeScript"}
             year={"2024"}
             description={[
               "\"Rhythm Strike\" is a two-lane rhythm game based on \"Reimu no Oharai Daisakusen\" (霊夢のお祓い大作戦), a mini-game from the mobile game \"Touhou LostWord\" (東方LostWord).",
@@ -171,7 +176,7 @@ export function ProjectsSection() {
           <ProjectComp
             id={"Projects-NieR"}
             title={"\"Song of the Ancients\" Music Video in C#"}
-            subtitle={"A solo music video project built in C#"}
+            subtitle={"A solo music video project built using C#"}
             year={"2023"}
             description={[
               "A music video (\"storyboard\"), specifically a music-lyric video hybrid, made as a tribute to the video game \"NieR Replicant\". The storyboard aims to capture one of the climaxes of the game's story.",
@@ -200,7 +205,7 @@ export function ProjectsSection() {
           <ProjectComp
             id={"Projects-Lottie"}
             title={"Lottie AI"}
-            subtitle={"A team technopreneurship venture focused on AI and Geodesy"}
+            subtitle={"A team technopreneurship venture on an AI-powered OCR for Geodetic Engineers"}
             year={"2023"}
             link={"https://github.com/ENGG-150-Lottie-AI/Lottie-AI"}
             description={[
@@ -211,7 +216,7 @@ export function ProjectsSection() {
           <ProjectComp
             id={"Projects-PASG"}
             title={"Post-apocalyptic Survival Game"}
-            subtitle={"A team project built in Python"}
+            subtitle={"A team project built using Python"}
             year={"2021"}
             link={
               "https://github.com/CS-192-S3-2020-2021-Group-2/Post-Apocalyptic-Survival-Game"
@@ -224,7 +229,7 @@ export function ProjectsSection() {
           <ProjectComp
             id={"Projects-Chopsticks"}
             title={"LAN Chopsticks"}
-            subtitle={"A remix of a classic game built in C++"}
+            subtitle={"A remix of a classic game built using C++"}
             year={"2019"}
             description={[
               'A spinoff of the classic game "Chopsticks" with new mechanics with LAN-play capabilities.',

@@ -9,19 +9,12 @@ import site_logo from "/images/site_logo.svg";
 function AboutComponent() {
   return (
     <div className={styles['about__about-me']}>
-      {/* <img src={site_logo} alt="Site owner's logo" loading="lazy" /> */}
       <div className={styles['about__about-me__text']}>
         <p className={styles['__indent-text']}>
-          Hello! I am a <strong>graduating B.S. Computer Science student</strong> from the University of the Philippines Diliman. I take passion in learning and sharing my knowledge when allowed to do so, especially those within my expertise.
+          Hi! I&apos;m a <strong>software developer</strong> and an <strong>aspiring lifelong learner</strong> with experiences in developing desktop and web applications, and credentials on <strong>Google Maps Platform Technical</strong> and <strong>Sales Fundamentals</strong>. I am finishing my Bachelor&apos;s Degree in Computer Science in the University of the Philippines Diliman, with my thesis tackling Spiking Neural P Systems. I&apos;m most proficient with C and Python technologies for desktop development, and React and native JS for web development.
         </p>
         <p className={styles['__indent-text']}>
-          As a developer, I enjoy <strong>building tools</strong> that enhances my workflow by making it more efficient and robust, possibly alleviating potential headaches in the process.
-        </p>
-        <p className={styles['__indent-text']}>
-          For my hobby, I&apos;ve been doing <strong>motion graphics</strong> for people for <strong>5 years</strong>. There, I bring life into static images and art, and I ensure it appeals to those viewing the animation. In my editor software of choice, I use Javascript to create dynamic movements and have more control over the elements in the canvas.
-        </p>
-        <p className={styles['__indent-text']}>
-          I am a curious learner at heart. I ask questions and seek information when I am presented with situations or topics I know little or nothing about. I always make sure I know what I&apos;m doing to make sure I can contribute in the most meaninful way I can. In tackling tasks, I am flexible and timely. I create schedules to map out how I can do my tasks, with enough leeway for flexibility, For instance, it is through this method that I was able to successfully review for an exam, write my thesis, and code for a course project.
+          Professional life aside, as my hobby, I&apos;ve been making <strong>animated graphics</strong> for chart creators in an online rhythm game community for <strong>more than 5 years</strong>. There, I bring life into static images and art, and I ensure it catches the attention of the users viewing the page. In my editor software of choice, I use Javascript to create dynamic movements and have more control over the elements in the canvas.
         </p>
       </div>
     </div>
@@ -42,56 +35,63 @@ function SkillsComponent() {
   }
   const skill_list = [
     skillListConstructor(
-      "Software Developer",
-      (
-        <>
-          <ul>
-            <li>
-              Have <strong>great understanding</strong> of the core processes behind software and operating systems (i.e. what happens &quot;under the hood&quot;).
-              <ul>
-                <li>
-                  Supporting this, I am proficient in <strong>C</strong>, the most dominant language used in the Linux kernel codebase, and I have knowledge in <strong>MIPS</strong>, an assembly language.
-                </li>
-              </ul>
-            </li>
-            <li>
-              Had experiences of working with a team in developing software (e.g. <a href="#Projects-PASG">Post-apocalyptic Survival Game</a> and <a href="#Projects-Lottie">Lottie AI</a>).
-            </li>
-            <li>
-              Studied UNIX-like operating systems like <strong>xv6</strong> and <strong>Linux</strong> and modified some of their core functionalities as desired &ndash; essentially creating a personalized operating system.
-            </li>
-            <li>
-              Worked using <strong>MySQL</strong>, a <strong>Relational Database Management System</strong>.
-            </li>
-            <li>
-              Worked on projects using <strong>Machine Learning and Artificial Intelligence</strong> in <strong>Python</strong>. For example, <a href="#Projects-Lottie">Lottie AI</a>.
-            </li>
-            <li>
-              Worked on academic projects using <strong>C++</strong> (e.g. <a href="#Projects-Chopsticks">LAN Chopsticks</a>) and <strong>Rust</strong> (e.g. Abstract Syntax Trees or AST).
-            </li>
-            <li>
-              Worked on <a href="#Projects-NieR">a personal project</a> of creating a music-lyric video hybrid using solely <strong>C#</strong>.
-            </li>
-          </ul>
-        </>
-      ),
-      [
-        "C", "C++", "C#", "CUDA C", "MIPS", "MySQL", "Python", "Rust"
-      ]
-    ),
-    skillListConstructor(
-      "Web Developer",
+      "General Software Development",
       (
         <ul>
           <li>
-            Made various small projects and mini tools using &quot;vanilla&quot; tools (i.e. <strong>HTML, CSS, and JS</strong>).
+            Worked on numerous academic projects using...
+            <dl className={styles['__two-column']}>
+              <dt><strong>C</strong></dt>
+              <dd>Solved problems related to various data structures; Created a local file server with concurrency and mutual exclusion; Generated space-filling curves efficiently using a GPU through <strong>CUDA C</strong></dd>
+
+              <dt><strong>C++</strong></dt>
+              <dd>Created a <a href="#Projects-Chopsticks">spinoff</a> of the classic game ”Chopsticks” with new mechanics and LAN-play capabilities.</dd>
+
+              <dt><strong>MIPS Assembly</strong></dt>
+              <dd>Created a checkers puzzle solver</dd>
+
+              <dt><strong>Python</strong></dt>
+              <dd>Solved for numerical approximations of solutions to differential equations; Created a custom reliable and parameter-adaptive UDP-based protocol</dd>
+
+              <dt><strong>Rust</strong></dt>
+              <dd>Created an Abstract Syntax Tree evaluator with arithmetic and comparative capabilities</dd>
+
+              <dt></dt>
+              <dd></dd>
+            </dl>
           </li>
           <li>
-            Created this site using <strong>React JS</strong>.
+            Worked on software development projects with a <strong>team</strong> (e.g. <a href="#Projects-PASG">Post-apocalyptic Survival Game</a> and <a href="#Projects-Lottie">Lottie AI</a>).
           </li>
           <li>
-            Started with the development of a web-based rhythm game (<a href="#Projects-Reimu">Reimu&apos;s Rhythm Striker</a>) using <strong>TypeScript</strong>.
+            Worked on projects using <strong>Machine Learning</strong> models like SVM and Linear Regression with <strong>Python</strong> (e.g. <a href="#Projects-Lottie">Lottie AI</a>).
           </li>
+          <li>
+            Worked on <a href="#Projects-NieR">a personal project</a> on creating a music-lyric video hybrid using solely <strong>C#</strong>.
+          </li>
+        </ul>
+      ),
+      [
+        "Assembly (MIPS, x86)", "C", "C++", "C#", "CUDA", "MySQL", "Python", "Rust"
+      ]
+    ),
+    skillListConstructor(
+      "Web Development",
+      (
+        <ul>
+          <li>
+            Built personal web apps using native <strong>JavaScript</strong> and <strong>React</strong>.
+          </li>
+          <li>
+            Built this site using <strong>React</strong>.
+          </li>
+          <li>
+            Started with the development of a web-based rhythm game (<a href="#Projects-Rhythm-Game">Rhythm Strike</a>) using <strong>TypeScript</strong>.
+          </li>
+          <li>
+            Built a full-stack geospatial web application using <strong>React</strong> (TS), <strong>Python</strong> (FastAPI), and <strong>PostgreSQL</strong> with <strong>Google Maps API</strong>.
+          </li>
+          
         </ul>
       ),
       [
@@ -99,7 +99,23 @@ function SkillsComponent() {
       ]
     ),
     skillListConstructor(
-      "Membrane Computing Researcher",
+      "Specific Technologies",
+      (
+        <ul>
+          <li>
+            Worked with <strong>xv6</strong> and <strong>Linux</strong> operating systems, using <strong>C</strong> and <strong>x86 Assembly</strong>, by modifying their core functionalities and behavior as desired, such as creating custom system calls and a custom process scheduling.
+          </li>
+          <li>
+            Built an API using <strong>FastAPI</strong> that interacts with a <strong>PostgreSQL</strong> database for a full-stack geospatial web application that uses the <strong>Google Maps API</strong>.
+          </li>
+        </ul>
+      ),
+      [
+        "FastAPI", "Google Maps API", "Linux", "PostgreSQL"
+      ]
+    ),
+    skillListConstructor(
+      "Membrane Computing Research",
       (
         <ul>
           <li>

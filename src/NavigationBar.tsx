@@ -3,7 +3,7 @@ import styles from "./App.module.css";
 
 import site_logo from "/images/site_logo.svg";
 
-function useOutsideNavHandler(
+function useOutsideNavClickHandler(
   nav_list_ref: React.MutableRefObject<Node | null>,
   nav_toggle_ref: React.MutableRefObject<Node | null>,
   _disableNav: () => void
@@ -48,7 +48,7 @@ export function NavigationBar() {
 
   const nav_list_ref = useRef(null);
   const nav_toggle_ref = useRef(null);
-  useOutsideNavHandler(nav_list_ref, nav_toggle_ref, disableNav);
+  useOutsideNavClickHandler(nav_list_ref, nav_toggle_ref, disableNav);
 
   const nav_list_links = (
     <>
@@ -60,10 +60,13 @@ export function NavigationBar() {
         href="#Academics">Academics</a></li>
       <li><a 
         onClick={() => {disableNav()}} 
-        href="#Projects">Projects</a></li>
+        href="#Credentials">Credentials</a></li>
       <li><a 
         onClick={() => {disableNav()}} 
-        href="#Experiences">Experiences</a></li>
+        href="#Experiences">Experience</a></li>
+      <li><a 
+        onClick={() => {disableNav()}} 
+        href="#Projects">Projects</a></li>
     </>
   );
 

@@ -7,7 +7,7 @@ type ExperienceProps = {
   work: string;
   location: string;
   year: string;
-  description: string[];
+  description: (string|JSX.Element)[];
 };
 
 function ExperienceComp(props: ExperienceProps) {
@@ -19,11 +19,7 @@ function ExperienceComp(props: ExperienceProps) {
     description,
   }: ExperienceProps = props;
 
-  const { containerRef, isVisible } = useElementOnScreen({
-    root: null,
-    rootMargin: "0px",
-    threshold: 0,
-  });
+  const { containerRef, isVisible } = useElementOnScreen({});
 
   return (
     <div ref={containerRef} className={[
@@ -62,7 +58,7 @@ export function ExperiencesSection() {
         styles['__section-container'], 
         styles['__limit-width']
       ].join(" ")}>
-        <h2>Experiences</h2>
+        <h2>Experience</h2>
         <div className={styles['__section-contents']}>
           <ExperienceComp
             company={"Navagis Asia Pacific PTE Ltd. - Philippine Branch Office"}
@@ -82,7 +78,7 @@ export function ExperiencesSection() {
             year={"September 2021 - May 2022"}
             description={[
               "Developed Spiking Neural P Systems, systems capable of being maximally parallel, that can generate Space-Filling Curves.",
-              "Assisted in the development of \"WebSnapse v2\", a visual simulator for Spiking Neural P Systems, as a software tester.",
+              <>Assisted in the development of &quot;WebSnapse v2&quot; (<a href="https://www.researchgate.net/figure/A-screen-of-WebSnapse-V2-with-some-new-features-improved-access-to-edit-parts-eg_fig3_380182615" target="_blank" rel="noreferrer">Screenshot</a>) (<a href="https://aclab.dcs.upd.edu.ph/productions/software/websnapse" target="_blank" rel="noreferrer">Details</a>), a visual simulator for Spiking Neural P Systems, as a software tester.</>,
               "Cooperated with fellow researchers by evaluating each others' research projects."
             ]}
           />

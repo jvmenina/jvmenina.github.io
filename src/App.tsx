@@ -2,6 +2,7 @@ import styles from "./App.module.css";
 import { HeaderSection } from "./section_Header.tsx";
 import { AboutSection } from "./section_About.tsx";
 import { AcademicsSection } from "./section_Academics.tsx";
+import { CredentialsSection } from "./section_Credentials.tsx";
 import { ProjectsSection } from "./section_Projects.tsx";
 import { ExperiencesSection } from "./section_Experiences.tsx";
 import { NavigationBar } from "./NavigationBar.tsx";
@@ -14,8 +15,9 @@ export default function HomePage() {
       <HeaderSection />
       <AboutSection />
       <AcademicsSection />
-      <ProjectsSection />
+      <CredentialsSection />
       <ExperiencesSection />
+      <ProjectsSection />
       <FooterSection />
     </main>
   );
