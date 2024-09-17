@@ -1,4 +1,4 @@
-import styles from "./App.module.css";
+import styles from "../assets/App.module.css";
 import useElementOnScreen from "./IntersectionObserver.tsx";
 import { NavigationAnchor } from "./NavigationAnchor.tsx";
 
@@ -25,7 +25,7 @@ function ExperienceComp(props: ExperienceProps) {
     <div ref={containerRef} className={[
       styles.__card, 
       styles.experiences__experience,
-      isVisible ? styles['__visible'] : styles['__not-visible']
+      isVisible ? styles["__visible"] : styles["__not-visible"]
     ].join(" ")}>
       <div className={styles.experiences__experience__details}>
         <span className={styles.experiences__experience__details__company}>
@@ -55,11 +55,11 @@ export function ExperiencesSection() {
     <section>
       <NavigationAnchor id="Experiences" />
       <div className={[
-        styles['__section-container'], 
-        styles['__limit-width']
+        styles["__section-container"], 
+        styles["__limit-width"]
       ].join(" ")}>
         <h2>Experience</h2>
-        <div className={styles['__section-contents']}>
+        <div className={styles["__section-contents"]}>
           <ExperienceComp
             company={"Navagis Asia Pacific PTE Ltd. - Philippine Branch Office"}
             work={"Software Engineer Intern"}
@@ -78,7 +78,7 @@ export function ExperiencesSection() {
             year={"September 2021 - May 2022"}
             description={[
               "Developed Spiking Neural P Systems, systems capable of being maximally parallel, that can generate Space-Filling Curves.",
-              <>Assisted in the development of &quot;WebSnapse v2&quot; (<a href="https://www.researchgate.net/figure/A-screen-of-WebSnapse-V2-with-some-new-features-improved-access-to-edit-parts-eg_fig3_380182615" target="_blank" rel="noreferrer">Screenshot</a>) (<a href="https://aclab.dcs.upd.edu.ph/productions/software/websnapse" target="_blank" rel="noreferrer">Details</a>), a visual simulator for Spiking Neural P Systems, as a software tester.</>,
+              <>Assisted in the development of &quot;WebSnapse v2&quot; (<a href="https://www.researchgate.net/figure/A-screen-of-WebSnapse-V2-with-some-new-features-improved-access-to-edit-parts-eg_fig3_380182615" target="_blank" rel="noreferrer">Screenshot</a>) (<a href="https://aclab.dcs.upd.edu.ph/productions/software/websnapse" target="_blank" rel="noreferrer">Details</a>) (<a href="https://github.com/nccruel/websnapse_extended" target="_blank" rel="noreferrer">GitHub</a>), a visual simulator for Spiking Neural P Systems, as a software tester.</>,
               "Cooperated with fellow researchers by evaluating each others' research projects."
             ]}
           />

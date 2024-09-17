@@ -1,9 +1,10 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 
 const useElementOnScreen = ({
-  root = null,
-  rootMargin = "0px",
-  threshold = 0.2,
+  root = window.document,
+  rootMargin = "-50px 0px -50px 0px",
+  threshold = 0,
+  // threshold = 0.2,
 }: {
   root?: Element | Document | null;
   rootMargin?: string;

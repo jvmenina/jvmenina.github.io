@@ -1,8 +1,7 @@
-import { useState } from "react";
-import styles from "./App.module.css";
+import styles from "../assets/App.module.css";
 import { NavigationAnchor } from "./NavigationAnchor.tsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { DropdownComponent } from "./Dropdown.tsx";
+
 import useElementOnScreen from "./IntersectionObserver.tsx";
 
 import reimu_preview_1 from "/images/proj_reimu_1.jpg";
@@ -15,46 +14,20 @@ import sota_preview_3 from "/images/proj_sota_3.jpg";
 import sota_preview_4 from "/images/proj_sota_4.jpg";
 import sota_preview_5 from "/images/proj_sota_5.jpg";
 
-function PreviewPane(contents: JSX.Element, is_active:boolean, clickHandler: () => void) {
+function PreviewPane(contents: JSX.Element) {
   return (
-    <div className={styles.__dropdown}>
-      <div 
-        className={[
-          styles.__dropdown__head,
-          styles['__dropdown__head--style-previews'],
-          is_active ? styles['__dropdown__head--inactive'] : ""
-        ].join(" ")}
-        onClick={() => {clickHandler();}}
-      >
-        <div className={styles.__dropdown__head__text}>
-          <span className={styles.__dropdown__head__text__title}>Preview</span>
-        </div>
-        <span>
-          <FontAwesomeIcon 
-            icon={faChevronDown} 
-            className={[
-              styles.__dropdown__head__icon, 
-              is_active ? styles['__dropdown__head__icon--active'] : ""
-            ].join(" ")} />
-        </span>
-      </div>
-      <div 
-        className={[
-          styles.__dropdown__body, 
-          is_active ? styles['__dropdown__body--active'] : ""
-        ].join(" ")}
-        style={{
-          backgroundColor: "transparent",
-          marginTop: 0,
-        }}
-      >
-        <div className={[
-          styles.__dropdown__body__container,
-          styles.projects__project__preview
-        ].join(" ")}>
-          {contents}
-        </div>
-      </div>
+    <div className={styles.projects__project__preview}>
+      <DropdownComponent
+        head_contents={
+          <span>Preview</span>
+        }
+        body_contents={
+          <div className={styles.projects__project__preview__contents}>
+            {contents}
+          </div>
+        }
+        is_rounded={true}
+      />
     </div>
   );
 }
@@ -79,23 +52,13 @@ function ProjectComp(props: ProjectProps) {
     description,
     preview,
   }: ProjectProps = props;
-
-  const [ preview_visible, setPreviewVisibility ]: [
-    preview_visible: boolean,
-    setPreviewVisibility: React.Dispatch<React.SetStateAction<boolean>>
-  ] = useState(false);
-
-  const clickHandler = () => {
-    setPreviewVisibility((prev) => (!prev));
-  };
-
   const { containerRef, isVisible } = useElementOnScreen({});
 
   return (
     <div ref={containerRef} className={[
         styles.__card, 
         styles.projects__project,
-        isVisible ? styles['__visible'] : styles['__not-visible']
+        isVisible ? styles["__visible"] : styles["__not-visible"]
     ].join(" ")}>
       <NavigationAnchor id={id} />
       <div className={styles.projects__project__details}>
@@ -120,7 +83,7 @@ function ProjectComp(props: ProjectProps) {
       </ul>
       {
         preview
-          ? PreviewPane(preview, preview_visible, clickHandler)
+          ? PreviewPane(preview)
           : <></>
       }
     </div>
@@ -132,18 +95,18 @@ export function ProjectsSection() {
     <section className={styles.projects}>
       <NavigationAnchor id="Projects" />
       <div className={[
-        styles['__section-container'], 
-        styles['__limit-width']
+        styles["__section-container"], 
+        styles["__limit-width"]
       ].join(" ")}>
         <h2>Projects</h2>
-        <div className={styles['__section-contents']}>
+        <div className={styles["__section-contents"]}>
           <ProjectComp
             id={"Projects-Geospatial-Intern"}
             title={"Choice Places Near Me"}
             subtitle={"A full-stack geospatial web application built using React"}
             year={"2024"}
             description={[
-              'lorem ipsum',
+              "An interactive place locator with a dynamic map utilizing the Google Maps API, where users can see details about nearby restaurants, cafes, and stores, and know which ones are nearest to their location.",
             ]}
           />
           <ProjectComp
@@ -153,11 +116,11 @@ export function ProjectsSection() {
             year={"2024"}
             description={[
               "\"Rhythm Strike\" is a two-lane rhythm game based on \"Reimu no Oharai Daisakusen\" (霊夢のお祓い大作戦), a mini-game from the mobile game \"Touhou LostWord\" (東方LostWord).",
-              "The player has a selection of songs to play. Once the player has chosen, notes start to rush towards the player and they must be struck to the beat to earn points. Depending on the accuracy of the player, each note hit awards the player with points; it is the player's task to earn as many points as they can."
+              "A two-lane rhythm game where notes rush towards the player's position and they must be struck to the beat to gain points.",
             ]}
             preview={
               <>
-                <p style={{textAlign: "center", fontWeight: "bolder"}}>In-development preview</p>
+                <p style={{textAlign: "center", fontWeight: "bold", paddingBottom: "1rem"}}>In-development preview</p>
                 <figure>
                   <img src={reimu_preview_1} alt="Rhythm Strike Preview #1" loading="lazy" />
                   {/* <figcaption>Preview #1</figcaption> */}
@@ -179,8 +142,8 @@ export function ProjectsSection() {
             subtitle={"A solo music video project built using C#"}
             year={"2023"}
             description={[
-              "A music video (\"storyboard\"), specifically a music-lyric video hybrid, made as a tribute to the video game \"NieR Replicant\". The storyboard aims to capture one of the climaxes of the game's story.",
-              "Implements a 2D Particle Generator, a 3D Environment with Camera capabilities, and custom effects and transitions."
+              "A music-lyric video hybrid \"storyboard\" made as a tribute to the video game \"NieR Replicant\", aiming to capture one of the climaxes of the game's story.",
+              "Implemented a custom Particle Generator, a custom 3D Environment with Camera capabilities, and a number of other custom effects and transitions."
             ]}
             preview={
               <>
@@ -209,8 +172,9 @@ export function ProjectsSection() {
             year={"2023"}
             link={"https://github.com/ENGG-150-Lottie-AI/Lottie-AI"}
             description={[
-              "A text-recognition software geared towards Geodetic Engineers that can scan and file land title documents.",
-              "Outputs a CAD-readable file containing all pertinent information of the land, as well as a summary containing them, for plotting and data management purposes.",
+              "A text-recognition software for Geodetic engineers that can scan, file, and summarize land title documents.",
+              "Outputs a CAD-readable file containing all important details of a land for plotting and data management purposes.",
+              "Worked as the back-end lead developer; Planned and implemented the entire program logic."
             ]}
           />
           <ProjectComp
@@ -223,7 +187,8 @@ export function ProjectsSection() {
             }
             description={[
               "A text-based \"Choose Your Own Adventure\" RPG game, set in a world overrun by zombies.",
-              "The player has just suffered memory loss. Helped by an old friend, it's their task to survive and piece together their memories.",
+              "The player has just suffered memory loss. Helped by an old friend, it's their task to survive and piece together the player's memories.",
+              "Worked as a back-end developer; Implemented a number of core game features."
             ]}
           />
           <ProjectComp
@@ -232,7 +197,7 @@ export function ProjectsSection() {
             subtitle={"A remix of a classic game built using C++"}
             year={"2019"}
             description={[
-              'A spinoff of the classic game "Chopsticks" with new mechanics with LAN-play capabilities.',
+              "A spinoff of the classic game \"Chopsticks\" with new mechanics with LAN-play capabilities.",
             ]}
           />
         </div>

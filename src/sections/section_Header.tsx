@@ -1,4 +1,4 @@
-import styles from "./App.module.css";
+import styles from "../assets/App.module.css";
 import { NavigationAnchor } from "./NavigationAnchor.tsx";
 
 export function HeaderSection() {
@@ -10,18 +10,18 @@ export function HeaderSection() {
   else greeting_message += "Evening";
 
   return (
-    <header className={styles['site-header']}>
+    <header className={styles["header"]}>
       <NavigationAnchor id="Top" />
       <div className={[
-        styles['site-header__container'], 
-        styles['__limit-width']
+        styles["header__container"], 
+        styles["__limit-width"]
       ].join(" ")}>
-        <div className={styles['site-header__text-content']}>
-          <div className={styles['site-header__greeting']}>
+        <div className={styles["header__contents"]}>
+          <div className={styles["header__greeting"]}>
             {greeting_message}! My name is
           </div>
           <h1>Jan Michael <span>Menina</span></h1>
-          <div className={styles['site-header__chips']}>
+          <div className={styles["header__chips"]}>
             <span>Software Developer</span>
             <span>Web Developer</span>
             <span>Membrane Computing Researcher</span>

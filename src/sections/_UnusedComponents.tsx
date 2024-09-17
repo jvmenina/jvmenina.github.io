@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./App.module.css";
+import styles from "../assets/App.module.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconDefinition, faJs, faPython, faReact, faRust } from "@fortawesome/free-brands-svg-icons";
@@ -130,7 +130,7 @@ function LanguageCircle( {
   );
   const donut_meter = (
     <g
-      className={styles['about__langs__lang__graphic__donut']}
+      className={styles["about__langs__lang__graphic__donut"]}
     >
       {donut_meter_bg}
       {donut_meter_fg}
@@ -214,7 +214,7 @@ export function SkillCircle_Pie( {
       `} 
       strokeWidth={2}
       key={i}
-      className={[styles.about__langs__bar__meter, i < filled_bars ? styles['about__langs__bar__meter-filled'] : ""].join(" ")}
+      className={[styles.about__langs__bar__meter, i < filled_bars ? styles["about__langs__bar__meter-filled"] : ""].join(" ")}
       onMouseOver={() => {
         const new_hover_states = hover_states.map((_state, idx) => ((idx === i) ? true : false));
         setHoverStates(new_hover_states);

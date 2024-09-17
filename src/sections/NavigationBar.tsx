@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from "react";
-import styles from "./App.module.css";
+import styles from "../assets/App.module.css";
 
 import site_logo from "/images/site_logo.svg";
 
@@ -54,6 +54,9 @@ export function NavigationBar() {
     <>
       <li><a 
         onClick={() => {disableNav()}} 
+        href="#Top">Top</a></li>
+      <li><a 
+        onClick={() => {disableNav()}} 
         href="#About">About</a></li>
       <li><a 
         onClick={() => {disableNav()}} 
@@ -71,23 +74,26 @@ export function NavigationBar() {
   );
 
   return (
-    <nav className={styles['site-nav']}>
+    <nav className={styles["nav"]}>
       <div className={[
-        styles['site-nav__container'], 
-        styles['__limit-width']
+        styles["nav__container"], 
+        styles["__limit-width"]
       ].join(" ")}>
-        <a className={styles['site-nav__container__logo']} onClick={() => {disableNav}} href="#Top">
+        {/* Logo */}
+        <a className={styles["nav__container__logo"]} onClick={() => {disableNav}} href="#Top">
           <img 
-            className={styles['site-nav__container__logo__img']} 
+            className={styles["nav__container__logo__img"]} 
             src={site_logo} 
             alt="Site logo" 
             // loading="lazy" 
           />
         </a>
+
+        {/* Mobile menu button */}
         <div
           className={[
-            styles['site-nav__container__button'],
-            check ? styles['site-nav__container__button--active'] : "",
+            styles["nav__container__button"],
+            check ? styles["nav__container__button--active"] : "",
           ].join(" ")}
           onClick={() => {toggleNav()}}
           ref={nav_toggle_ref}
@@ -96,27 +102,16 @@ export function NavigationBar() {
           <span></span>
           <span></span>
         </div>
-        <div className={styles['site-nav__container__nav']}>
+
+        {/* Navigation menu */}
+        <div className={styles["nav__container__nav"]}>
           <ul
             className={[
-              styles['site-nav__container__nav__nav-list--generic'],
-              styles['site-nav__container__nav__nav-list'], 
+              styles["nav__container__nav__nav-list"],
+              check ? styles["nav__container__nav__nav-list--mobile-active"] : "" 
             ].join(" ")}
             ref={nav_list_ref}
           >
-            {nav_list_links}
-          </ul>
-          <ul
-            className={[
-              styles['site-nav__container__nav__nav-list--generic'],
-              styles['site-nav__container__nav__nav-list--mobile'], 
-              check ? styles['site-nav__container__nav__nav-list--mobile--active'] : ""
-            ].join(" ")}
-            ref={nav_list_ref}
-          >
-            <li><a 
-              onClick={() => {disableNav()}} 
-              href="#Top">Home</a></li>
             {nav_list_links}
           </ul>
         </div>
@@ -124,5 +119,3 @@ export function NavigationBar() {
     </nav>
   );
 }
-
-// could make a nav menu at the bottom as a circle that can be expanded on tap

@@ -1,4 +1,4 @@
-import styles from "./App.module.css";
+import styles from "../assets/App.module.css";
 
 export function NavigationAnchor({ id }: { id: string; }) {
   return (
