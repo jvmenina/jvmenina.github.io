@@ -77,6 +77,7 @@ section {
   display: flex;
   width: 100%;
   padding: 5rem 0;
+  background-color: var(--color-bg-main);
 }
 
 section:nth-child(even) {
@@ -322,6 +323,7 @@ ul, ol {
 
 .site-main {
   width: auto;
+  background-color: var(--color-header-bg);
 }
 
 /** 
@@ -340,6 +342,12 @@ ul, ol {
 
   background-image: linear-gradient(to top, var(--color-nav-bg), var(--color-nav-bg-alt2));
   box-shadow: 0px 0px 20px 0px black;
+
+  transition: transform 250ms var(--easeOutCubic);
+}
+
+.nav--hidden {
+  
 }
 
 .nav__container {
@@ -1026,6 +1034,10 @@ ul, ol {
   }
   
   /* Nav */
+  .nav--hidden {
+    transform: translateY(calc(-1 * var(--nav-height)));
+  }
+
   .nav__container {
     display: grid;
     grid-template-columns: 1fr auto 1fr;

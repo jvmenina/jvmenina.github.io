@@ -73,8 +73,24 @@ export function NavigationBar() {
     </>
   );
 
+  const [ navHidden, setNavHidden ] = useState<boolean>(false);
+  const [ prevScrollPosition, setPrevScrollPosition ] = useState<number>(window.scrollY);
+
+  window.addEventListener("scroll", () => {
+    if (prevScrollPosition - window.scrollY > 0 || window.scrollY <= 100) 
+      setNavHidden(false);
+    else if (prevScrollPosition - window.scrollY < 0)
+      setNavHidden(true);
+    setPrevScrollPosition(window.scrollY);
+  })
+
   return (
-    <nav className={styles["nav"]}>
+    <nav 
+      className={[
+        styles["nav"],
+        navHidden ? styles["nav--hidden"] : ""
+      ].join(" ")}
+    >
       <div className={[
         styles["nav__container"], 
         styles["__limit-width"]
