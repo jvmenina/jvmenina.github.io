@@ -3,6 +3,7 @@ import useElementOnScreen from "./IntersectionObserver.tsx";
 import { NavigationAnchor } from "./NavigationAnchor.tsx";
 
 type ExperienceProps = {
+  logo_path: string;
   company: string;
   work: string;
   location: string;
@@ -12,6 +13,7 @@ type ExperienceProps = {
 
 function ExperienceComp(props: ExperienceProps) {
   const {
+    logo_path,
     company,
     work,
     location,
@@ -27,6 +29,7 @@ function ExperienceComp(props: ExperienceProps) {
       styles.experiences__experience,
       isVisible ? styles["__visible"] : styles["__not-visible"]
     ].join(" ")}>
+      <img src={logo_path} alt={`Logo of ${company}`} className={styles.experiences__experience__logo} loading="lazy" />
       <div className={styles.experiences__experience__details}>
         <span className={styles.experiences__experience__details__company}>
           {company}
@@ -61,6 +64,7 @@ export function ExperiencesSection() {
         <h2>Experience</h2>
         <div className={styles["__section-contents"]}>
           <ExperienceComp
+            logo_path={"/images/navagis_logo.jpg"}
             company={"Navagis Asia Pacific PTE Ltd. - Philippine Branch Office"}
             work={"Software Engineer Intern"}
             location={"Taguig City, Philippines"}
@@ -72,6 +76,7 @@ export function ExperiencesSection() {
             ]}
           />
           <ExperienceComp
+            logo_path={"/images/aclab_logo.png"}
             company={"Algorithms and Complexity Laboratory, University of the Philippines Diliman"}
             work={"Research Work"}
             location={"Quezon City, Philippines"}
@@ -83,6 +88,7 @@ export function ExperiencesSection() {
             ]}
           />
           <ExperienceComp
+            logo_path={"/images/uphsd_logo.jpg"}
             company={"University of Perpetual Help System DALTA Las Piñas"}
             work={"Engineering Work Immersion Student"}
             location={"Las Piñas City, Philippines"}

@@ -2,7 +2,7 @@ import styles from "../assets/App.module.css";
 import { NavigationAnchor } from "./NavigationAnchor.tsx";
 import useElementOnScreen from "./IntersectionObserver.tsx";
 
-import up_seal from "/images/up_seal.svg";
+import up_logo from "/images/up_logo.svg";
 
 function UniversityComp() {
   const { containerRef, isVisible } = useElementOnScreen({});
@@ -14,8 +14,8 @@ function UniversityComp() {
       isVisible ? styles["__visible"] : styles["__not-visible"]
     ].join(" ")}>
       <img
-        src={up_seal}
-        alt="University of the Philippines seal" 
+        src={up_logo}
+        alt="Logo of University of the Philippines" 
         loading="lazy" 
       />
       <div className={styles.academics__university__details}>
@@ -25,11 +25,11 @@ function UniversityComp() {
         <div className={styles.academics__university__details__subtitle}>
           <span className={styles["academics__university__details__subtitle__degree"]}>Bachelor of Science in Computer Science</span>
           <hr />
-          <span className={styles["academics__university__details__subtitle__date"]}>October 2024</span>
+          <span className={styles["academics__university__details__subtitle__date"]}>August 2024</span>
         </div>
         <div className={styles["academics__university__details__body"]}>
           <ul>
-            <li>Running for <strong>Cum Laude</strong> with Current GWA of 1.7407</li>
+            <li>Graduated with <strong>Cum Laude Honors</strong> with GWA of 1.73</li>
           </ul>
         </div>
       </div>

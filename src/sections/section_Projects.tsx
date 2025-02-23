@@ -107,6 +107,7 @@ export function ProjectsSection() {
             year={"2024"}
             description={[
               "An interactive place locator with a dynamic map utilizing the Google Maps API, where users can see details about nearby restaurants, cafes, and stores, and know which ones are nearest to their location.",
+              "Reviewed and assessed by select sales and technical leads at Navagis (Philippine Branch)."
             ]}
           />
           <ProjectComp
@@ -142,7 +143,7 @@ export function ProjectsSection() {
             subtitle={"A solo music video project built using C#"}
             year={"2023"}
             description={[
-              "A music-lyric video hybrid \"storyboard\" made as a tribute to the video game \"NieR Replicant\", aiming to capture one of the climaxes of the game's story.",
+              "A music video \"storyboard\" made as a tribute to the video game \"NieR Replicant\", aiming to capture one of the climaxes of the game's story.",
               "Implemented a custom Particle Generator, a custom 3D Environment with Camera capabilities, and a number of other custom effects and transitions."
             ]}
             preview={
@@ -168,7 +169,7 @@ export function ProjectsSection() {
           <ProjectComp
             id={"Projects-Lottie"}
             title={"Lottie AI"}
-            subtitle={"A team technopreneurship venture on an AI-powered OCR for Geodetic Engineers"}
+            subtitle={"A team technopreneurship venture on a smart OCR for Geodetic Engineers"}
             year={"2023"}
             link={"https://github.com/ENGG-150-Lottie-AI/Lottie-AI"}
             description={[

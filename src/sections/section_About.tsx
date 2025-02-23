@@ -9,10 +9,10 @@ function AboutComponent() {
     <div className={styles["about__about-me"]}>
       <div className={styles["about__about-me__text"]}>
         <p className={styles["__indent-text"]}>
-          Hi! I&apos;m a <strong>software developer</strong> and an <strong>aspiring lifelong learner</strong> with experiences in developing desktop and web applications, and credentials on <strong>Google Maps Platform Technical</strong> and <strong>Sales Fundamentals</strong>. I am finishing my <strong>Bachelor&apos;s Degree in Computer Science</strong> in the University of the Philippines Diliman, with my thesis tackling Spiking Neural P Systems. I&apos;m most proficient with C and Python technologies for desktop development, and React and native JS for web development.
+          Hi! I&apos;m a <strong>software developer</strong> and an <strong>aspiring lifelong learner</strong> with experiences in developing desktop and web applications, and credentials on <strong>Google Maps Platform Technical</strong> and <strong>Sales Fundamentals</strong>. I finished my <strong>Bachelor&apos;s Degree in Computer Science</strong> with Cum Laude honors in the University of the Philippines Diliman, with my thesis tackling Spiking Neural P Systems. I&apos;m most proficient with C and Python technologies for desktop development, and React and native JS for web development.
         </p>
         <p className={styles["__indent-text"]}>
-          Professional life aside, as my hobby, I&apos;ve been making <strong>animated graphics</strong> for chart creators in an online rhythm game community for <strong>more than 5 years</strong>. There, I bring life into static images and art, and I ensure it catches the attention of the users viewing the page. In my editor software of choice, I use Javascript to create dynamic movements and have more control over the elements in the canvas.
+          Professional life aside, as my hobby, I&apos;ve been making <strong>animated graphics</strong> for content creators in an online rhythm game community for <strong>more than 5 years</strong>. There, I bring life into static images and art, and I ensure it catches the attention of the users viewing the page. In my editor software of choice, I use Javascript to create dynamic movements and have more control over the elements in the canvas.
         </p>
       </div>
     </div>
@@ -115,7 +115,7 @@ function SkillsComponent() {
           </ul>
         }
         tags={[
-          "HTML + CSS", "JavaScript", "React", "TypeScript"
+          "HTML", "CSS", "JavaScript", "React", "TypeScript"
         ]}
       />
       <SkillComponent
