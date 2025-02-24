@@ -151,19 +151,19 @@ ul, ol {
 
 /* Intersection Observer */
 .__not-visible {
-  transform: translateX(100px);
+  transform: translateX(1.5rem);
   opacity: 0;
   transition: 
-    transform 800ms var(--easeOutCubic),
-    opacity 800ms var(--easeOutCubic);
+    transform 500ms var(--easeOutCubic),
+    opacity 500ms var(--easeOutCubic);
 }
 
 .__visible {
   transform: translateX(0px);
   opacity: 1;
   transition: 
-    transform 800ms var(--easeOutCubic),
-    opacity 800ms var(--easeOutCubic);
+    transform 500ms var(--easeOutCubic),
+    opacity 500ms var(--easeOutCubic);
 }
 
 /* Reusable Format */
@@ -998,6 +998,7 @@ ul, ol {
 }
 
 .site-footer__socials a {
+  display: flex;
   color: var(--color-text-highlight-y-alt);
 }
 
@@ -1278,5 +1279,15 @@ ul, ol {
     border-top: var(--hr-style);
     margin-top: 0.5rem;
     padding-top: 1rem;
+  }
+  
+  /* Footer */
+  .site-footer__container {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
+  .site-footer__socials {
+    border-right: 0;
   }
 }
