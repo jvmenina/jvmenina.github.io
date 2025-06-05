@@ -25,7 +25,7 @@ function UniversityComp() {
         <div className={styles.academics__university__details__subtitle}>
           <span className={styles["academics__university__details__subtitle__degree"]}>Bachelor of Science in Computer Science</span>
           <hr />
-          <span className={styles["academics__university__details__subtitle__date"]}>August 2024</span>
+          <span className={styles["academics__university__details__subtitle__date"]}>2024</span>
         </div>
         <div className={styles["academics__university__details__body"]}>
           <ul>

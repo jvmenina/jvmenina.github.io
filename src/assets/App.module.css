@@ -951,6 +951,7 @@ ul, ol {
 .experiences__experience__details__location {
   font-style: italic;
   text-align: right;
+  align-self: end;
 }
 .experiences__experience__details__work {
   font-variant: small-caps;
