@@ -1,0 +1,64 @@
+.academics {
+
+}
+
+.academics__university {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 2rem;
+}
+
+.academics__university > img {
+  object-fit: contain;
+  --logo-img-size: 150px;
+  width: var(--logo-img-size);
+  height: var(--logo-img-size);
+}
+
+.academics__university__details {
+
+}
+
+.academics__university__details__title {
+  width: 100%;
+}
+
+.academics__university__details__subtitle {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 0.5rem;
+  width: 100%;
+  align-items: center;
+}
+
+.academics__university__details__subtitle__degree {
+  font-weight: bold;
+}
+
+.academics__university__details__subtitle__date {
+  font-style: italic;
+}
+
+.academics__university__details__body {
+  padding-top: 1rem;
+}
+
+.academics__thesis {
+
+}
+
+.academics__thesis__title {
+
+}
+
+.academics__thesis__details {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+}
+
+.academics__thesis__details > dt {
+  font-weight: bold;
+}

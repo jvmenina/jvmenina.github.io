@@ -1,13 +1,18 @@
 import { useRef, useEffect, useState, useCallback } from "react";
-import styles from "../assets/App.module.css";
+import { useSections } from "../hooks/CustomHooks";
 
-import site_logo from "/images/site_logo.svg";
+import { joinStyles } from "../utils/joinStyles";
+
+import coreStyles from "../assets/core.module.css";
+import navStyles from "../assets/nav.module.css";
 
 function useOutsideNavClickHandler(
-  nav_list_ref: React.MutableRefObject<Node | null>,
-  nav_toggle_ref: React.MutableRefObject<Node | null>,
+  navListRef: React.RefObject<Node | null>,
+  navToggleRef: React.RefObject<Node | null>,
   _disableNav: () => void
 ) {
+  // Note: Use MutableRefObject if needed
+
   const disableNav = useCallback(() => {_disableNav()}, [_disableNav]);
 
   useEffect(() => {
@@ -16,16 +21,16 @@ function useOutsideNavClickHandler(
        * Can also do...
        * 
        * if (
-       *   !nav_list_ref.current!.contains(event.target as HTMLElement)
-       *   && !nav_toggle_ref.current!.contains(event.target as HTMLElement)
+       *   !navListRef.current!.contains(event.target as HTMLElement)
+       *   && !navToggleRef.current!.contains(event.target as HTMLElement)
        * ) {
        */
 
       if (
-        nav_list_ref.current 
-        && nav_toggle_ref.current
-        && !nav_list_ref.current.contains(event.target as HTMLElement)
-        && !nav_toggle_ref.current.contains(event.target as HTMLElement)
+        navListRef.current 
+        && navToggleRef.current
+        && !navListRef.current.contains(event.target as HTMLElement)
+        && !navToggleRef.current.contains(event.target as HTMLElement)
         ) {
         disableNav();
       }
@@ -35,44 +40,36 @@ function useOutsideNavClickHandler(
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [nav_list_ref, nav_toggle_ref, disableNav]);
+  }, [navListRef, navToggleRef, disableNav]);
 }
 
-export function NavigationBar() {
-  const [ check, setCheck ] = useState<boolean>(false);
-  
-  const disableNav = useCallback(() => {setCheck(false)}, []);
-  // const enableNav = useCallback(() => {setCheck(true)}, []);
+export function NavigationBar(
+  // {sectionSwitcher: switchTo } : { sectionSwitcher : SectionSwitcherType}
+) {
+  const { sectionContexts, navContexts } = useSections();
+  const switchTo = sectionContexts.sectionSwitcher;
+  const activeIndex = navContexts.activeIndex;
+  const setActiveIndex = navContexts.setActiveIndex;
+
+  /**
+   * Handle mobile nav button
+   */
+  const [ mobileNavIsOpen, setMobileNavIsOpen ] = useState<boolean>(false);
+  const disableNav = useCallback(() => {setMobileNavIsOpen(false)}, []);
+  // const enableNav = useCallback(() => {setMobileNavIsOpen(true)}, []);
   // Note: StrictMode makes it so that "setState"s are called twice
-  const toggleNav = useCallback(() => {setCheck((prev) => (!prev))}, []);
+  const toggleNav = useCallback(() => {setMobileNavIsOpen((prev) => (!prev))}, []);
 
-  const nav_list_ref = useRef(null);
-  const nav_toggle_ref = useRef(null);
-  useOutsideNavClickHandler(nav_list_ref, nav_toggle_ref, disableNav);
+  /**
+   * Handle taps (clicks) outside mobile nav
+   */
+  const navListRef = useRef(null);
+  const navToggleRef = useRef(null);
+  useOutsideNavClickHandler(navListRef, navToggleRef, disableNav);
 
-  const nav_list_links = (
-    <>
-      <li><a 
-        onClick={() => {disableNav()}} 
-        href="#Top">Top</a></li>
-      <li><a 
-        onClick={() => {disableNav()}} 
-        href="#About">About</a></li>
-      <li><a 
-        onClick={() => {disableNav()}} 
-        href="#Academics">Academics</a></li>
-      <li><a 
-        onClick={() => {disableNav()}} 
-        href="#Credentials">Credentials</a></li>
-      <li><a 
-        onClick={() => {disableNav()}} 
-        href="#Experiences">Experience</a></li>
-      <li><a 
-        onClick={() => {disableNav()}} 
-        href="#Projects">Projects</a></li>
-    </>
-  );
-
+  /**
+   * Hides and reveals nav when scrolling down and up, respectively
+   */
   const [ navHidden, setNavHidden ] = useState<boolean>(false);
   const [ prevScrollPosition, setPrevScrollPosition ] = useState<number>(window.scrollY);
 
@@ -82,37 +79,98 @@ export function NavigationBar() {
     else if (prevScrollPosition - window.scrollY < 0)
       setNavHidden(true);
     setPrevScrollPosition(window.scrollY);
+    disableNav();
   })
+
+  /**
+   * Handle marker
+   */
+
+  // const navRef: React.MutableRefObject<HTMLDivElement | null> = useRef(null);
+  const [markerStyle, setMarkerStyle] = useState<{left: number, width: number}>({ left: 0, width: 0 });
+  // const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const handleClick = (index: number) => {
+    disableNav();
+    setActiveIndex(index);
+    switch (index) {
+      case 1:
+        switchTo.about();
+        break;
+      case 2:
+        switchTo.academics();
+        break;
+      case 3:
+        switchTo.credentials();
+        break;
+      case 4:
+        switchTo.experiences();
+        break;
+      case 5:
+        switchTo.projects();
+        break;
+      default:
+        switchTo.header();
+        break;
+    }
+  }
+
+  useEffect(() => {
+    const navRef = navListRef as React.MutableRefObject<HTMLDivElement | null>;
+    const nav = navRef.current;
+    if (!nav) return;
+
+    const item = nav.children[activeIndex];
+    if (!item) return;
+
+    const navRect = nav.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect();
+
+    setMarkerStyle({
+      left: (itemRect.left - navRect.left) + (itemRect.width/2),
+      width: itemRect.width,
+    });
+  }, [activeIndex]);
+
+  /**
+   * Output
+   */
+  // const autoClickRef = useRef<HTMLAnchorElement>(null);
+  // useEffect(() => {
+  //   if (autoClickRef.current) autoClickRef.current.click()
+  // }, []);
+  const navListLinks: {
+    text: string,
+    href?: string,
+    anchorRef?: React.RefObject<HTMLAnchorElement>
+  }[] = [
+    {text: "Top"},
+    {text: "About Me"},
+    {text: "Academics"},
+    {text: "Credentials"},
+    {text: "Experience"},
+    {text: "Projects"},
+  ];
 
   return (
     <nav 
-      className={[
-        styles["nav"],
-        navHidden ? styles["nav--hidden"] : ""
-      ].join(" ")}
+      className={joinStyles(
+        navStyles["nav"],
+        navHidden ? navStyles["nav--hidden"] : ""
+      )}
     >
-      <div className={[
-        styles["nav__container"], 
-        styles["__limit-width"]
-      ].join(" ")}>
-        {/* Logo */}
-        <a className={styles["nav__container__logo"]} onClick={() => {disableNav}} href="#Top">
-          <img 
-            className={styles["nav__container__logo__img"]} 
-            src={site_logo} 
-            alt="Site logo" 
-            // loading="lazy" 
-          />
-        </a>
-
+      <div className={joinStyles(
+        navStyles["nav__container"], 
+        coreStyles["__limit-width"]
+      )}>
         {/* Mobile menu button */}
         <div
-          className={[
-            styles["nav__container__button"],
-            check ? styles["nav__container__button--active"] : "",
-          ].join(" ")}
+          className={joinStyles(
+            navStyles["nav__container__button"],
+            mobileNavIsOpen ? navStyles["nav__container__button--active"] : "",
+          )}
           onClick={() => {toggleNav()}}
-          ref={nav_toggle_ref}
+          ref={navToggleRef}
         >
           <span></span>
           <span></span>
@@ -120,18 +178,31 @@ export function NavigationBar() {
         </div>
 
         {/* Navigation menu */}
-        <div className={styles["nav__container__nav"]}>
+        <div className={navStyles["nav__container__nav"]}>
           <ul
-            className={[
-              styles["nav__container__nav__nav-list"],
-              check ? styles["nav__container__nav__nav-list--mobile-active"] : "" 
-            ].join(" ")}
-            ref={nav_list_ref}
+            className={joinStyles(
+              navStyles["nav__container__nav__list"],
+              mobileNavIsOpen ? navStyles["nav__container__nav__list--mobile-active"] : "" 
+            )}
+            ref={navListRef}
           >
-            {nav_list_links}
+            {navListLinks.map((link, index) => (
+              <li key={index}><a
+                href={link.href}
+                onClick={(event) => {
+                  event.preventDefault();
+                  handleClick(index);
+                  window.history.replaceState(null, '', window.location.pathname + window.location.search);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                ref={link.anchorRef}
+              >{link.text}</a></li>
+            ))}
+            <div className={navStyles["nav__marker"]} style={markerStyle}></div>
           </ul>
         </div>
       </div>
+      <div className={navStyles.nav__bg}></div>
     </nav>
   );
 }

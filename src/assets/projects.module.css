@@ -1,0 +1,92 @@
+.projects {
+  
+}
+
+.projects__contents {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.projects__project {
+
+}
+
+.projects__project__details {
+  display: grid;
+  width: 100%;
+  column-gap: 1rem;
+  grid-template-columns: auto auto 1fr auto auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "title line line line date"
+    "subtitle subtitle subtitle link link";
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.projects__project__details__title {
+  display: block;
+  grid-area: title;
+}
+.projects__project__details hr {
+  grid-area: line;
+}
+.projects__project__details__year {
+  display: block;
+  justify-self: right;
+  grid-area: date;
+}
+.projects__project__details__subtitle {
+  display: block;
+  grid-area: subtitle;
+  font-weight: bold;
+}
+.projects__project__details__link {
+  display: block;
+  grid-area: link;
+}
+.projects__project__description {
+  width: 100%;
+  padding-left: 2rem;
+  text-align: left;
+}
+
+.projects__project__preview {
+  padding-top: 1rem;
+}
+
+.projects__project__preview__dropdown-head {
+  text-align: center;
+}
+
+.projects__project__preview__contents {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.projects__project__preview__contents > * {
+  width: 100%;
+}
+
+.projects__project__preview__contents figure {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding: 1rem 0;
+}
+
+.projects__project__preview__contents figure:first-of-type {
+  padding: 0;
+  padding-bottom: 1rem;
+}
+
+.projects__project__preview__contents figure img {
+  width: 75%;
+}
+
+.projects__project__preview__contents figure figcaption {
+  text-align: center;
+  font-style: italic;
+  padding-top: 0.5rem;
+}

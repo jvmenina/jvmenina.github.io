@@ -1,0 +1,99 @@
+@keyframes animation__fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items:end;
+  position: absolute;
+  /* width: 50%; */
+  min-width: min(100%, 640px);
+  max-width: 640px;
+  /* color: var(--color-footer-credits);
+  background-color: var(--color-header-bg); */
+  bottom: 10px;
+  right: 10px;
+  padding: 1rem;
+
+  opacity: 0;
+  animation: animation__fade-in 250ms ease-in-out 500ms 1 forwards;
+}
+
+.site-footer__info-button {
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+
+.site-footer__info-button--hidden {
+  cursor: unset;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+
+.site-footer__container {
+  display: flex;
+  /* min-height: 300px; */
+  align-content: center;
+  padding: 2rem;
+  z-index: 1;
+
+  position: absolute !important; 
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+}
+
+@keyframes animation__section__enter {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes animation__section__exit {
+  from {opacity: 1; transform: translateY(0);}
+  to {opacity: 0; transform: translateY(20px);}
+}
+.site-footer__container:global(.__section--expanded) {
+  animation: animation__section__enter 250ms var(--easeOutCubic);
+  animation-fill-mode: forwards;
+  display: flex !important;
+}
+.site-footer__container:global(.__section--collapsed) {
+  animation: animation__section__exit 250ms var(--easeOutCubic);
+  animation-fill-mode: forwards;
+}
+
+.site-footer__socials {
+  justify-self: center;
+
+  padding-right: 2rem;
+  margin-right: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
+  border-right: 1px solid var(--c-palette-1);
+}
+
+.site-footer__socials a {
+  display: flex;
+  color: var(--color-text-highlight-y-alt);
+}
+
+.site-footer__credits {
+  flex: 1;
+  display: block;
+  text-align: center;
+  font-size: 8pt;
+}
+
+.site-footer__credits p:not(:first-of-type) {
+  padding-top: 1rem;
+}
+
+.site-footer__credits a {
+  text-decoration: underline;
+  color: var(--color-footer-credits);
+}

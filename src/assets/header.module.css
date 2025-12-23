@@ -1,0 +1,145 @@
+.header {
+  color: var(--color-header-text);
+  background-color: var(--color-header-bg);
+}
+
+.header__container {
+  padding: 2rem;
+}
+
+.header__contents {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes animation__fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+h1 {
+  opacity: 0;
+  animation: animation__fade-in 500ms steps(1, end) 0ms 1;
+  animation-fill-mode: forwards;
+  font-size: var(--h1-size);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: var(--color-header-h1);
+  font-family: var(--font-mono);
+  font-weight: bolder;
+}
+
+h1 > span {
+  background-color: var(--color-header-h1);
+  color: var(--color-header-bg);
+  text-transform: uppercase;
+}
+
+.header__greeting {
+  width: 100%;
+}
+
+.header__chips {
+  display: flex;
+  row-gap: 0.5rem;
+  column-gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@keyframes animation__chip__enter {
+  0% {transform: translateY(-15px); opacity: 0;}
+  100% {transform: translateY(0px); opacity: 100%;}
+}
+
+.header__chips > span {
+  position: relative;
+  /* z-index: 1; */
+
+  padding: 0.5rem 2rem;
+  border: 0.15rem solid var(--color-header-chip-border);
+
+  opacity: 0;
+  animation: animation__chip__enter 1s var(--easeOutCubic);
+  animation-fill-mode: forwards;
+
+  border-radius: 10000px;
+  background-color: var(--color-header-chip-bg);
+  color: var(--color-header-chip-text);
+  font-family: var(--font-mono);  /* index.css */
+  transition:
+    color 250ms var(--easeOutCubic),
+    font-weight 250ms var(--easeOutCubic);
+}
+
+.header__chips > span::before {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  left: 50%;
+  bottom: 0;
+  z-index: -1;
+
+  border: 0.15rem solid var(--color-header-chip-border);
+
+  content: "";
+  border-radius: 10000px;
+  background-color: var(--color-header-chip-border);
+  opacity: 0;
+  transition: 
+    opacity 250ms var(--easeOutCubic),
+    left 250ms var(--easeOutCubic),
+    right 250ms var(--easeOutCubic);
+}
+
+.header__chips > span:hover,
+.header__chips > span:active {
+  color: var(--color-header-bg);
+  font-weight: bold;
+}
+
+.header__chips > span:hover::before,
+.header__chips > span:active::before {
+  left: -2px;
+  right: -2px;
+  opacity: 1;
+}
+
+.header__featured {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.header__featured__card {
+  display: flex;
+  align-items: center;
+  animation: animation__fade-in 500ms ease-in-out forwards;
+  transition: transform 250ms ease-in-out;
+}
+
+.header__featured__card:hover {
+  transform: scale(1.05);
+  transition: transform 250ms ease-in-out;
+}
+
+.header__featured__card__icon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  padding-right: calc(1rem);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  margin-right: 1rem;
+}
+
+.header__featured__card__icon img {
+  width: 2em;
+}
+
+.header__featured__card__details {
+
+}

@@ -1,0 +1,489 @@
+/** 
+ *  ##########################################
+ *  Core Component Styles
+ *  ##########################################
+ */
+
+/* Navigation anchors */
+.__anchor {
+  display: block;
+  visibility: hidden;
+  scroll-margin-top: var(--nav-height);
+}
+
+/* Component classes triggered by intersection observer */
+.__not-visible {
+  transform: translateX(1.5rem);
+  opacity: 0;
+  transition: 
+    transform 500ms var(--easeOutCubic),
+    opacity 500ms var(--easeOutCubic);
+}
+
+.__visible {
+  transform: translateX(0px);
+  opacity: 1;
+  transition: 
+    transform 500ms var(--easeOutCubic),
+    opacity 500ms var(--easeOutCubic);
+}
+
+/* Component class for slide-in animation */
+@keyframes animation__content__enter {
+  from {opacity: 0; transform: translateX(3rem);}
+  to {opacity: 1; transform: translateX(0);}
+}
+.__slide-in {
+  animation: animation__content__enter 1s var(--easeOutCubic);
+  animation-fill-mode: forwards;
+}
+
+/** 
+ *  ##########################################
+ *  Generic Styles
+ *  ##########################################
+ */
+
+.__limit-width {
+  margin: 0 auto;
+  width: min(100%, var(--max-width));
+}
+
+.__limit-width > * {
+  width: 100%;
+  max-width: var(--max-width);
+  /* overflow-x: hidden; */
+}
+
+.__indent-text {
+  text-indent: 2rem;
+}
+
+.__two-column {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 1rem;
+  row-gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+.__text-align-right {
+  text-align: right;
+}
+
+/** 
+ *  ##########################################
+ *  Custom Component Styles
+ *  ##########################################
+ */
+
+/* Cards */
+.comp__card {
+  /* margin: 0 1.5rem; */
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  position: relative;
+  /* line-height: 2rem; */
+
+  background-color: hsla(var(--theme-hue), 10%, 95%, 0.05);
+  /* background-color: hsla(var(--theme-hue), 60%, 50%, 0.05); */
+
+  border: 1px solid hsla(var(--theme-hue), 10%, 95%, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.comp__card:hover .comp__card__bg {
+  opacity: 0.4;
+  transition: opacity 250ms var(--easeOutCubic);
+}
+
+.comp__card__bg {
+  border-radius: 20px;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.2;
+  transition: opacity 250ms var(--easeOutCubic);
+
+  background-image: radial-gradient(circle at bottom, var(--c-palette-1), transparent);
+  /* background-image: radial-gradient(circle at bottom, var(--c-palette-2), transparent); */
+}
+
+/* Tooltips */
+.comp__tooltip__parent {
+  position: relative;
+  cursor: pointer;
+}
+
+.comp__tooltip__tip {
+  cursor: default;
+  pointer-events: none;
+  min-width: 50px;
+  width: auto;
+  max-width: 500px;
+  color: var(--c-palette-1);
+  background-color: var(--c-palette-black);
+  text-align: center;
+  padding: 5px 1rem;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1; /* Ensure tooltip is displayed above content */
+  opacity: 0;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.5);
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  
+  /* top: calc(-5px + 25%);
+  left: 120%; */
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  transition: opacity 250ms ease-in-out;
+}
+
+.comp__tooltip__parent:hover .comp__tooltip__tip {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.comp__tooltip__tip::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--c-palette-black) transparent transparent transparent;
+}
+
+/* Dropdowns */
+.comp__dropdown {
+  position: relative;
+  /* background-color: var(--color-bg-highlight-p-alt); */
+}
+
+.comp__dropdown__head {
+  width: 100%;
+  min-height: 40px;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1rem;
+  align-items: center;
+
+  position: relative;
+  z-index: 1;
+
+  transition: 
+    background-color 500ms var(--easeOutCubic),
+    filter 500ms var(--easeOutCubic)
+  ;
+}
+
+.comp__dropdown__head--active {
+
+}
+
+.comp__dropdown__head--filled {
+  composes: comp__dropdown__head;
+  background-color: var(--c-palette-1);
+}
+
+.comp__dropdown__head--active.comp__dropdown__head--filled {
+  background-color: var(--c-palette-2);
+}
+
+.comp__dropdown__head--rounded {
+  composes: comp__dropdown__head;
+  border-radius: 999999px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.comp__dropdown__head__icon-container {
+  width: 25px;
+  height: 25px;
+  border-radius: 999999px;
+  background-color: var(--c-palette-1);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.comp__dropdown__head__icon-container, 
+.comp__dropdown__head__icon-container * {
+  transition: 
+    color 500ms var(--easeOutCubic),
+    background-color 500ms var(--easeOutCubic)
+  ;
+}
+
+.comp__dropdown__head__icon-container--active {
+  background-color: var(--c-palette-2);
+}
+
+.comp__dropdown__head--filled .comp__dropdown__head__icon-container {
+  background-color: transparent;
+}
+
+.comp__dropdown__head__icon {
+  transform: rotate(0deg);
+  transition: transform 250ms var(--easeOutCubic);
+  color: var(--c-palette-black);
+}
+
+.comp__dropdown__head__icon-container--active .comp__dropdown__head__icon {
+  transform: rotate(180deg);
+  /* color: var(--c-palette-1); */
+}
+
+.comp__dropdown__head:hover,
+.comp__dropdown__head:active {
+  cursor: pointer;
+  filter: brightness(130%);
+}
+
+.comp__dropdown__head__contents {
+  display: block;
+  font-weight: bolder;
+}
+
+.comp__dropdown__head__contents * {
+  transition: 
+    filter 500ms var(--easeOutCubic),
+    color 500ms var(--easeOutCubic),
+    background-color 500ms var(--easeOutCubic)
+  ;
+}
+
+.comp__dropdown__head--filled .comp__dropdown__head__contents * {
+  color: var(--c-palette-black);
+}
+
+.comp__dropdown__body {
+  overflow: hidden;
+  border-top: 0;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0fr;
+  padding: 0rem 1rem;
+  opacity: 0;
+  transition: 
+    padding 250ms var(--easeOutCubic),
+    opacity 250ms var(--easeOutCubic),
+    grid-template-rows 250ms var(--easeOutCubic);
+}
+
+.comp__dropdown__body--active {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  padding: 1rem 1rem;
+}
+.comp__dropdown__body__container {
+  overflow: hidden;
+}
+
+/* Per-character Fade-in */
+@keyframes animation__fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.comp__fade-char {
+  opacity: 0;
+  display: inline-block;
+  animation: animation__fade-in 0.4s linear forwards;
+}
+
+@keyframes animation__blinking {
+  0%    { opacity: 1; }
+  50%   { opacity: 0; }
+  100%  { opacity: 1; }
+}
+
+.comp__blink {
+  display: inline-flex;
+  margin: 0;
+  margin-left: 0px;
+  background-color: transparent;
+}
+
+.comp__blink > span {
+  width: 0.5em;
+  padding-top: 1rem;
+  background-color: transparent;
+  --blink-height: 0.5ex;
+  border-bottom: solid var(--blink-height) var(--color-header-h1);
+  animation: animation__blinking 500ms steps(1, end) infinite;
+  transform: translateY(var(--blink-height));
+}
+
+/** 
+ *  ##########################################
+ *  Global Styles
+ *  ##########################################
+ */
+
+body {
+  color: var(--c-palette-1);
+  background-color: var(--color-header-bg);
+}
+
+#main {
+  position: relative;
+  width: auto;
+}
+
+#main__contents {
+  position: relative;
+  /* height: calc(100svh - var(--nav-height)); */
+  overflow-y: hidden;
+}
+
+#main__contents__bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  box-shadow: inset 0px 0px 200px var(--color-bg-main-special);
+}
+
+#main__contents, header, section {
+  width: 100%;
+  /* height: calc(100svh - var(--nav-height)) !important; */
+  height: 100svh;
+}
+
+header, section {
+  position: absolute;
+  inset: 0;
+}
+
+header {
+  display: flex;
+  height: calc(100svh - var(--nav-height)) !important;
+  /* height: 100svh; */
+  align-items: center; /* Remember to disable this in smaller viewports */
+
+  scrollbar-gutter: auto;
+  overflow-y: auto;
+}
+
+section {
+  display: flex;
+  width: 100%;
+  padding: 5rem 0;
+  background-color: transparent;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+h3 {
+  font-size: var(--h3-size);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: var(--color-header-h1);
+}
+
+h4 {
+  font-size: var(--h4-size);
+  color: var(--c-palette-4);
+}
+
+hr {
+  height: 0px;
+  border: 0;
+  border-top: 3px dotted var(--c-palette-1);
+}
+
+a {
+  text-decoration: none;
+  /* color: var(--color-text-highlight-p-alt); */
+  color: var(--c-palette-3);
+}
+
+strong {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+code {
+  font-family: var(--font-mono);
+}
+
+ul, ol {
+  padding-left: 2rem;
+}
+
+/** 
+ *  ##########################################
+ *  Section-related Styles
+ *  ##########################################
+ */
+
+.__section__header {
+  font-size: var(--h1-size);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: var(--color-header-h1);
+  font-family: var(--font-mono);
+}
+
+/* Navigation section selection */
+:global(.__section--collapsed),
+.__section--collapsed {
+  /* visibility: collapse; */
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+
+  transition: 
+    opacity 250ms var(--easeOutCubic);
+}
+
+:global(.__section--expanded),
+.__section--expanded {
+  /* visibility: visible; */
+  opacity: 1;
+
+  transition: 
+    opacity 250ms var(--easeOutCubic);
+    
+}
+
+@keyframes animation__section__enter {
+  from {opacity: 0; transform: translateY(50px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* .__section--expanded > .__section__container { */
+.__section--expanded > *:first-child {
+  animation: animation__section__enter 1s var(--easeOutCubic);
+  animation-fill-mode: forwards;
+}
+
+@keyframes animation__section__exit {
+  from {opacity: 1; transform: translateY(0);}
+  to {opacity: 0; transform: translateY(-50px);}
+}
+
+/* .__section--collapsed > .__section__container { */
+.__section--collapsed > *:first-child {
+  animation: animation__section__exit 1s var(--easeOutCubic);
+  animation-fill-mode: forwards;
+}
+
+.__section__container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.__section__container__contents {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-bottom: calc(1.5rem + var(--nav-height));
+  width: 100%;
+}

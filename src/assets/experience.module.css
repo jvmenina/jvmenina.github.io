@@ -1,0 +1,54 @@
+.experiences {
+
+}
+
+.experiences__contents {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.experiences__experience {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "logo details"
+    "logo description";
+  column-gap: 2rem;
+}
+
+.experiences__experience__logo {
+  grid-area: logo;
+  width: 120px;
+  align-self: center;
+}
+
+.experiences__experience__details {
+  grid-area: details;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 1rem;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.experiences__experience__details__company {
+
+}
+.experiences__experience__details__location {
+  font-style: italic;
+  text-align: right;
+  align-self: end;
+}
+.experiences__experience__details__work {
+  font-variant: small-caps;
+}
+.experiences__experience__details__year {
+  font-style: italic;
+  text-align: right;
+}
+.experiences__experience__details__description {
+  grid-area: description;
+  width: 100%;
+  padding-left: 2rem;
+}

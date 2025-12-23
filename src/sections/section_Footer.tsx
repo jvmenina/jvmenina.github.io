@@ -1,21 +1,40 @@
-import styles from "../assets/App.module.css";
+import { useRef, useState } from "react";
+import { useOutsideTargetClickHandler } from "../hooks/CustomHooks";
+
+import { joinStyles } from "../utils/joinStyles";
+
+import { CardComponent } from "../components/Card";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+
+import coreStyles from "../assets/core.module.css";
+import footerStyles from "../assets/footer.module.css";
 
 export function FooterSection() {
+  const [ isActive, setIsActive ] = useState<boolean>(false);
+
+  const infoButtonRef = useRef(null);
+  const infoRef = useRef(null);
+  useOutsideTargetClickHandler(infoRef, infoButtonRef, ()=>{setIsActive(false);})
+
   return (
-    <footer className={styles["site-footer"]}>
-      <div className={[
-        styles["site-footer__container"], 
-        styles["__limit-width"]
-      ].join(" ")}>
-        <div className={styles["site-footer__socials"]}>
-          <a href="https://github.com/jmichaelmenina/" target="_blank" rel="noreferrer">
+    <footer className={footerStyles["site-footer"]}>
+      <CardComponent
+        additionalClassNames={[
+          footerStyles["site-footer__container"]
+          , isActive ? "__section--expanded" : "__section--collapsed"
+        ]}
+        cardRef={infoRef}
+      >
+        <span style={{display: "none"}}></span>
+        {/* <div className={footerStyles["site-footer__socials"]}>
+          <a href="https://github.com/jvmenina/" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faGithub} />
           </a>
-        </div>
-        <div className={styles["site-footer__credits"]}>
+        </div> */}
+        <div className={footerStyles["site-footer__credits"]}>
           <p>
             The images (i.e. logos) in this website that are being used to represent the <strong>University of the Philippines</strong>, <strong>Navagis Asia Pacific PTE Ltd. - Philippine Branch Office</strong>, <strong>Algorithms and Complexity Laboratory</strong>, and <strong>University of Perpetual Help System DALTA Las Piñas</strong> are owned and trademarked by the respective entities each logo is meant to represent.
           </p>
@@ -26,6 +45,15 @@ export function FooterSection() {
             The design of this website and its logo are provided by myself. This website is not monetized by myself in any way.
           </p>
         </div>
+      </CardComponent>
+      <div className={joinStyles(
+        footerStyles['site-footer__info-button']
+        , isActive ? footerStyles['site-footer__info-button--hidden'] : ""
+      )}>
+        <FontAwesomeIcon 
+          icon={faCircleInfo} ref={infoButtonRef} size={"xl"} 
+          onClick={() => {setIsActive(true);}
+        }/>
       </div>
     </footer>
   );
