@@ -22,21 +22,23 @@
   --theme-hue-2: 160;
 
   /* Colors */
-  --c-palette-1:      hsl(var(--theme-hue), 70%, 85%);
-  --c-palette-2:      hsl(var(--theme-hue), 60%, 50%);
-  --c-palette-3:      hsl(var(--theme-hue-2), 70%, 80%);
-  --c-palette-4:      hsl(var(--theme-hue-2), 50%, 50%);
-  --c-palette-white:  hsl(var(--theme-hue), 10%, 95%);
-  --c-palette-black:  hsl(var(--theme-hue), 5%, 10%);
-  --c-black:        hsl(0, 0%, 10%);
+  --c-palette-1:              hsl(var(--theme-hue), 70%, 85%);
+  --c-palette-2:              hsl(var(--theme-hue), 60%, 50%);
+  --c-palette-3:              hsl(var(--theme-hue-2), 70%, 80%);
+  --c-palette-4:              hsl(var(--theme-hue-2), 50%, 50%);
+  --c-palette-white:          hsl(var(--theme-hue), 10%, 95%);
+  --c-palette-black:          hsl(var(--theme-hue), 5%, 10%);
+  --c-black:                hsl(0, 0%, 10%);
 
-  --color-nav-bg:         var(--c-palette-black);
-  --color-nav-bg-alt:     var(--c-black);
-  --color-nav-text:       var(--c-palette-white-styled);
-  --color-nav-highlight:  var(--c-palette-2);
+  --color-main-bg:    hsl(var(--theme-hue), 10%, 15%);
+
+  --color-nav-bg:             var(--c-palette-black);
+  --color-nav-bg-alt:         var(--c-black);
+  --color-nav-text:           var(--c-palette-white);
+  --color-nav-highlight:      var(--c-palette-2);
 
   --color-header-h1:          var(--c-palette-2);
-  --color-header-text:        var(--c-palette-white-styled);
+  --color-header-text:        var(--c-palette-white);
   --color-header-bg:          var(--c-black);
   --color-header-chip-text:   var(--c-palette-1);
   --color-header-chip-border: var(--color-header-h1);
@@ -88,5 +90,17 @@ body {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+/** 
+ *  ##########################################
+ *  MOBILE
+ *  ##########################################
+ */
+
+@media (max-width: 800px) {
+  :root {
+    --nav-height: 80px;
   }
 }

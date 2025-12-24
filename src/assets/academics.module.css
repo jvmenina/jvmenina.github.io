@@ -62,3 +62,58 @@
 .academics__thesis__details > dt {
   font-weight: bold;
 }
+
+/** 
+ *  ##########################################
+ *  MOBILE
+ *  ##########################################
+ */
+
+@media (max-width: 800px) {
+  .academics__university {
+    justify-items: center;
+    text-align: center;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+
+  .academics__university__details {
+    width: 100%;
+  }
+
+  .academics__university__details__subtitle {
+    padding-top: 0.25rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    row-gap: 0.25rem;
+  }
+
+  .academics__university__details__subtitle__date {
+    text-align: center;
+  }
+
+  .academics__university__details__subtitle hr {
+    display: none;
+  }
+
+  .academics__university__details__body {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    padding-top: 1rem;
+  }
+
+  .academics__thesis {
+    text-align: center;
+  }
+
+  .academics__thesis__details {
+    grid-template-columns: 1fr;
+  }
+
+  .academics__thesis__details > dt:not(:first-of-type) {
+    padding-top: 1rem;
+  }
+}

@@ -9,6 +9,8 @@ import { AppSection } from "./SectionTemplate.tsx";
 
 import simply_preview from "/images/proj_simply.jpg";
 
+import easyytdlp_preview from "/images/proj_easy_ytdlp_cli.jpg";
+
 import reimu_preview_1 from "/images/proj_reimu_1.jpg";
 import reimu_preview_2 from "/images/proj_reimu_2.jpg";
 import reimu_preview_3 from "/images/proj_reimu_3.jpg";
@@ -22,6 +24,7 @@ import sota_preview_5 from "/images/proj_sota_5.jpg";
 import coreStyles from "../assets/core.module.css";
 import projectsStyles from "../assets/projects.module.css";
 import { CardComponent } from "../components/Card.tsx";
+import { ExpandableImage } from "../components/ExpandableImage.tsx";
 
 function PreviewPane(contents: JSX.Element) {
   return (
@@ -115,10 +118,23 @@ function ProjectsComp() {
       ]}
       preview={
         <>
-          <figure>
-            <img src={simply_preview} alt="Simply FFmpeg Preview #1" loading="lazy" />
-            {/* <figcaption>Preview #1</figcaption> */}
-          </figure>
+          <ExpandableImage src={simply_preview} alt={"Simply FFmpeg Preview #1"} />
+        </>
+      }
+      link={"https://github.com/jvmenina/Simply-FFmpeg"}
+    />
+    <ProjectComp
+      id={"Projects-ytdlp-CLI"}
+      title={"Easy yt-dlp CLI"}
+      subtitle={"An easy-to-use command-line interface that provides abstractions for the essential capabilities of yt-dlp"}
+      year={"2025"}
+      description={[
+        "A command-line interface (CLI) that's meant to simplify the usage of yt-dlp, a feature-rich audio and video downloader, which can be daunting to use."
+      ]}
+      link={"https://github.com/jvmenina/Easy-yt-dlp-CLI"}
+      preview={
+        <>
+          <ExpandableImage src={easyytdlp_preview} alt={"Easy yt-dlp CLI Preview #1"} />
         </>
       }
     />
@@ -135,7 +151,7 @@ function ProjectsComp() {
     <ProjectComp
       id={"Projects-Rhythm-Game"}
       title={"Rhythm Strike"}
-      subtitle={"A WebGL rhythm game built using TypeScript"}
+      subtitle={"A WebGL rhythm game built using TypeScript with the Phaser game engine"}
       year={"2024"}
       description={[
         "\"Rhythm Strike\" is a two-lane rhythm game based on \"Reimu no Oharai Daisakusen\" (霊夢のお祓い大作戦), a mini-game from the mobile game \"Touhou LostWord\" (東方LostWord).",
@@ -143,19 +159,13 @@ function ProjectsComp() {
       ]}
       preview={
         <>
-          <p style={{textAlign: "center", fontWeight: "bold", paddingBottom: "1rem"}}>In-development preview</p>
-          <figure>
+          {/* <p style={{textAlign: "center", fontWeight: "bold", paddingBottom: "1rem"}}>In-development preview</p> */}
+          {/* <figure>
             <img src={reimu_preview_1} alt="Rhythm Strike Preview #1" loading="lazy" />
-            {/* <figcaption>Preview #1</figcaption> */}
-          </figure>
-          <figure>
-            <img src={reimu_preview_2} alt="Rhythm Strike Preview #2" loading="lazy" />
-            {/* <figcaption>Preview #1</figcaption> */}
-          </figure>
-          <figure>
-            <img src={reimu_preview_3} alt="Rhythm Strike Preview #3" loading="lazy" />
-            {/* <figcaption>Preview #1</figcaption> */}
-          </figure>
+          </figure> */}
+          <ExpandableImage src={reimu_preview_1} alt={"Rhythm Strike Preview #1"} />
+          <ExpandableImage src={reimu_preview_2} alt={"Rhythm Strike Preview #2"} />
+          <ExpandableImage src={reimu_preview_3} alt={"Rhythm Strike Preview #3"} />
         </>
       }
     />
@@ -165,26 +175,16 @@ function ProjectsComp() {
       subtitle={"A solo music video project built using C#"}
       year={"2023"}
       description={[
-        "A music video \"storyboard\" made as a tribute to the video game \"NieR Replicant\", aiming to capture one of the climaxes of the game's story.",
+        "A music video made as a tribute to the video game \"NieR Replicant\", aiming to capture one of the climaxes of the game's story.",
         "Implemented a custom Particle Generator, a custom 3D Environment with Camera capabilities, and a number of other custom effects and transitions."
       ]}
       preview={
         <>
-          <figure>
-            <img src={sota_preview_1} alt="Song of the Ancients Music Video Preview #1" loading="lazy" />
-          </figure>
-          <figure>
-            <img src={sota_preview_2} alt="Song of the Ancients Music Video Preview #2" loading="lazy" />
-          </figure>
-          <figure>
-            <img src={sota_preview_3} alt="Song of the Ancients Music Video Preview #3" loading="lazy" />
-          </figure>
-          <figure>
-            <img src={sota_preview_4} alt="Song of the Ancients Music Video Preview #4" loading="lazy" />
-          </figure>
-          <figure>
-            <img src={sota_preview_5} alt="Song of the Ancients Music Video Preview #5" loading="lazy" />
-          </figure>
+          <ExpandableImage src={sota_preview_1} alt={"Song of the Ancients Music Video Preview #1"} />
+          <ExpandableImage src={sota_preview_2} alt={"Song of the Ancients Music Video Preview #2"} />
+          <ExpandableImage src={sota_preview_3} alt={"Song of the Ancients Music Video Preview #3"} />
+          <ExpandableImage src={sota_preview_4} alt={"Song of the Ancients Music Video Preview #4"} />
+          <ExpandableImage src={sota_preview_5} alt={"Song of the Ancients Music Video Preview #5"} />
         </>
       }
     />
@@ -229,6 +229,7 @@ function ProjectsComp() {
 export function ProjectsSection() {
   const { sectionContexts } = useSections();
   const isActive = sectionContexts.isActive.projects;
+  const sectionRef = sectionContexts.sectionRefs.projects;
   return (
     <AppSection 
       isActive={isActive}
@@ -239,6 +240,7 @@ export function ProjectsSection() {
           <ProjectsComp />
         </div>
       }
+      sectionRef={sectionRef}
     />
   );
 }

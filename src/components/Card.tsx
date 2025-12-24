@@ -10,11 +10,13 @@ export function CardComponent({
   additionalClassNames,
   cardRef,
   customStyle,
+  customBGStyle,
   children,
 } : {
   additionalClassNames?: string[],
   cardRef?: React.RefObject<HTMLDivElement>,
   customStyle?: React.CSSProperties,
+  customBGStyle?: React.CSSProperties,
   children: string | JSX.Element | JSX.Element[],
 }) {
   return (
@@ -23,7 +25,7 @@ export function CardComponent({
       , ...(additionalClassNames ?? [])
     )}>
       {children}
-      <div className={coreStyles.comp__card__bg}></div>
+      <div style={customBGStyle} className={coreStyles.comp__card__bg}></div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useRef } from "react";
 import { Section } from "../sections/SectionNames";
 
 export type SectionSwitcherType = {
@@ -14,6 +14,14 @@ type SectionContextsType = {
   activeSection: Section,
   sectionSwitcher: SectionSwitcherType,
   manualSectionSwitcher: (section:Section) => void,
+  sectionRefs: {
+    header: React.RefObject<HTMLElement>,
+    about: React.RefObject<HTMLElement>,
+    academics: React.RefObject<HTMLElement>,
+    credentials: React.RefObject<HTMLElement>,
+    experiences: React.RefObject<HTMLElement>,
+    projects: React.RefObject<HTMLElement>,
+  },
   isActive: {
     header: boolean,
     about: boolean,
@@ -40,7 +48,7 @@ export const SectionContext = createContext<SectionContextSetType | null>(null);
  * A context provider for all sections.
  */
 
-export function SectionContextProvider({ children }: { children: JSX.Element[]; }) {
+export function SectionContextProvider({ children }: { children: JSX.Element | JSX.Element[]; }) {
   /**
    * Section Contexts
    */
@@ -58,6 +66,15 @@ export function SectionContextProvider({ children }: { children: JSX.Element[]; 
 
   const manualSectionSwitcher = (section: Section) => { setActiveSection(section); };
 
+  const sectionRefs = {
+    header: useRef<HTMLElement>(null),
+    about: useRef<HTMLElement>(null),
+    academics: useRef<HTMLElement>(null),
+    credentials: useRef<HTMLElement>(null),
+    experiences: useRef<HTMLElement>(null),
+    projects: useRef<HTMLElement>(null),
+  };
+
   const isActive = {
     header: activeSection === Section.Header,
     about: activeSection === Section.About,
@@ -73,8 +90,8 @@ export function SectionContextProvider({ children }: { children: JSX.Element[]; 
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  const sectionContexts: SectionContextsType = {activeSection:activeSection, sectionSwitcher:sectionSwitcher, manualSectionSwitcher:manualSectionSwitcher, isActive:isActive};
-  const navContexts: NavContextsType = {activeIndex:activeIndex, setActiveIndex:setActiveIndex};
+  const sectionContexts: SectionContextsType = {activeSection, sectionSwitcher, manualSectionSwitcher, sectionRefs, isActive};
+  const navContexts: NavContextsType = {activeIndex, setActiveIndex};
 
   return (
     <SectionContext.Provider value={{ sectionContexts, navContexts }}>

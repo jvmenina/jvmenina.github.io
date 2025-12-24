@@ -82,11 +82,53 @@
 }
 
 .projects__project__preview__contents figure img {
-  width: 75%;
+  width: 100%;
+  /* width: 75%; */
 }
 
 .projects__project__preview__contents figure figcaption {
   text-align: center;
   font-style: italic;
   padding-top: 0.5rem;
+}
+
+/** 
+ *  ##########################################
+ *  MOBILE
+ *  ##########################################
+ */
+
+@media (max-width: 800px) {
+  .projects__project {
+    text-align: center;
+  }
+
+  .projects__project__details {
+    row-gap: 0.25rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+      "title"
+      "subtitle"
+      "date"
+      "link";
+  }
+
+  .projects__project__details hr {
+    display: none;
+  }
+
+  .projects__project__details__year {
+    justify-self: auto;
+  }
+
+  .projects__project__description {
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: var(--hr-style);
+  }
+
+  .projects__project__preview__contents figure img {
+    width: 100%;
+  }
 }

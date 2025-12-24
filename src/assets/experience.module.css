@@ -52,3 +52,39 @@
   width: 100%;
   padding-left: 2rem;
 }
+
+/** 
+ *  ##########################################
+ *  MOBILE
+ *  ##########################################
+ */
+
+@media (max-width: 800px) {
+  .experiences__experience {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "logo" 
+      "details"
+      "description";
+    row-gap: 1rem;
+  }
+
+  .experiences__experience__logo {
+    justify-self: center;
+  }
+
+  .experiences__experience__details {
+    grid-template-columns: 1fr;
+    row-gap: 0.25rem;
+  }
+
+  .experiences__experience__details * {
+    text-align: center;
+  }
+
+  .experiences__experience__details__description {
+    border-top: 1px solid var(--c-palette-1);
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+  }
+}

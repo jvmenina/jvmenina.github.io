@@ -15,7 +15,8 @@ type AppSectionProps = {
   headingText: string, 
   sectionContents: JSX.Element,
   unboundedSectionContents?: JSX.Element,
-  disableScrollToTopOnView?: boolean
+  disableScrollToTopOnView?: boolean,
+  sectionRef: React.RefObject<HTMLElement>,
 }
 
 export function AppSection({
@@ -24,11 +25,12 @@ export function AppSection({
   headingText,
   sectionContents,
   unboundedSectionContents,
-  disableScrollToTopOnView
+  disableScrollToTopOnView,
+  sectionRef
 } : AppSectionProps) {
   // Scroll to relevant content if there is a hash in the URL, otherwise, scroll to the top
   disableScrollToTopOnView = true; // Force disable for now
-  const sectionRef = useRef<HTMLElement>(null);
+  // const sectionRef = useRef<HTMLElement>(null);
   useEffect(() => {
     if (window.location.hash) {
       const id = window.location.hash.substring(1);
@@ -40,7 +42,7 @@ export function AppSection({
     } else {
       if (sectionRef.current && !disableScrollToTopOnView) sectionRef.current.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  }, [disableScrollToTopOnView, isActive]);
+  }, [disableScrollToTopOnView, isActive, sectionRef]);
 
   // If section was viewed for the first time, make first children of contents div play a slide-in animation, each
   const [ wasLoadedBefore, setWasLoadedBefore ] = useState<boolean>(false);

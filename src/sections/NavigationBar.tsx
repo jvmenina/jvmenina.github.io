@@ -5,6 +5,7 @@ import { joinStyles } from "../utils/joinStyles";
 
 import coreStyles from "../assets/core.module.css";
 import navStyles from "../assets/nav.module.css";
+import { FooterSection } from "./section_Footer";
 
 function useOutsideNavClickHandler(
   navListRef: React.RefObject<Node | null>,
@@ -50,6 +51,9 @@ export function NavigationBar(
   const switchTo = sectionContexts.sectionSwitcher;
   const activeIndex = navContexts.activeIndex;
   const setActiveIndex = navContexts.setActiveIndex;
+  const sectionRefs = sectionContexts.sectionRefs;
+
+  // switchTo.about();
 
   /**
    * Handle mobile nav button
@@ -73,14 +77,32 @@ export function NavigationBar(
   const [ navHidden, setNavHidden ] = useState<boolean>(false);
   const [ prevScrollPosition, setPrevScrollPosition ] = useState<number>(window.scrollY);
 
-  window.addEventListener("scroll", () => {
-    if (prevScrollPosition - window.scrollY > 0 || window.scrollY <= 100) 
-      setNavHidden(false);
-    else if (prevScrollPosition - window.scrollY < 0)
-      setNavHidden(true);
-    setPrevScrollPosition(window.scrollY);
-    disableNav();
-  })
+  [
+    sectionRefs.about, 
+    sectionRefs.academics, 
+    sectionRefs.credentials, 
+    sectionRefs.experiences, 
+    sectionRefs.header, 
+    sectionRefs.projects
+  ].forEach((ref) => {
+    const section = ref.current;
+    if (section) section.addEventListener("scroll", () => {
+      if (prevScrollPosition - section.scrollTop > 0 || section.scrollTop <= 100) 
+        setNavHidden(false);
+      else if (prevScrollPosition - section.scrollTop < 0)
+        setNavHidden(true);
+      setPrevScrollPosition(section.scrollTop);
+      disableNav();
+    })
+  });
+  // window.addEventListener("scroll", () => {
+  //   if (prevScrollPosition - window.scrollY > 0 || window.scrollY <= 100) 
+  //     setNavHidden(false);
+  //   else if (prevScrollPosition - window.scrollY < 0)
+  //     setNavHidden(true);
+  //   setPrevScrollPosition(window.scrollY);
+  //   disableNav();
+  // });
 
   /**
    * Handle marker
@@ -92,6 +114,7 @@ export function NavigationBar(
 
   const handleClick = (index: number) => {
     disableNav();
+    // setNavHidden(true);
     setActiveIndex(index);
     switch (index) {
       case 1:
@@ -130,6 +153,8 @@ export function NavigationBar(
       left: (itemRect.left - navRect.left) + (itemRect.width/2),
       width: itemRect.width,
     });
+
+    setNavHidden(false);
   }, [activeIndex]);
 
   /**
@@ -151,7 +176,7 @@ export function NavigationBar(
     {text: "Experience"},
     {text: "Projects"},
   ];
-
+  
   return (
     <nav 
       className={joinStyles(
@@ -159,6 +184,7 @@ export function NavigationBar(
         navHidden ? navStyles["nav--hidden"] : ""
       )}
     >
+      <FooterSection />
       <div className={joinStyles(
         navStyles["nav__container"], 
         coreStyles["__limit-width"]

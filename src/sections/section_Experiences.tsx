@@ -108,6 +108,7 @@ function ExperiencesComp() {
 export function ExperiencesSection() {
   const { sectionContexts } = useSections();
   const isActive = sectionContexts.isActive.experiences;
+  const sectionRef = sectionContexts.sectionRefs.experiences;
   return (
     <AppSection 
       isActive={isActive}
@@ -118,6 +119,7 @@ export function ExperiencesSection() {
           <ExperiencesComp />
         </div>
       }
+      sectionRef={sectionRef}
     />
   );
 }

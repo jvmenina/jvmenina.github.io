@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { useOutsideTargetClickHandler } from "../hooks/CustomHooks";
+import { useOutsideTargetClickHandler, useSections } from "../hooks/CustomHooks";
 
 import { joinStyles } from "../utils/joinStyles";
 
@@ -11,20 +11,26 @@ import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
 import coreStyles from "../assets/core.module.css";
 import footerStyles from "../assets/footer.module.css";
+import { Section } from "./SectionNames";
 
 export function FooterSection() {
   const [ isActive, setIsActive ] = useState<boolean>(false);
+  const { sectionContexts } = useSections();
+  const headerIsActive = sectionContexts.isActive.header;
 
   const infoButtonRef = useRef(null);
   const infoRef = useRef(null);
   useOutsideTargetClickHandler(infoRef, infoButtonRef, ()=>{setIsActive(false);})
 
   return (
-    <footer className={footerStyles["site-footer"]}>
+    <footer className={joinStyles(
+      footerStyles["site-footer"],
+      // headerIsActive ? "" : footerStyles['site-footer--disabled']
+    )}>
       <CardComponent
         additionalClassNames={[
           footerStyles["site-footer__container"]
-          , isActive ? "__section--expanded" : "__section--collapsed"
+          , isActive && headerIsActive ? "__section--expanded" : "__section--collapsed"
         ]}
         cardRef={infoRef}
       >
@@ -48,7 +54,7 @@ export function FooterSection() {
       </CardComponent>
       <div className={joinStyles(
         footerStyles['site-footer__info-button']
-        , isActive ? footerStyles['site-footer__info-button--hidden'] : ""
+        , isActive || !headerIsActive ? footerStyles['site-footer__info-button--hidden'] : ""
       )}>
         <FontAwesomeIcon 
           icon={faCircleInfo} ref={infoButtonRef} size={"xl"} 

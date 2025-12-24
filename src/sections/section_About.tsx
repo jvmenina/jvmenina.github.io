@@ -17,22 +17,23 @@ import aboutStyles from "../assets/about.module.css";
 import { CrossSectionAnchor } from "../components/CrossSectionAnchor.tsx";
 import { Section } from "./SectionNames.ts";
 import { TooltipComponent } from "../components/TooltipComponent.tsx";
+import { joinStyles } from "../utils/joinStyles.ts";
 
 function AboutComponent() {
   return (
     <div className={aboutStyles["about__about-me"]}>
-      <div className={aboutStyles["about__about-me__text"]}>
-        <p className={coreStyles["__indent-text"]}>
-          Hi, <strong>Michael</strong>! I&apos;m a <strong>software developer</strong> and an <strong>aspiring lifelong learner</strong>. I&apos;m most proficient with <em>Python</em> and <em>C++</em> for desktop development, and <em>React</em> (JavaScript and TypeScript) for web development.
+      <div className={joinStyles(aboutStyles["about__about-me__text"], coreStyles['__indent-text'])}>
+        <p>
+          I&apos;m a <strong>software developer</strong> and an <strong>aspiring lifelong learner</strong>. I&apos;m most proficient with <em>Python</em>, <em>C</em>, and <em>C++</em> for desktop development, and <em>React</em> (JavaScript and TypeScript) for web development.
         </p>
-        <p className={coreStyles["__indent-text"]}>
-          I finished my <strong>Bachelor&apos;s Degree in Computer Science</strong> with Cum Laude honors in the University of the Philippines Diliman, with my thesis tackling Spiking Neural P Systems.
+        <p>
+          I finished my <strong>Bachelor&apos;s Degree in Computer Science</strong> with Cum Laude honors in the <strong>University of the Philippines Diliman</strong>, with my thesis tackling <em>Spiking Neural P Systems</em>.
         </p>
-        <p className={coreStyles["__indent-text"]}>
-          I have credentials on <strong>Google Maps Platform Technical and Sales Fundamentals</strong> and <strong>AWS Cloud Essentials</strong>. Additoinally, I completed Google&apos;s training on becoming a <strong>Cloud Digital Leader</strong>.
+        <p>
+          I have credentials on <strong>Google Maps Platform Technical and Sales Fundamentals</strong> and <strong>AWS Cloud Essentials</strong>. Additionally, I completed Google&apos;s training on becoming a <strong>Cloud Digital Leader</strong>.
         </p>
-        <p className={coreStyles["__indent-text"]}>
-          Professional life aside, as my hobby, I&apos;ve been making <strong>animated graphics</strong> for content creators in an online rhythm game community for <strong>more than 5 years</strong>. There, I bring life into static images and art, and I ensure it catches the attention of the users viewing the page. In my editor software of choice, I use Javascript to create dynamic movements and have more control over the elements in the canvas.
+        <p>
+          As a hobby, I&apos;ve been making <strong>animated graphics</strong> for content creators in an online rhythm game community for <strong>more than 6 years</strong>. In my editor software of choice, I use <strong>Javascript</strong> to create and control dynamic elements.
         </p>
       </div>
     </div>
@@ -119,9 +120,9 @@ function SkillSetComponent({
       <DropdownComponent
         head_contents={
           <div className={aboutStyles.about__skills__skillset__head}>
-            <h3 className={aboutStyles.about__skills__skillset__title}>
+            <h4 className={aboutStyles.about__skills__skillset__title}>
               {title}
-            </h3>
+            </h4>
             <span className={aboutStyles["about__skills__skillset__tags"]}>
               {(tags ?? []).map((tag, idx) => (<span 
                 key={idx}
@@ -167,9 +168,13 @@ function FeaturedSkillsComponent() {
           </div>
         </div>
         <div className={aboutStyles.about__skills__featured__text}>
-          <ul>
-            <li></li>
-          </ul>
+          <div>
+            <h4>Choice Places Near Me</h4>
+            <div style={{fontWeight: "bolder", marginBottom: "1rem"}}>A full-stack geospatial web application built using React</div>
+            <div className={coreStyles['__indent-text']}>
+              <p>I built a full-stack interactive place locator using <strong>React</strong>, <strong>Python</strong>, and <strong>PostgreSQL</strong> with the Google Maps API to create a dynamic experience. Here, users can see details about nearby restaurants, cafes, and stores from their set location.</p>
+            </div>
+          </div>
         </div>
       </CardComponent>
     </div>
@@ -179,22 +184,24 @@ function FeaturedSkillsComponent() {
 function SkillsComponent() {
   return (
     <div className={aboutStyles.about__skills}>
+      <h3>Featured Project</h3>
       <FeaturedSkillsComponent />
+      <h3>What do I do?</h3>
       <SkillSetComponent
         title={"General Software Development"}
         tags={[
-          "C", "C++", "C#", "CUDA", "MySQL", "Python", "Rust"
+          "C", "C++", "C#", "CUDA", "Python"
         ]}
         skills={[
-          createSkillObject((<>Created a local file server with concurrency and mutual exclusion; Generated space-filling curves efficiently using a GPU through <strong>CUDA C</strong>.</>),["C", "CUDA C"]),
-          createSkillObject((<>Created a <CrossSectionAnchor href="#Projects-Chopsticks" targetSection={Section.Projects}>spinoff</CrossSectionAnchor> of the classic game &quot;Chopsticks&quot; with new mechanics and LAN-play capabilities.</>),["C++"]),
-          createSkillObject((<>Created an Abstract Syntax Tree evaluator with arithmetic and comparative capabilities</>),["Rust"]),
+          createSkillObject((<>Created a local file server with concurrency and mutual exclusion.</>),["C"]),
+          createSkillObject((<>Optimized generation of space-filling curves, a computationally intensive task, using <strong>CUDA C</strong>.</>),["CUDA (C)", "GPU Computing"]),
+          createSkillObject((<>Created <CrossSectionAnchor href="#Projects-ytdlp-CLI" targetSection={Section.Projects}>an easy-to-use command-line user interface</CrossSectionAnchor> for yt-dlp, a content downloader which can be daunting to use.</>),["C++"]),
           createSkillObject((<>
             Worked on software development projects with a <strong>team</strong> (e.g. <CrossSectionAnchor href="#Projects-PASG" targetSection={Section.Projects}>Post-apocalyptic Survival Game</CrossSectionAnchor> and <CrossSectionAnchor href="#Projects-Lottie" targetSection={Section.Projects}>Lottie AI</CrossSectionAnchor>).
           </>), ["Python", "Team Project"]),
           createSkillObject((<>
-            Worked on projects using <strong>Machine Learning</strong> models like SVM and Linear Regression with <strong>Python</strong> (e.g. <CrossSectionAnchor href="#Projects-Lottie" targetSection={Section.Projects}>Lottie AI</CrossSectionAnchor>).
-          </>), ["Python", "Team Project"]),
+            Worked on academic projects using <strong>Machine Learning</strong> models like SVM and Linear Regression with <strong>Python</strong>.
+          </>), ["Python", "Machine Learning"]),
           createSkillObject((<>
             Programatically created <CrossSectionAnchor href="#Projects-NieR" targetSection={Section.Projects}>a music video</CrossSectionAnchor> using solely <strong>C#</strong>.
           </>), ["C#"])
@@ -207,14 +214,14 @@ function SkillsComponent() {
         ]}
         skills={[
           createSkillObject((<>
-            Built a full-stack geospatial web application using <strong>React</strong> (TS), <strong>Python</strong> (FastAPI), and <strong>PostgreSQL</strong> with <strong>Google Maps API</strong>.
+            Built <CrossSectionAnchor href="#Projects-Geospatial-Intern" targetSection={Section.Projects}>a full-stack geospatial web application</CrossSectionAnchor> using <strong>React</strong> (TS), <strong>Python</strong> (FastAPI), and <strong>PostgreSQL</strong> with <strong>Google Maps API</strong>.
           </>), ["Python", "FastAPI", "PostgreSQL", "Google Maps API"]),
           createSkillObject((<>
             Built personal web apps and pages using native <strong>JavaScript</strong> and <strong>React</strong>, including <strong>this site</strong>.
           </>), ["JavaScript", "React"]),
           createSkillObject((<>
-            Created a web-based rhythm game (<CrossSectionAnchor href="#Projects-Rhythm-Game" targetSection={Section.Projects}>Rhythm Strike</CrossSectionAnchor>) using <strong>TypeScript</strong>.
-          </>), ["TypeScript"]),
+            Created <CrossSectionAnchor href="#Projects-Rhythm-Game" targetSection={Section.Projects}>a web-based rhythm game</CrossSectionAnchor> using <strong>TypeScript</strong> and the <strong>Phaser</strong> game engine.
+          </>), ["TypeScript", "Phaser"]),
         ]}
       />
       <SkillSetComponent
@@ -227,7 +234,7 @@ function SkillsComponent() {
             Worked with <strong>xv6</strong> and <strong>Linux</strong> operating systems, using <strong>C</strong> and <strong>x86 Assembly</strong>, by modifying their core functionalities and behavior as desired, such as creating custom system calls and a custom process scheduling.
           </>), ["xv6", "Linux", "C", "Assembly"]),
           createSkillObject((<>
-            Built an API using <strong>FastAPI</strong> that interacts with a <strong>PostgreSQL</strong> database for a full-stack geospatial web application that uses the <strong>Google Maps API</strong>.
+            Built an API using <strong>FastAPI</strong> that interacts with a <strong>PostgreSQL</strong> database as part of the back-end for <CrossSectionAnchor href="#Projects-Geospatial-Intern" targetSection={Section.Projects}>a full-stack geospatial web application</CrossSectionAnchor> that uses the <strong>Google Maps API</strong>.
           </>), ["FastAPI", "PostgreSQL", "Google Maps API"]),
         ]}
       />
@@ -238,10 +245,10 @@ function SkillsComponent() {
         ]}
         skills={[
           createSkillObject((<>
-            Written multiple documents and presentation materials, including illustrations and graphics, using <strong>LaTeX</strong> &ndash; a programmatic, text-based means to create documents, etc.
+            Wrote multiple documents and presentation materials, including illustrations and graphics, using <strong>LaTeX</strong> &ndash; a programmatic, text-based means to create documents, etc.
           </>), ["LaTeX"]),
           createSkillObject((<>
-            Used <strong>Python</strong> as a tool in automating typesetting and computations. The latter is achieved by creating a personal module that would simulate a &quot;Spiking Neural P System&quot;.
+            Used <strong>Python</strong> as a tool in automating typesetting and computations. For example, by creating a module that would simulate a &quot;Spiking Neural P System&quot;.
           </>), ["Python", "Research"]),
           createSkillObject((<>
             Participated in the development process of <strong>WebSnapse v2</strong>, a web simulator for &quot;Spiking Neural P Systems&quot;, with fellow researchers.
@@ -255,6 +262,7 @@ function SkillsComponent() {
 export function AboutSection() {
   const { sectionContexts } = useSections();
   const isActive = sectionContexts.isActive.about;
+  const sectionRef = sectionContexts.sectionRefs.about;
   return (
     <AppSection 
       isActive={isActive}
@@ -262,6 +270,7 @@ export function AboutSection() {
       headingText={"About Me"}
       sectionContents={
         <>
+          <h3>Hi, I&apos;m Michael!</h3>
           <AboutComponent />
           <SkillsComponent />
         </>
@@ -271,6 +280,7 @@ export function AboutSection() {
           <img src={site_logo} alt="Site logo" />
         </div>
       }
+      sectionRef={sectionRef}
     />
   );
 }

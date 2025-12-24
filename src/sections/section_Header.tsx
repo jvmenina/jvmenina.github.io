@@ -73,6 +73,7 @@ export function HeaderSection(
 ) {
   const { sectionContexts } = useSections();
   const isActive = sectionContexts.isActive.header;
+  const sectionRef = sectionContexts.sectionRefs.header;
 
   const [ highlightStyle, setHighlightStyle ] = useState<string>("");
   const [ idx, setIdx ] = useState<number>(0);
@@ -106,7 +107,7 @@ export function HeaderSection(
   const blinkerGap = idx == fullName.length ? " " : "";
 
   return (
-    <header className={joinStyles(headerStyles["header"], isActive ? coreStyles["__section--expanded"] : coreStyles["__section--collapsed"])}>
+    <header ref={sectionRef} className={joinStyles(headerStyles["header"], isActive ? coreStyles["__section--expanded"] : coreStyles["__section--collapsed"])}>
       <div className={joinStyles(
         headerStyles["header__container"], 
         coreStyles["__limit-width"]
@@ -144,7 +145,6 @@ export function HeaderSection(
           </div>
         </div>
       </div>
-      <FooterSection />
     </header>
   );
 }

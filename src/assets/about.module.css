@@ -11,10 +11,6 @@
   line-height: 2rem !important;
 }
 
-.about__about-me__text p:not(:first-child) {
-  margin-top: 1rem;
-}
-
 .about__skills {
   width: 100%;
   margin-top: 2rem;
@@ -38,6 +34,7 @@
 .about__skills__featured__icons {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding-right: calc(1rem);
   border-right: 1px solid rgba(255, 255, 255, 0.5);
   margin-right: 1rem;
@@ -57,9 +54,6 @@
 
 .about__skills__featured__text {
   flex: 1;
-
-  display: grid;
-  align-items: center;
 }
 
 .about__skills__skillset {
@@ -86,12 +80,10 @@
 .about__skills__skillset__title {
   display: block;
   margin: 0; padding: 0;
+  font-size: var(--h3-size);
 }
 
 .about__skills__skillset__tags {
-  --head-bg-color: var(--color-text-main-alt);
-  --head-color: var(--color-bg-highlight-y);
-
   justify-self: right;
   
   display: flex;
@@ -103,8 +95,6 @@
 
 .about__skills__skillset__tags__tag {
   display: block;
-  /* color: var(--head-color); */
-  /* background-color: var(--head-bg-color); */
 
   background-color: var(--color-header-h1);
   color: var(--c-palette-black);
@@ -156,11 +146,11 @@
   background-color: var(--c-palette-1);
 }
 
-.about__skills__skillset__dropdown__head h3 {
+.about__skills__skillset__dropdown__head .about__skills__skillset__title {
   color: var(--c-palette-1);
 }
 
-.about__skills__skillset__dropdown__head--active h3 {
+.about__skills__skillset__dropdown__head--active .about__skills__skillset__title {
   color: var(--color-header-h1);
 }
 
@@ -196,4 +186,38 @@
   height: 1000px;
   transform: translateY(-15%);
   opacity: 0.05;
+}
+
+/** 
+ *  ##########################################
+ *  MOBILE
+ *  ##########################################
+ */
+
+@media (max-width: 800px) {
+  .about__skills__featured {
+    display: grid;
+    justify-content: center;
+  }
+  .about__skills__featured__icons {
+    max-width: 100%;
+    border-right: 0;
+    margin-right: 0;
+    padding-right: 0;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .about__skills__skillset__head {
+    display: block;
+  }
+
+  .about__skills__skillset__tags {
+    padding-top: 0.5rem;
+  }
+
+  .about__skills__skillset__skills-container {
+    grid-template-columns: 1fr;
+  }
 }

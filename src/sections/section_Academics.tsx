@@ -79,6 +79,7 @@ function ThesisComp() {
 export function AcademicsSection() {
   const { sectionContexts } = useSections();
   const isActive = sectionContexts.isActive.academics;
+  const sectionRef = sectionContexts.sectionRefs.academics;
   return (
     <AppSection 
       isActive={isActive}
@@ -90,6 +91,7 @@ export function AcademicsSection() {
           <ThesisComp />
         </>
       }
+      sectionRef={sectionRef}
     />
   );
 }
