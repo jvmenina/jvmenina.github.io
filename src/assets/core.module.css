@@ -459,7 +459,6 @@ hr {
 a {
   text-decoration: none;
   font-weight: bold;
-  /* color: var(--color-text-highlight-p-alt); */
   color: var(--c-palette-3);
 }
 

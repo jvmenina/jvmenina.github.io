@@ -1,14 +1,13 @@
 import { useSections } from "../hooks/CustomHooks.tsx";
-import useElementOnScreen from "./IntersectionObserver.tsx";
 
-import { joinStyles } from "../utils/joinStyles.ts";
+// import { joinStyles } from "../utils/joinStyles.ts";
 
 import { AppSection } from "./SectionTemplate.tsx";
 
 // import up_seal from "/images/up_seal.svg";
 // import dostsei_seal from "/images/dostsei_seal.png";
 
-import coreStyles from "../assets/core.module.css";
+// import coreStyles from "../assets/core.module.css";
 import credsStyles from "../assets/credentials.module.css";
 import { CardComponent } from "../components/Card.tsx";
 
@@ -28,15 +27,12 @@ function CredentialComp(props: CredentialProps) {
     link,
     description,
   }: CredentialProps = props;
-  const { containerRef, isVisible } = useElementOnScreen({});
-
   return (
     <CardComponent
       additionalClassNames={[
         credsStyles["credentials__credential"],
         // isVisible ? styles["__visible"] : styles["__not-visible"]
       ]}
-      cardRef={containerRef}
     >
       <div className={credsStyles.credentials__credential__details}>
         <h4 className={credsStyles.credentials__credential__details__title}>

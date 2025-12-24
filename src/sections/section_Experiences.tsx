@@ -1,11 +1,10 @@
 import { useSections } from "../hooks/CustomHooks.tsx";
-import useElementOnScreen from "./IntersectionObserver.tsx";
 
-import { joinStyles } from "../utils/joinStyles.ts";
+// import { joinStyles } from "../utils/joinStyles.ts";
 
 import { AppSection } from "./SectionTemplate.tsx";
 
-import coreStyles from "../assets/core.module.css";
+// import coreStyles from "../assets/core.module.css";
 import expStyles from "../assets/experience.module.css";
 import { CardComponent } from "../components/Card.tsx";
 
@@ -28,15 +27,12 @@ function ExperienceComp(props: ExperienceProps) {
     description,
   }: ExperienceProps = props;
 
-  const { containerRef, isVisible } = useElementOnScreen({});
-
   return (
     <CardComponent
       additionalClassNames={[
         expStyles.experiences__experience,
         // isVisible ? styles["__visible"] : styles["__not-visible"]
       ]}
-      cardRef={containerRef}
     >
       <img src={logo_path} alt={`Logo of ${company}`} className={expStyles.experiences__experience__logo} loading="lazy" />
       <div className={expStyles.experiences__experience__details}>

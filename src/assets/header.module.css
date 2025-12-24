@@ -5,6 +5,7 @@
 
 .header__container {
   padding: 2rem;
+  padding-bottom: calc(2rem + var(--nav-height));
 }
 
 .header__contents {

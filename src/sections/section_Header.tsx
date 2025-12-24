@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import { joinStyles } from "../utils/joinStyles.ts";
-import { FooterSection } from "./section_Footer.tsx";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faJs, IconDefinition, faHtml5, faCss3Alt } from "@fortawesome/free-brands-svg-icons";

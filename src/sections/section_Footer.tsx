@@ -6,12 +6,11 @@ import { joinStyles } from "../utils/joinStyles";
 import { CardComponent } from "../components/Card";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+// import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
-import coreStyles from "../assets/core.module.css";
+// import coreStyles from "../assets/core.module.css";
 import footerStyles from "../assets/footer.module.css";
-import { Section } from "./SectionNames";
 
 export function FooterSection() {
   const [ isActive, setIsActive ] = useState<boolean>(false);

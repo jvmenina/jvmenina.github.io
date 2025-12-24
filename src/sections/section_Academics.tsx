@@ -1,23 +1,19 @@
 import { useSections } from "../hooks/CustomHooks.tsx";
-import useElementOnScreen from "./IntersectionObserver.tsx";
 
-import { joinStyles } from "../utils/joinStyles.ts";
+// import { joinStyles } from "../utils/joinStyles.ts";
 
 import { AppSection } from "./SectionTemplate.tsx";
 
 import up_logo from "/images/up_logo.svg";
 
-import coreStyles from "../assets/core.module.css";
+// import coreStyles from "../assets/core.module.css";
 import acadsStyles from "../assets/academics.module.css";
 import { CardComponent } from "../components/Card.tsx";
 
 function UniversityComp() {
-  const { containerRef, isVisible } = useElementOnScreen({});
-
   return (
     <CardComponent
       additionalClassNames={[acadsStyles["academics__university"]]}
-      cardRef={containerRef}
     >
       <img
         src={up_logo}
@@ -44,13 +40,10 @@ function UniversityComp() {
 }
 
 function ThesisComp() {
-  const { containerRef, isVisible } = useElementOnScreen({});
-
   return (<>
     <h3>Undergraduate Thesis</h3>
     <CardComponent 
       additionalClassNames={[acadsStyles["academics__thesis"]]}
-      cardRef={containerRef}
     >
       <h4 className={acadsStyles.academics__thesis__title}>
         Spiking Neural P Systems in Generating Chain Code Pictures for Finite
