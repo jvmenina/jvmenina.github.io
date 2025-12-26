@@ -5,6 +5,7 @@ import { useSections } from "../hooks/CustomHooks.tsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faJs, faHtml5, faCss3Alt } from "@fortawesome/free-brands-svg-icons";
 import site_logo from "/images/site_logo.svg";
+import postgres_logo from "/images/postgresql_logo.svg";
 // import cpp_logo from "/images/c++_logo.svg";
 // import python_logo from "/images/python_logo.svg";
 
@@ -24,7 +25,7 @@ function AboutComponent() {
     <div className={aboutStyles["about__about-me"]}>
       <div className={joinStyles(aboutStyles["about__about-me__text"], coreStyles['__indent-text'])}>
         <p>
-          I&apos;m a <strong>software developer</strong> and an <strong>aspiring lifelong learner</strong>. I&apos;m most proficient with <em>Python</em>, <em>C</em>, and <em>C++</em> for desktop development, and <em>React</em> (JavaScript and TypeScript) for web development.
+          I&apos;m a <strong>software developer</strong> and an <strong>aspiring lifelong learner</strong> from the <strong>Philippines</strong>. I&apos;m most proficient with <em>Python</em>, <em>C</em>, and <em>C++</em> for desktop development, and <em>React</em> (JavaScript and TypeScript) for web development.
         </p>
         <p>
           I finished my <strong>Bachelor&apos;s Degree in Computer Science</strong> with Cum Laude honors in the <strong>University of the Philippines Diliman</strong>, with my thesis tackling <em>Spiking Neural P Systems</em>.
@@ -161,10 +162,11 @@ function FeaturedSkillsComponent() {
         <div className={aboutStyles.about__skills__featured__icons}>
           <div className={aboutStyles.about__skills__featured__icons__container}>
             {/* <FontAwesomeIcon icon={faReact} size="2xl" /> */}
-            <TooltipComponent tip={"React"}><FontAwesomeIcon icon={faReact} size="3x" /></TooltipComponent>
-            <TooltipComponent tip={"JavaScript"}><FontAwesomeIcon icon={faJs} size="3x" /></TooltipComponent>
-            <TooltipComponent tip={"HTML"}><FontAwesomeIcon icon={faHtml5} size="3x" /></TooltipComponent>
-            <TooltipComponent tip={"CSS"}><FontAwesomeIcon icon={faCss3Alt} size="3x" /></TooltipComponent>
+            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"PostgreSQL"}><img src={postgres_logo} /></TooltipComponent>
+            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"React"}><FontAwesomeIcon icon={faReact} size="3x" /></TooltipComponent>
+            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"JavaScript"}><FontAwesomeIcon icon={faJs} size="3x" /></TooltipComponent>
+            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"HTML"}><FontAwesomeIcon icon={faHtml5} size="3x" /></TooltipComponent>
+            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"CSS"}><FontAwesomeIcon icon={faCss3Alt} size="3x" /></TooltipComponent>
           </div>
         </div>
         <div className={aboutStyles.about__skills__featured__text}>
@@ -194,7 +196,7 @@ function SkillsComponent() {
         ]}
         skills={[
           createSkillObject((<>Created a local file server with concurrency and mutual exclusion.</>),["C"]),
-          createSkillObject((<>Optimized generation of space-filling curves, a computationally intensive task, using <strong>CUDA C</strong>.</>),["CUDA (C)", "GPU Computing"]),
+          createSkillObject((<>Optimized computationally intensive tasks, like generation of space-filling curves, using <strong>CUDA C</strong>.</>),["CUDA (C)", "GPU Computing"]),
           createSkillObject((<>Created <CrossSectionAnchor href="#Projects-ytdlp-CLI" targetSection={Section.Projects}>an easy-to-use command-line user interface</CrossSectionAnchor> for yt-dlp, a content downloader which can be daunting to use.</>),["C++"]),
           createSkillObject((<>
             Worked on software development projects with a <strong>team</strong> (e.g. <CrossSectionAnchor href="#Projects-PASG" targetSection={Section.Projects}>Post-apocalyptic Survival Game</CrossSectionAnchor> and <CrossSectionAnchor href="#Projects-Lottie" targetSection={Section.Projects}>Lottie AI</CrossSectionAnchor>).
@@ -239,7 +241,7 @@ function SkillsComponent() {
         ]}
       />
       <SkillSetComponent
-        title={"Membrane Computing Research"}
+        title={"Research Studies"}
         tags={[
           "LaTeX", "Python"
         ]}

@@ -34,7 +34,7 @@
   to {opacity: 1; transform: translateX(0);}
 }
 .__slide-in {
-  animation: animation__content__enter 1s var(--easeOutCubic);
+  animation: animation__content__enter 500ms var(--easeOutCubic);
   animation-fill-mode: forwards;
 }
 
@@ -457,14 +457,15 @@ hr {
 }
 
 a {
-  text-decoration: none;
+  /* text-decoration: none; */
+  text-decoration: underline;
   font-weight: bold;
   color: var(--c-palette-3);
 }
 
 strong {
   font-weight: bolder;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 code {
@@ -502,7 +503,7 @@ p:not(:first-of-type) {
   overflow: hidden;
 
   transition: 
-    opacity 250ms var(--easeOutCubic);
+    opacity 150ms var(--easeOutCubic);
 }
 
 :global(.__section--expanded),
@@ -511,7 +512,7 @@ p:not(:first-of-type) {
   opacity: 1;
 
   transition: 
-    opacity 250ms var(--easeOutCubic);
+    opacity 150ms var(--easeOutCubic);
     
 }
 

@@ -191,16 +191,21 @@ export function NavigationBar(
       )}>
         {/* Mobile menu button */}
         <div
-          className={joinStyles(
-            navStyles["nav__container__button"],
-            mobileNavIsOpen ? navStyles["nav__container__button--active"] : "",
-          )}
+          className={navStyles['nav__container__button-container']}
           onClick={() => {toggleNav()}}
           ref={navToggleRef}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <p>Menu</p>
+          <div
+            className={joinStyles(
+              navStyles["nav__container__button"],
+              mobileNavIsOpen ? navStyles["nav__container__button--active"] : "",
+            )}
+          >
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
         </div>
 
         {/* Navigation menu */}

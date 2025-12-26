@@ -94,7 +94,7 @@ export function HeaderSection(
           return i + 1;
         });
       }, 30);
-    }, 1000);
+    }, 500);
 
     return () => {
       clearTimeout(delayTimer);
@@ -103,7 +103,7 @@ export function HeaderSection(
   }, []);
   const firstName = fullName.slice(0, Math.min(idx, 12));
   const lastName = fullName.slice(12, idx);
-  const blinkerGap = idx == fullName.length ? " " : "";
+  // const blinkerGap = idx == fullName.length ? " " : "";
 
   return (
     <header ref={sectionRef} className={joinStyles(headerStyles["header"], isActive ? coreStyles["__section--expanded"] : coreStyles["__section--collapsed"])}>
@@ -120,14 +120,16 @@ export function HeaderSection(
             })}
           </div>
           <h1 style={{animationDuration: "0ms"}}>
-            &gt; {firstName}<span style={{padding: highlightStyle}}>{lastName}</span>{blinkerGap}<Blinker />
+            &gt; {firstName}<span style={{padding: highlightStyle}}>{lastName}</span>
+            {/* {blinkerGap} */}
+            <Blinker />
           </h1>
           <div className={headerStyles["header__chips"]}>
             {
               chipsList.map((chipText, index) => (
                 <span 
                   key={index}
-                  style={{animationDelay: `calc(1000ms + ${index} * 200ms)`}}
+                  style={{animationDelay: `calc(500ms + ${index} * 200ms)`}}
                 >{chipText}</span>
               ))
             }
@@ -136,7 +138,7 @@ export function HeaderSection(
             {
               featuredCardsList.map((card, index) => (
                 <FeaturedCard key={index} svgIcon={card.svgIcon} faIcon={card.faIcon} text={card.text} customStyle={{
-                  animationDelay: `${1500 + index * 100}ms`,
+                  animationDelay: `${1000 + index * 50}ms`,
                   opacity: 0
                 }} />
               ))

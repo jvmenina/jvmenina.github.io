@@ -38,7 +38,7 @@
   padding-right: calc(1rem);
   border-right: 1px solid rgba(255, 255, 255, 0.5);
   margin-right: 1rem;
-  max-width: 25%;
+  max-width: calc(3em * 3 + 3rem);
 }
 
 .about__skills__featured__icons__container {
@@ -48,8 +48,17 @@
   justify-content: space-around;
 }
 
-.about__skills__featured__icons__container > * {
+.about__skills__featured__icons__container__sub-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about__skills__featured__icons__container * {
   flex: 1 1 auto;
+}
+
+.about__skills__featured__icons__container img {
+  width: 3rem;
 }
 
 .about__skills__featured__text {

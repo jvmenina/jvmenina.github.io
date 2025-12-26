@@ -81,7 +81,7 @@
   filter: saturate(300%) brightness(120%) drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
 }
 
-.nav__container__button {
+.nav__container__button-container {
   display: none;
 }
 
@@ -193,10 +193,24 @@
     grid-area: logo;
   }
   
-  .nav__container__button {
+  .nav__container__button-container {
     justify-self: right;
     grid-area: nav;
 
+    cursor: pointer;
+    width: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 1rem;
+  }
+  
+  .nav__container__button-container p {
+    font-size: large;
+  }
+
+  .nav__container__button {
     height: 50px;
     width: 50px;    
     padding: 14px;

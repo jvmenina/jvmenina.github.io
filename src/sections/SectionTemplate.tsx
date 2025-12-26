@@ -49,8 +49,8 @@ export function AppSection({
   const sectionContentsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {if (isActive) {
-    const animationDelay = "1";
-    const componentDelay = "250";
+    const animationDelay = "500";
+    const componentDelay = "100";
     setWasLoadedBefore(true);
     if (sectionContentsRef && sectionContentsRef.current) {
       let directChildren = Array.from(sectionContentsRef.current.children);
@@ -65,7 +65,7 @@ export function AppSection({
         ) {
           child.style.opacity = "0";
           child.classList.add(coreStyles['__slide-in']);
-          child.style.animationDelay = `calc(${index} * ${componentDelay}ms + ${animationDelay}s)`;
+          child.style.animationDelay = `calc(${index} * ${componentDelay}ms + ${animationDelay}ms)`;
         }
       });
     }
@@ -88,7 +88,7 @@ export function AppSection({
           michael:/&gt; <TypewriterComponent 
             text={headingText}
             characterInterval={30}
-            animationDelay={500}
+            animationDelay={250}
           /><Blinker />
         </h2>
         <div 

@@ -1,4 +1,4 @@
-import useElementOnScreen from "./IntersectionObserver.tsx";
+// import useElementOnScreen from "./IntersectionObserver.tsx";
 import { useSections } from "../hooks/CustomHooks.tsx";
 
 // import { joinStyles } from "../utils/joinStyles.ts";
@@ -21,7 +21,7 @@ import sota_preview_3 from "/images/proj_sota_3.jpg";
 import sota_preview_4 from "/images/proj_sota_4.jpg";
 import sota_preview_5 from "/images/proj_sota_5.jpg";
 
-import coreStyles from "../assets/core.module.css";
+// import coreStyles from "../assets/core.module.css";
 import projectsStyles from "../assets/projects.module.css";
 import { CardComponent } from "../components/Card.tsx";
 import { ExpandableImage } from "../components/ExpandableImage.tsx";
@@ -66,15 +66,15 @@ function ProjectComp(props: ProjectProps) {
     description,
     preview,
   }: ProjectProps = props;
-  const { containerRef, isVisible } = useElementOnScreen({});
+  // const { containerRef, isVisible } = useElementOnScreen({});
 
   return (
     <CardComponent
       additionalClassNames={[
         projectsStyles.projects__project,
-        isVisible ? coreStyles["__visible"] : coreStyles["__not-visible"]
+        // isVisible ? coreStyles["__visible"] : coreStyles["__not-visible"]
       ]}
-      cardRef={containerRef}
+      // cardRef={containerRef}
     >
       <NavigationAnchor id={id} />
       <div className={projectsStyles.projects__project__details}>
@@ -129,7 +129,7 @@ function ProjectsComp() {
       subtitle={"An easy-to-use command-line interface that provides abstractions for the essential capabilities of yt-dlp"}
       year={"2025"}
       description={[
-        "A command-line interface (CLI) that's meant to simplify the usage of yt-dlp, a feature-rich audio and video downloader, which can be daunting to use."
+        "A command-line interface (CLI) that's meant to simplify the usage of a user's copy of yt-dlp, a feature-rich audio and video downloader, which can be daunting to use."
       ]}
       link={"https://github.com/jvmenina/Easy-yt-dlp-CLI"}
       preview={
