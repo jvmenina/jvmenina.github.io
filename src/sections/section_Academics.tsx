@@ -9,6 +9,7 @@ import up_logo from "/images/up_logo.svg";
 // import coreStyles from "../assets/core.module.css";
 import acadsStyles from "../assets/academics.module.css";
 import { CardComponent } from "../components/Card.tsx";
+import { NavigationAnchor } from "./NavigationAnchor.tsx";
 
 function UniversityComp() {
   return (
@@ -41,6 +42,7 @@ function UniversityComp() {
 
 function ThesisComp() {
   return (<>
+    <NavigationAnchor id={"__Undergrad-Thesis"} />
     <h3>Undergraduate Thesis</h3>
     <CardComponent 
       additionalClassNames={[acadsStyles["academics__thesis"]]}

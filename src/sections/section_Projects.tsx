@@ -114,7 +114,7 @@ function ProjectsComp() {
       subtitle={"A full-stack video converter web app built using Bootstrap, Django, and SQLite"}
       year={"2025"}
       description={[
-        "A web app designed to simplify the use of the powerful media processing tool FFmpeg, that is normally complicated to non-technical users, by providing an easy-to-use graphical interface available on the web."
+        "An app designed to provide an easy-to-use, web-based interface for the powerful media processing tool FFmpeg, which is normally complicated to non-technical users, by abstracting essential and most frequently used options."
       ]}
       preview={
         <>
@@ -124,7 +124,7 @@ function ProjectsComp() {
       link={"https://github.com/jvmenina/Simply-FFmpeg"}
     />
     <ProjectComp
-      id={"Projects-ytdlp-CLI"}
+      id={"__ytdlp-CLI"}
       title={"Easy yt-dlp CLI"}
       subtitle={"An easy-to-use command-line interface that provides abstractions for the essential capabilities of yt-dlp"}
       year={"2025"}
@@ -139,7 +139,7 @@ function ProjectsComp() {
       }
     />
     <ProjectComp
-      id={"Projects-Geospatial-Intern"}
+      id={"__Choice-Places"}
       title={"Choice Places Near Me"}
       subtitle={"A full-stack geospatial web application built using React"}
       year={"2024"}
@@ -149,7 +149,7 @@ function ProjectsComp() {
       ]}
     />
     <ProjectComp
-      id={"Projects-Rhythm-Game"}
+      id={"__Rhythm-Strike"}
       title={"Rhythm Strike"}
       subtitle={"A WebGL rhythm game built using TypeScript with the Phaser game engine"}
       year={"2024"}
@@ -170,7 +170,7 @@ function ProjectsComp() {
       }
     />
     <ProjectComp
-      id={"Projects-NieR"}
+      id={"__NieR-MV"}
       title={"\"Song of the Ancients\" Music Video in C#"}
       subtitle={"A solo music video project built using C#"}
       year={"2023"}
@@ -189,7 +189,7 @@ function ProjectsComp() {
       }
     />
     <ProjectComp
-      id={"Projects-Lottie"}
+      id={"__Lottie-AI"}
       title={"Lottie AI"}
       subtitle={"A team technopreneurship venture on a smart OCR for Geodetic Engineers"}
       year={"2023"}
@@ -201,7 +201,7 @@ function ProjectsComp() {
       ]}
     />
     <ProjectComp
-      id={"Projects-PASG"}
+      id={"__Survival-Game"}
       title={"Post-apocalyptic Survival Game"}
       subtitle={"A team project built using Python"}
       year={"2021"}

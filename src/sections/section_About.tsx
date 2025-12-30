@@ -174,7 +174,8 @@ function FeaturedSkillsComponent() {
             <h4>Choice Places Near Me</h4>
             <div style={{fontWeight: "bolder", marginBottom: "1rem"}}>A full-stack geospatial web application built using React</div>
             <div className={coreStyles['__indent-text']}>
-              <p>I built a full-stack interactive place locator using <strong>React</strong>, <strong>Python</strong>, and <strong>PostgreSQL</strong> with the Google Maps API to create a dynamic experience. Here, users can see details about nearby restaurants, cafes, and stores from their set location.</p>
+              <p>I built a full-stack interactive place locator using <strong>React</strong>, <strong>Python</strong>, and <strong>PostgreSQL</strong> with the Google Maps API to create a dynamic experience. This project was then reviewed and assessed by select sales and technical leads at Navagis (Philippine Branch).</p>
+              <p>This app is meant to simplify the Google Maps experience by providing users all relevant details about nearby restaurants, cafes, and stores from their set location. The app helps users discover relevant businesses they might want to visit when they are looking for a place to eat or buy supplies.</p>
             </div>
           </div>
         </div>
@@ -197,15 +198,15 @@ function SkillsComponent() {
         skills={[
           createSkillObject((<>Created a local file server with concurrency and mutual exclusion.</>),["C"]),
           createSkillObject((<>Optimized computationally intensive tasks, like generation of space-filling curves, using <strong>CUDA C</strong>.</>),["CUDA (C)", "GPU Computing"]),
-          createSkillObject((<>Created <CrossSectionAnchor href="#Projects-ytdlp-CLI" targetSection={Section.Projects}>an easy-to-use command-line user interface</CrossSectionAnchor> for yt-dlp, a content downloader which can be daunting to use.</>),["C++"]),
+          createSkillObject((<>Created <CrossSectionAnchor href="#__ytdlp-CLI" targetSection={Section.Projects}>an easy-to-use command-line user interface</CrossSectionAnchor> for yt-dlp, a content downloader which can be daunting to use.</>),["C++"]),
           createSkillObject((<>
-            Worked on software development projects with a <strong>team</strong> (e.g. <CrossSectionAnchor href="#Projects-PASG" targetSection={Section.Projects}>Post-apocalyptic Survival Game</CrossSectionAnchor> and <CrossSectionAnchor href="#Projects-Lottie" targetSection={Section.Projects}>Lottie AI</CrossSectionAnchor>).
+            Worked on software development projects with a <strong>team</strong> (e.g. <CrossSectionAnchor href="#__Survival-Game" targetSection={Section.Projects}>Post-apocalyptic Survival Game</CrossSectionAnchor> and <CrossSectionAnchor href="#__Lottie-AI" targetSection={Section.Projects}>Lottie AI</CrossSectionAnchor>).
           </>), ["Python", "Team Project"]),
           createSkillObject((<>
             Worked on academic projects using <strong>Machine Learning</strong> models like SVM and Linear Regression with <strong>Python</strong>.
           </>), ["Python", "Machine Learning"]),
           createSkillObject((<>
-            Programatically created <CrossSectionAnchor href="#Projects-NieR" targetSection={Section.Projects}>a music video</CrossSectionAnchor> using solely <strong>C#</strong>.
+            Programatically created <CrossSectionAnchor href="#__NieR-MV" targetSection={Section.Projects}>a music video</CrossSectionAnchor> using solely <strong>C#</strong>.
           </>), ["C#"])
         ]}
       />
@@ -216,13 +217,13 @@ function SkillsComponent() {
         ]}
         skills={[
           createSkillObject((<>
-            Built <CrossSectionAnchor href="#Projects-Geospatial-Intern" targetSection={Section.Projects}>a full-stack geospatial web application</CrossSectionAnchor> using <strong>React</strong> (TS), <strong>Python</strong> (FastAPI), and <strong>PostgreSQL</strong> with <strong>Google Maps API</strong>.
+            Built <CrossSectionAnchor href="#__Choice-Places" targetSection={Section.Projects}>a full-stack geospatial web application</CrossSectionAnchor> using <strong>React</strong> (TS), <strong>Python</strong> (FastAPI), and <strong>PostgreSQL</strong> with <strong>Google Maps API</strong>.
           </>), ["Python", "FastAPI", "PostgreSQL", "Google Maps API"]),
           createSkillObject((<>
             Built personal web apps and pages using native <strong>JavaScript</strong> and <strong>React</strong>, including <strong>this site</strong>.
           </>), ["JavaScript", "React"]),
           createSkillObject((<>
-            Created <CrossSectionAnchor href="#Projects-Rhythm-Game" targetSection={Section.Projects}>a web-based rhythm game</CrossSectionAnchor> using <strong>TypeScript</strong> and the <strong>Phaser</strong> game engine.
+            Created <CrossSectionAnchor href="#__Rhythm-Strike" targetSection={Section.Projects}>a web-based rhythm game</CrossSectionAnchor> using <strong>TypeScript</strong> and the <strong>Phaser</strong> game engine.
           </>), ["TypeScript", "Phaser"]),
         ]}
       />
@@ -236,7 +237,7 @@ function SkillsComponent() {
             Worked with <strong>xv6</strong> and <strong>Linux</strong> operating systems, using <strong>C</strong> and <strong>x86 Assembly</strong>, by modifying their core functionalities and behavior as desired, such as creating custom system calls and a custom process scheduling.
           </>), ["xv6", "Linux", "C", "Assembly"]),
           createSkillObject((<>
-            Built an API using <strong>FastAPI</strong> that interacts with a <strong>PostgreSQL</strong> database as part of the back-end for <CrossSectionAnchor href="#Projects-Geospatial-Intern" targetSection={Section.Projects}>a full-stack geospatial web application</CrossSectionAnchor> that uses the <strong>Google Maps API</strong>.
+            Built an API using <strong>FastAPI</strong> that interacts with a <strong>PostgreSQL</strong> database as part of the back-end for <CrossSectionAnchor href="#__Choice-Places" targetSection={Section.Projects}>a full-stack geospatial web application</CrossSectionAnchor> that uses the <strong>Google Maps API</strong>.
           </>), ["FastAPI", "PostgreSQL", "Google Maps API"]),
         ]}
       />
@@ -247,11 +248,11 @@ function SkillsComponent() {
         ]}
         skills={[
           createSkillObject((<>
-            Wrote multiple documents and presentation materials, including illustrations and graphics, using <strong>LaTeX</strong> &ndash; a programmatic, text-based means to create documents, etc.
+            Wrote documents, especially my <CrossSectionAnchor href="#__Undergrad-Thesis" targetSection={Section.Academics}>undergrad thesis</CrossSectionAnchor> paper and presentation slides, using <strong>LaTeX</strong> and <strong>TikZ</strong> (for illustrations) &ndash; a programmatic way to create documents.
           </>), ["LaTeX"]),
           createSkillObject((<>
-            Used <strong>Python</strong> as a tool in automating typesetting and computations. For example, by creating a module that would simulate a &quot;Spiking Neural P System&quot;.
-          </>), ["Python", "Research"]),
+            Used <strong>Python</strong> to create tools in automating repeated tasks like calculations and typesetting.
+          </>), ["Python"]),
           createSkillObject((<>
             Participated in the development process of <strong>WebSnapse v2</strong>, a web simulator for &quot;Spiking Neural P Systems&quot;, with fellow researchers.
           </>)),

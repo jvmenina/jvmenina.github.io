@@ -80,7 +80,7 @@ function ExperiencesComp() {
         location={"Quezon City, Philippines"}
         year={"September 2021 - May 2022"}
         description={[
-          "Developed Spiking Neural P Systems, systems capable of being maximally parallel, that can generate Space-Filling Curves.",
+          "Developed Spiking Neural P Systems - computing systems capable of being maximally parallel - that can generate Space-Filling Curves.",
           <>Assisted in the development of &quot;WebSnapse v2&quot; (<a href="https://www.researchgate.net/figure/A-screen-of-WebSnapse-V2-with-some-new-features-improved-access-to-edit-parts-eg_fig3_380182615" target="_blank" rel="noreferrer">Screenshot</a>) (<a href="https://aclab.dcs.upd.edu.ph/productions/software/websnapse" target="_blank" rel="noreferrer">Details</a>) (<a href="https://github.com/nccruel/websnapse_extended" target="_blank" rel="noreferrer">GitHub</a>), a visual simulator for Spiking Neural P Systems, as a software tester.</>,
           "Cooperated with fellow researchers by evaluating each others' research projects."
         ]}
