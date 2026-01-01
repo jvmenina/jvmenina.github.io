@@ -42,7 +42,7 @@ function UniversityComp() {
 
 function ThesisComp() {
   return (<>
-    <NavigationAnchor id={"__Undergrad-Thesis"} />
+    <NavigationAnchor id={"Academics__Undergrad-Thesis"} />
     <h3>Undergraduate Thesis</h3>
     <CardComponent 
       additionalClassNames={[acadsStyles["academics__thesis"]]}

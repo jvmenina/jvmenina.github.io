@@ -406,6 +406,7 @@ body {
   width: 100%;
   /* height: calc(100svh - var(--nav-height)) !important; */
   height: 100svh;
+  scroll-behavior: smooth;
 }
 
 header, section {

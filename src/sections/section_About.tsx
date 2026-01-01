@@ -196,17 +196,18 @@ function SkillsComponent() {
           "C", "C++", "C#", "CUDA", "Python"
         ]}
         skills={[
-          createSkillObject((<>Created a local file server with concurrency and mutual exclusion.</>),["C"]),
+          createSkillObject((<>Worked on numerous academics-related projects using <strong>C</strong>, like a local file server with concurrency and mutual exclusion.</>),["C"]),
           createSkillObject((<>Optimized computationally intensive tasks, like generation of space-filling curves, using <strong>CUDA C</strong>.</>),["CUDA (C)", "GPU Computing"]),
-          createSkillObject((<>Created <CrossSectionAnchor href="#__ytdlp-CLI" targetSection={Section.Projects}>an easy-to-use command-line user interface</CrossSectionAnchor> for yt-dlp, a content downloader which can be daunting to use.</>),["C++"]),
+          // createSkillObject((<>Created <CrossSectionAnchor href="#Projects__ytdlp-CLI" targetSection={Section.Projects}>an easy-to-use command-line user interface</CrossSectionAnchor> for yt-dlp, a content downloader which can be daunting to use.</>),["C++"]),
+          createSkillObject((<>Created tools that simplify powerful but complex tools, providing better accessiblity and a fast and easy user experience (e.g. SimplyFFmpeg - [<CrossSectionAnchor href="#Projects__SimplyFFmpeg" targetSection={Section.Projects}>Desktop</CrossSectionAnchor>] [<CrossSectionAnchor href="#Projects__SimplyFFmpeg-Web" targetSection={Section.Projects}>Web</CrossSectionAnchor>], <CrossSectionAnchor href="#Projects__ytdlp-CLI" targetSection={Section.Projects}>Easy yt-dlp CLI</CrossSectionAnchor>).</>), ["C++", "Python"]),
           createSkillObject((<>
-            Worked on software development projects with a <strong>team</strong> (e.g. <CrossSectionAnchor href="#__Survival-Game" targetSection={Section.Projects}>Post-apocalyptic Survival Game</CrossSectionAnchor> and <CrossSectionAnchor href="#__Lottie-AI" targetSection={Section.Projects}>Lottie AI</CrossSectionAnchor>).
+            Worked on software development projects with a <strong>team</strong> (e.g. <CrossSectionAnchor href="#Projects__Survival-Game" targetSection={Section.Projects}>Post-apocalyptic Survival Game</CrossSectionAnchor> and <CrossSectionAnchor href="#Projects__Lottie-AI" targetSection={Section.Projects}>Lottie AI</CrossSectionAnchor>).
           </>), ["Python", "Team Project"]),
           createSkillObject((<>
             Worked on academic projects using <strong>Machine Learning</strong> models like SVM and Linear Regression with <strong>Python</strong>.
           </>), ["Python", "Machine Learning"]),
           createSkillObject((<>
-            Programatically created <CrossSectionAnchor href="#__NieR-MV" targetSection={Section.Projects}>a music video</CrossSectionAnchor> using solely <strong>C#</strong>.
+            Programatically created <CrossSectionAnchor href="#Projects__NieR-MV" targetSection={Section.Projects}>a music video</CrossSectionAnchor> using solely <strong>C#</strong>.
           </>), ["C#"])
         ]}
       />
@@ -217,13 +218,13 @@ function SkillsComponent() {
         ]}
         skills={[
           createSkillObject((<>
-            Built <CrossSectionAnchor href="#__Choice-Places" targetSection={Section.Projects}>a full-stack geospatial web application</CrossSectionAnchor> using <strong>React</strong> (TS), <strong>Python</strong> (FastAPI), and <strong>PostgreSQL</strong> with <strong>Google Maps API</strong>.
+            Built <CrossSectionAnchor href="#Projects__Choice-Places" targetSection={Section.Projects}>a full-stack geospatial web application</CrossSectionAnchor> using <strong>React</strong> (TS), <strong>Python</strong> (FastAPI), and <strong>PostgreSQL</strong> with <strong>Google Maps API</strong>.
           </>), ["Python", "FastAPI", "PostgreSQL", "Google Maps API"]),
           createSkillObject((<>
             Built personal web apps and pages using native <strong>JavaScript</strong> and <strong>React</strong>, including <strong>this site</strong>.
           </>), ["JavaScript", "React"]),
           createSkillObject((<>
-            Created <CrossSectionAnchor href="#__Rhythm-Strike" targetSection={Section.Projects}>a web-based rhythm game</CrossSectionAnchor> using <strong>TypeScript</strong> and the <strong>Phaser</strong> game engine.
+            Created <CrossSectionAnchor href="#Projects__Rhythm-Strike" targetSection={Section.Projects}>a web-based rhythm game</CrossSectionAnchor> using <strong>TypeScript</strong> and the <strong>Phaser</strong> game engine.
           </>), ["TypeScript", "Phaser"]),
         ]}
       />
@@ -237,7 +238,7 @@ function SkillsComponent() {
             Worked with <strong>xv6</strong> and <strong>Linux</strong> operating systems, using <strong>C</strong> and <strong>x86 Assembly</strong>, by modifying their core functionalities and behavior as desired, such as creating custom system calls and a custom process scheduling.
           </>), ["xv6", "Linux", "C", "Assembly"]),
           createSkillObject((<>
-            Built an API using <strong>FastAPI</strong> that interacts with a <strong>PostgreSQL</strong> database as part of the back-end for <CrossSectionAnchor href="#__Choice-Places" targetSection={Section.Projects}>a full-stack geospatial web application</CrossSectionAnchor> that uses the <strong>Google Maps API</strong>.
+            Built an API using <strong>FastAPI</strong> that interacts with a <strong>PostgreSQL</strong> database as part of the back-end for <CrossSectionAnchor href="#Projects__Choice-Places" targetSection={Section.Projects}>a full-stack geospatial web application</CrossSectionAnchor> that uses the <strong>Google Maps API</strong>.
           </>), ["FastAPI", "PostgreSQL", "Google Maps API"]),
         ]}
       />
@@ -248,7 +249,7 @@ function SkillsComponent() {
         ]}
         skills={[
           createSkillObject((<>
-            Wrote documents, especially my <CrossSectionAnchor href="#__Undergrad-Thesis" targetSection={Section.Academics}>undergrad thesis</CrossSectionAnchor> paper and presentation slides, using <strong>LaTeX</strong> and <strong>TikZ</strong> (for illustrations) &ndash; a programmatic way to create documents.
+            Wrote documents, especially my <CrossSectionAnchor href="#Academics__Undergrad-Thesis" targetSection={Section.Academics}>undergrad thesis</CrossSectionAnchor> paper and presentation slides, using <strong>LaTeX</strong> and <strong>TikZ</strong> (for illustrations) &ndash; a programmatic way to create documents.
           </>), ["LaTeX"]),
           createSkillObject((<>
             Used <strong>Python</strong> to create tools in automating repeated tasks like calculations and typesetting.

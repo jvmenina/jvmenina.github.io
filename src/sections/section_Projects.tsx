@@ -52,7 +52,7 @@ type ProjectProps = {
   subtitle: string;
   year: string;
   link?: string;
-  description: string[];
+  description: (string | JSX.Element)[];
   preview?: JSX.Element;
 };
 
@@ -109,27 +109,38 @@ function ProjectComp(props: ProjectProps) {
 function ProjectsComp() {
   return (<>
     <ProjectComp
-      id={"Projects-Simply-FFmpeg"}
-      title={"Simply FFmpeg"}
-      subtitle={"A full-stack video converter web app built using Bootstrap, Django, and SQLite"}
+      id={"Projects__SimplyFFmpeg-Web"}
+      title={"SimplyFFmpeg (Web)"}
+      subtitle={"A full-stack multimedia processor web app built using Bootstrap, Django, and SQLite"}
       year={"2025"}
       description={[
-        "An app designed to provide an easy-to-use, web-based interface for the powerful media processing tool FFmpeg, which is normally complicated to non-technical users, by abstracting essential and most frequently used options."
+        "An app designed to provide an easy-to-use, web-based interface for the powerful media processing tool FFmpeg, which is normally complicated to non-technical users, by abstracting essential and most frequently used options.",
+        <>This is the web app version of <a href="#Projects__SimplyFFmpeg">SimplyFFmpeg</a>. </>
       ]}
       preview={
         <>
-          <ExpandableImage src={simply_preview} alt={"Simply FFmpeg Preview #1"} />
+          <ExpandableImage src={simply_preview} alt={"SimplyFFmpeg (Web) Preview #1"} />
         </>
       }
-      link={"https://github.com/jvmenina/Simply-FFmpeg"}
+      link={"https://github.com/jvmenina/SimplyFFmpeg-Web"}
     />
     <ProjectComp
-      id={"__ytdlp-CLI"}
+      id={"Projects__SimplyFFmpeg"}
+      title={"SimplyFFmpeg"}
+      subtitle={"A multimedia processor desktop app built using Python and PyQT6"}
+      year={"2025"}
+      description={[
+        "A desktop graphical interface for FFmpeg, a powerful multimedia processing tool, created to alleviate the complexity of the tool and be able to quickly process audio and video files with some degree of customizability."
+      ]}
+      link={"https://github.com/jvmenina/SimplyFFmpeg"}
+    />
+    <ProjectComp
+      id={"Projects__ytdlp-CLI"}
       title={"Easy yt-dlp CLI"}
       subtitle={"An easy-to-use command-line interface that provides abstractions for the essential capabilities of yt-dlp"}
       year={"2025"}
       description={[
-        "A command-line interface (CLI) that's meant to simplify the usage of a user's copy of yt-dlp, a feature-rich audio and video downloader, which can be daunting to use."
+        "A command-line interface (CLI) that's meant to simplify the usage of a user's copy of yt-dlp, a feature-rich multimedia downloader, which can be daunting to use."
       ]}
       link={"https://github.com/jvmenina/Easy-yt-dlp-CLI"}
       preview={
@@ -139,7 +150,7 @@ function ProjectsComp() {
       }
     />
     <ProjectComp
-      id={"__Choice-Places"}
+      id={"Projects__Choice-Places"}
       title={"Choice Places Near Me"}
       subtitle={"A full-stack geospatial web application built using React"}
       year={"2024"}
@@ -149,7 +160,7 @@ function ProjectsComp() {
       ]}
     />
     <ProjectComp
-      id={"__Rhythm-Strike"}
+      id={"Projects__Rhythm-Strike"}
       title={"Rhythm Strike"}
       subtitle={"A WebGL rhythm game built using TypeScript with the Phaser game engine"}
       year={"2024"}
@@ -170,7 +181,7 @@ function ProjectsComp() {
       }
     />
     <ProjectComp
-      id={"__NieR-MV"}
+      id={"Projects__NieR-MV"}
       title={"\"Song of the Ancients\" Music Video in C#"}
       subtitle={"A solo music video project built using C#"}
       year={"2023"}
@@ -189,7 +200,7 @@ function ProjectsComp() {
       }
     />
     <ProjectComp
-      id={"__Lottie-AI"}
+      id={"Projects__Lottie-AI"}
       title={"Lottie AI"}
       subtitle={"A team technopreneurship venture on a smart OCR for Geodetic Engineers"}
       year={"2023"}
@@ -201,7 +212,7 @@ function ProjectsComp() {
       ]}
     />
     <ProjectComp
-      id={"__Survival-Game"}
+      id={"Projects__Survival-Game"}
       title={"Post-apocalyptic Survival Game"}
       subtitle={"A team project built using Python"}
       year={"2021"}
@@ -215,7 +226,7 @@ function ProjectsComp() {
       ]}
     />
     <ProjectComp
-      id={"Projects-Chopsticks"}
+      id={"Projects__Chopsticks"}
       title={"LAN Chopsticks"}
       subtitle={"A remix of a classic game built using C++"}
       year={"2019"}
