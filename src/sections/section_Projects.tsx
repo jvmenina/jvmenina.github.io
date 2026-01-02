@@ -19,7 +19,6 @@ import sota_preview_1 from "/images/proj_sota_1.jpg";
 import sota_preview_2 from "/images/proj_sota_2.jpg";
 import sota_preview_3 from "/images/proj_sota_3.jpg";
 import sota_preview_4 from "/images/proj_sota_4.jpg";
-import sota_preview_5 from "/images/proj_sota_5.jpg";
 
 // import coreStyles from "../assets/core.module.css";
 import projectsStyles from "../assets/projects.module.css";
@@ -195,7 +194,6 @@ function ProjectsComp() {
           <ExpandableImage src={sota_preview_2} alt={"Song of the Ancients Music Video Preview #2"} />
           <ExpandableImage src={sota_preview_3} alt={"Song of the Ancients Music Video Preview #3"} />
           <ExpandableImage src={sota_preview_4} alt={"Song of the Ancients Music Video Preview #4"} />
-          <ExpandableImage src={sota_preview_5} alt={"Song of the Ancients Music Video Preview #5"} />
         </>
       }
     />

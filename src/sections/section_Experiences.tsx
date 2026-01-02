@@ -2,6 +2,13 @@ import { useSections } from "../hooks/CustomHooks.tsx";
 
 // import { joinStyles } from "../utils/joinStyles.ts";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { 
+  faLocationDot, 
+  faCalendar, 
+  // faBriefcase 
+} from "@fortawesome/free-solid-svg-icons";
+
 import { AppSection } from "./SectionTemplate.tsx";
 
 // import coreStyles from "../assets/core.module.css";
@@ -40,13 +47,14 @@ function ExperienceComp(props: ExperienceProps) {
           {company}
         </h4>
         <span className={expStyles.experiences__experience__details__location}>
-          {location}
+          <FontAwesomeIcon icon={faLocationDot} /> {location}
         </span>
         <span className={expStyles.experiences__experience__details__work}>
           {work}
+          {/* <FontAwesomeIcon icon={faBriefcase} /> {work} */}
         </span>
         <span className={expStyles.experiences__experience__details__year}>
-          {year}
+          <FontAwesomeIcon icon={faCalendar} /> {year}
         </span>
       </div>
       <ul className={expStyles.experiences__experience__details__description}>

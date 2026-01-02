@@ -129,6 +129,7 @@
 
   font-weight: bold;
   /* font-size: smaller; */
+  text-decoration: none;
   color: var(--color-nav-text);
   cursor: pointer;
   transition: 
