@@ -49,6 +49,13 @@
   padding-top: 0.25rem;
 }
 
+.about__skills__featured__header__github {
+  align-self: center;
+  margin-right: 0.5rem;
+  font-size: unset !important;
+  color: var(--c-palette-4);
+}
+
 .about__skills__featured__details {
   padding-top: 1rem;
 }

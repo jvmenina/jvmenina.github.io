@@ -47,14 +47,14 @@ function ExperienceComp(props: ExperienceProps) {
           {company}
         </h4>
         <span className={expStyles.experiences__experience__details__location}>
-          <FontAwesomeIcon icon={faLocationDot} /> {location}
+          <FontAwesomeIcon icon={faLocationDot} style={{marginRight: "0.25rem"}}/> {location}
         </span>
         <span className={expStyles.experiences__experience__details__work}>
           {work}
           {/* <FontAwesomeIcon icon={faBriefcase} /> {work} */}
         </span>
         <span className={expStyles.experiences__experience__details__year}>
-          <FontAwesomeIcon icon={faCalendar} /> {year}
+          <FontAwesomeIcon icon={faCalendar}  style={{marginRight: "0.25rem"}}/> {year}
         </span>
       </div>
       <ul className={expStyles.experiences__experience__details__description}>

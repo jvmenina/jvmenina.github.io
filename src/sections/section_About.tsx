@@ -3,7 +3,7 @@ import { useSections } from "../hooks/CustomHooks.tsx";
 // import { joinStyles } from "../utils/joinStyles.ts";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact, faJs, faHtml5, faCss3Alt, faWindows, faLinux } from "@fortawesome/free-brands-svg-icons";
+import { faReact, faJs, faHtml5, faCss3Alt, faWindows, faLinux, faGithub } from "@fortawesome/free-brands-svg-icons";
 import site_logo from "/images/site_logo.svg";
 import postgres_logo from "/images/postgresql_logo.svg";
 // import cpp_logo from "/images/c++_logo.svg";
@@ -157,12 +157,14 @@ function FeaturedProjectComponent({
   icons,
   title,
   subtitle,
-  details
+  details,
+  github
 }:{
   icons: JSX.Element,
   title: string,
   subtitle: string,
-  details: string | JSX.Element
+  details: string | JSX.Element,
+  github?: string
 }) {
   return (
     <CardComponent 
@@ -174,7 +176,11 @@ function FeaturedProjectComponent({
               {icons}
             </div>
           </div>
-          <h4>{title}</h4>
+          <h4>{
+            github ? <a className={aboutStyles.about__skills__featured__header__github} href={github} target="_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={faGithub} />
+            </a> : <></>
+          }{title}</h4>
           <div className={aboutStyles.about__skills__featured__header__subtitle}>
             {subtitle}
           </div>
@@ -216,10 +222,11 @@ function FeaturedSkillsComponent() {
         title={"SimplyFFmpeg"}
         subtitle={"A multimedia processor desktop app built using Python and PyQt6"}
         details={<>
-          <p>As part of my hobbies, I process multimedia content like audio and video files quite often, and I use <b>FFmpeg</b> to do this, an application where you have to type in everything yourself. To make my workflow easier and faster, I made an interface for the application using <b>Python</b>.</p>
+          <p>As part of my hobbies, I process multimedia content like audio and video files quite often using the command-line app <b>FFmpeg</b>, where you have to explicitly type in everything by yourself. To make my workflow easier and faster, I made an interface for the application using <b>Python</b>.</p>
           <p><b>SimplyFFmpeg</b> contains various optional fields that serve as an interface to FFmpeg&apos;s essential features like FPS, resolution, volume, compression level and hardware acceleration. The app also has the option for presets, containing predefined instructions for processing.</p>
           <p>This app has a buildable web GUI version, <CrossSectionAnchor href="#Projects__SimplyFFmpeg-Web" targetSection={Section.Projects}>SimplyFFmpeg (Web)</CrossSectionAnchor>.</p>
         </>}
+        github={"https://github.com/jvmenina/SimplyFFmpeg"}
       />
       
       {/* <CardComponent 

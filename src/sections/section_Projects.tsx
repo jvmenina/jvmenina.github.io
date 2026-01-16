@@ -15,15 +15,13 @@ import reimu_preview_1 from "/images/proj_reimu_1.jpg";
 import reimu_preview_2 from "/images/proj_reimu_2.jpg";
 import reimu_preview_3 from "/images/proj_reimu_3.jpg";
 
-import sota_preview_1 from "/images/proj_sota_1.jpg";
-import sota_preview_2 from "/images/proj_sota_2.jpg";
-import sota_preview_3 from "/images/proj_sota_3.jpg";
-import sota_preview_4 from "/images/proj_sota_4.jpg";
-
 // import coreStyles from "../assets/core.module.css";
 import projectsStyles from "../assets/projects.module.css";
 import { CardComponent } from "../components/Card.tsx";
 import { ExpandableImage } from "../components/ExpandableImage.tsx";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 function PreviewPane(contents: JSX.Element) {
   return (
@@ -77,17 +75,19 @@ function ProjectComp(props: ProjectProps) {
     >
       <NavigationAnchor id={id} />
       <div className={projectsStyles.projects__project__details}>
-        <h4 className={projectsStyles.projects__project__details__title}>{title}</h4>
+        <h4 className={projectsStyles.projects__project__details__title}>
+          {
+            link
+              ? <a className={projectsStyles.projects__project__details__link} href={link} target="_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={faGithub} /></a>
+              : <></>
+          }{title}
+        </h4>
         <hr />
         <span className={projectsStyles.projects__project__details__year}>{year}</span>
         {
           subtitle
             ? <span className={projectsStyles.projects__project__details__subtitle}>{`${subtitle}`}</span> 
-            : <></>
-        }
-        {
-          link
-            ? <a className={projectsStyles.projects__project__details__link} href={link} target="_blank" rel="noreferrer">GitHub</a>
             : <></>
         }
       </div>
@@ -188,14 +188,6 @@ function ProjectsComp() {
         "A music video made as a tribute to the video game \"NieR Replicant\", aiming to capture one of the climaxes of the game's story.",
         "Implemented a custom Particle Generator, a custom 3D Environment with Camera capabilities, and a number of other custom effects and transitions."
       ]}
-      preview={
-        <>
-          <ExpandableImage src={sota_preview_1} alt={"Song of the Ancients Music Video Preview #1"} />
-          <ExpandableImage src={sota_preview_2} alt={"Song of the Ancients Music Video Preview #2"} />
-          <ExpandableImage src={sota_preview_3} alt={"Song of the Ancients Music Video Preview #3"} />
-          <ExpandableImage src={sota_preview_4} alt={"Song of the Ancients Music Video Preview #4"} />
-        </>
-      }
     />
     <ProjectComp
       id={"Projects__Lottie-AI"}

@@ -93,8 +93,8 @@
   /* background-color: hsla(var(--theme-hue), 60%, 50%, 0.05); */
 
   border: 1px solid hsla(var(--theme-hue), 10%, 95%, 0.3);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); */
 }
 
 .comp__card:hover .comp__card__bg {
