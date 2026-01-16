@@ -126,7 +126,7 @@ function ProjectsComp() {
     <ProjectComp
       id={"Projects__SimplyFFmpeg"}
       title={"SimplyFFmpeg"}
-      subtitle={"A multimedia processor desktop app built using Python and PyQT6"}
+      subtitle={"A multimedia processor desktop app built using Python and PyQt6"}
       year={"2025"}
       description={[
         "A desktop graphical interface for FFmpeg, a powerful multimedia processing tool, created to alleviate the complexity of the tool and be able to quickly process audio and video files with some degree of customizability."

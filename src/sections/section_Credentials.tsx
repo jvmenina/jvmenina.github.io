@@ -68,7 +68,7 @@ function CredentialsComp() {
         organization={"Amazon Web Services"}
         date={"December 2025"}
         link={"https://www.credly.com/badges/1f02a623-ed0d-4c7f-99e8-2827c7202cdc/public_url"}
-        description={["Badge ID: 1f02a623-ed0d-4c7f-99e8-2827c7202cdc"]}
+        description={["ID: 1f02a623-ed0d-4c7f-99e8-2827c7202cdc"]}
       />
       <CredentialComp
         title={"Google Maps Platform Technical Fundamentals Credential"}
@@ -76,7 +76,7 @@ function CredentialsComp() {
         date={"July 2024"}
         link={"https://skillshop.exceedlms.com/profiles/47e4e9c31c8f406886a7588596a1d889"}
         // link={"https://skillshop.exceedlms.com/student/award/TMKiihouqux9Bp4e3wyUqgt5"}
-        description={["Completion ID: 308867989"]}
+        description={["ID: 308867989"]}
       />
       <CredentialComp
         title={"Google Maps Platform Sales Fundamentals Credential"}
@@ -84,7 +84,7 @@ function CredentialsComp() {
         date={"July 2024"}
         // link={"https://skillshop.exceedlms.com/student/award/MYRMaWbdYspTTEEWgS4xfjsx"}
         link={"https://skillshop.exceedlms.com/profiles/47e4e9c31c8f406886a7588596a1d889"}
-        description={["Completion ID: 309209019"]}
+        description={["ID: 309209019"]}
       />
       <CredentialComp
         title={"Google Cloud Digital Leader Course Completer"}

@@ -20,15 +20,37 @@
   gap: 1.5rem;
 }
 
+.about__skills__featured-container {
+  display: grid;
+  row-gap: 1rem;
+}
+
 .about__skills__featured {
-  display: flex;
+  display: grid;
   /* column-gap: 1rem; */
   /* NOTE: Don't use `align-items: center`. This breaks the border for icons */
 }
 
-.about__skills__featured-container {
+.about__skills__featured__header {
   display: grid;
-  row-gap: 1rem;
+  grid-template-columns: fit-content(50%) 1fr;
+  grid-template-areas:
+    "icons title"
+    "icons subtitle";
+}
+
+.about__skills__featured__header h4 {
+  grid-area: title;
+}
+
+.about__skills__featured__header__subtitle {
+  font-weight: bolder;
+  grid-area: subtitle;
+  padding-top: 0.25rem;
+}
+
+.about__skills__featured__details {
+  padding-top: 1rem;
 }
 
 .about__skills__featured__icons {
@@ -38,7 +60,7 @@
   padding-right: calc(1rem);
   border-right: 1px solid rgba(255, 255, 255, 0.5);
   margin-right: 1rem;
-  max-width: calc(3em * 3 + 3rem);
+  grid-area: icons;
 }
 
 .about__skills__featured__icons__container {
@@ -55,14 +77,12 @@
 
 .about__skills__featured__icons__container * {
   flex: 1 1 auto;
+  color: white;
 }
 
 .about__skills__featured__icons__container img {
-  width: 3rem;
-}
+  width: 2.5rem;
 
-.about__skills__featured__text {
-  flex: 1;
 }
 
 .about__skills__skillset {
@@ -205,9 +225,18 @@
 
 @media (max-width: 800px) {
   .about__skills__featured {
-    display: grid;
     justify-content: center;
   }
+  .about__skills__featured__header {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "icons"
+      "title"
+      "subtitle";
+    
+    text-align: center;
+  }
+
   .about__skills__featured__icons {
     max-width: 100%;
     border-right: 0;

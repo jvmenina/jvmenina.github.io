@@ -3,11 +3,11 @@ import { useSections } from "../hooks/CustomHooks.tsx";
 // import { joinStyles } from "../utils/joinStyles.ts";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact, faJs, faHtml5, faCss3Alt } from "@fortawesome/free-brands-svg-icons";
+import { faReact, faJs, faHtml5, faCss3Alt, faWindows, faLinux } from "@fortawesome/free-brands-svg-icons";
 import site_logo from "/images/site_logo.svg";
 import postgres_logo from "/images/postgresql_logo.svg";
 // import cpp_logo from "/images/c++_logo.svg";
-// import python_logo from "/images/python_logo.svg";
+import python_logo from "/images/python_logo.svg";
 
 import { DropdownComponent } from "../components/Dropdown.tsx";
 import { AppSection } from "./SectionTemplate.tsx";
@@ -153,33 +153,96 @@ function SkillSetComponent({
   );
 }
 
+function FeaturedProjectComponent({
+  icons,
+  title,
+  subtitle,
+  details
+}:{
+  icons: JSX.Element,
+  title: string,
+  subtitle: string,
+  details: string | JSX.Element
+}) {
+  return (
+    <CardComponent 
+        additionalClassNames={[aboutStyles.about__skills__featured]}
+      >
+        <div className={aboutStyles.about__skills__featured__header}>
+          <div className={aboutStyles.about__skills__featured__icons}>
+            <div className={aboutStyles.about__skills__featured__icons__container}>
+              {icons}
+            </div>
+          </div>
+          <h4>{title}</h4>
+          <div className={aboutStyles.about__skills__featured__header__subtitle}>
+            {subtitle}
+          </div>
+        </div>
+        <div className={joinStyles(coreStyles['__indent-text'], aboutStyles.about__skills__featured__details)}>
+          {details}
+        </div>
+      </CardComponent>
+  )
+}
+
 function FeaturedSkillsComponent() {
   return (
     <div className={aboutStyles['about__skills__featured-container']}>
-      <CardComponent 
+      {/* <FontAwesomeIcon icon={faReact} size="2xl" /> */}
+      <FeaturedProjectComponent 
+        icons={<>
+          <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"PostgreSQL"}><img src={postgres_logo} /></TooltipComponent>
+          <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"React"}><FontAwesomeIcon icon={faReact} size="3x" /></TooltipComponent>
+          <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"JavaScript"}><FontAwesomeIcon icon={faJs} size="3x" /></TooltipComponent>
+          <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"HTML"}><FontAwesomeIcon icon={faHtml5} size="3x" /></TooltipComponent>
+          <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"CSS"}><FontAwesomeIcon icon={faCss3Alt} size="3x" /></TooltipComponent>
+        </>}
+        title={"Choice Places Near Me"}
+        subtitle={"A full-stack geospatial web application built using React"}
+        details={<>
+          <p>I built a full-stack interactive place locator using <strong>React</strong>, <strong>Python</strong>, and <strong>PostgreSQL</strong> with the Google Maps API to create a dynamic experience. This project was then reviewed and assessed by select sales and technical leads at Navagis (Philippine Branch).</p>
+          <p>This app is meant to simplify the Google Maps experience by providing users all relevant details about nearby restaurants, cafes, and stores from their set location. The app helps users discover relevant businesses they might want to visit when they are looking for a place to eat or buy supplies.</p>
+        </>}
+      />
+
+      <FeaturedProjectComponent 
+        icons={<>
+          <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"Python"}><img src={python_logo} /></TooltipComponent>
+            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"CSS"}><FontAwesomeIcon icon={faCss3Alt} size="3x" /></TooltipComponent>
+            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"Windows"}><FontAwesomeIcon icon={faWindows} size="3x" /></TooltipComponent>
+            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"Linux"}><FontAwesomeIcon icon={faLinux} size="3x" /></TooltipComponent>
+        </>}
+        title={"SimplyFFmpeg"}
+        subtitle={"A multimedia processor desktop app built using Python and PyQt6"}
+        details={<>
+          <p>As part of my hobbies, I process multimedia content like audio and video files quite often, and I use <b>FFmpeg</b> to do this, an application where you have to type in everything yourself. To make my workflow easier and faster, I made an interface for the application using <b>Python</b>.</p>
+          <p><b>SimplyFFmpeg</b> contains various optional fields that serve as an interface to FFmpeg&apos;s essential features like FPS, resolution, volume, compression level and hardware acceleration. The app also has the option for presets, containing predefined instructions for processing.</p>
+          <p>This app has a buildable web GUI version, <CrossSectionAnchor href="#Projects__SimplyFFmpeg-Web" targetSection={Section.Projects}>SimplyFFmpeg (Web)</CrossSectionAnchor>.</p>
+        </>}
+      />
+      
+      {/* <CardComponent 
         additionalClassNames={[aboutStyles.about__skills__featured]}
       >
-        <div className={aboutStyles.about__skills__featured__icons}>
-          <div className={aboutStyles.about__skills__featured__icons__container}>
-            {/* <FontAwesomeIcon icon={faReact} size="2xl" /> */}
-            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"PostgreSQL"}><img src={postgres_logo} /></TooltipComponent>
-            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"React"}><FontAwesomeIcon icon={faReact} size="3x" /></TooltipComponent>
-            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"JavaScript"}><FontAwesomeIcon icon={faJs} size="3x" /></TooltipComponent>
-            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"HTML"}><FontAwesomeIcon icon={faHtml5} size="3x" /></TooltipComponent>
-            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"CSS"}><FontAwesomeIcon icon={faCss3Alt} size="3x" /></TooltipComponent>
-          </div>
-        </div>
-        <div className={aboutStyles.about__skills__featured__text}>
-          <div>
-            <h4>Choice Places Near Me</h4>
-            <div style={{fontWeight: "bolder", marginBottom: "1rem"}}>A full-stack geospatial web application built using React</div>
-            <div className={coreStyles['__indent-text']}>
-              <p>I built a full-stack interactive place locator using <strong>React</strong>, <strong>Python</strong>, and <strong>PostgreSQL</strong> with the Google Maps API to create a dynamic experience. This project was then reviewed and assessed by select sales and technical leads at Navagis (Philippine Branch).</p>
-              <p>This app is meant to simplify the Google Maps experience by providing users all relevant details about nearby restaurants, cafes, and stores from their set location. The app helps users discover relevant businesses they might want to visit when they are looking for a place to eat or buy supplies.</p>
+        <div className={aboutStyles.about__skills__featured__header}>
+          <div className={aboutStyles.about__skills__featured__icons}>
+            <div className={aboutStyles.about__skills__featured__icons__container}>
+              <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"PostgreSQL"}><img src={postgres_logo} /></TooltipComponent>
+              <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"React"}><FontAwesomeIcon icon={faReact} size="3x" /></TooltipComponent>
+              <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"JavaScript"}><FontAwesomeIcon icon={faJs} size="3x" /></TooltipComponent>
+              <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"HTML"}><FontAwesomeIcon icon={faHtml5} size="3x" /></TooltipComponent>
+              <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"CSS"}><FontAwesomeIcon icon={faCss3Alt} size="3x" /></TooltipComponent>
             </div>
           </div>
+          <h4>Choice Places Near Me</h4>
+          <div className={aboutStyles.about__skills__featured__header__subtitle}>A full-stack geospatial web application built using React</div>
         </div>
-      </CardComponent>
+        <div className={joinStyles(coreStyles['__indent-text'], aboutStyles.about__skills__featured__details)}>
+          <p>I built a full-stack interactive place locator using <strong>React</strong>, <strong>Python</strong>, and <strong>PostgreSQL</strong> with the Google Maps API to create a dynamic experience. This project was then reviewed and assessed by select sales and technical leads at Navagis (Philippine Branch).</p>
+          <p>This app is meant to simplify the Google Maps experience by providing users all relevant details about nearby restaurants, cafes, and stores from their set location. The app helps users discover relevant businesses they might want to visit when they are looking for a place to eat or buy supplies.</p>
+        </div>
+      </CardComponent> */}
     </div>
   );
 }
@@ -187,7 +250,7 @@ function FeaturedSkillsComponent() {
 function SkillsComponent() {
   return (
     <div className={aboutStyles.about__skills}>
-      <h3>Featured Project</h3>
+      <h3>Featured Projects</h3>
       <FeaturedSkillsComponent />
       <h3>What do I do?</h3>
       <SkillSetComponent
