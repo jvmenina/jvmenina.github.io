@@ -49,6 +49,7 @@ type ProjectProps = {
   subtitle: string;
   year: string;
   link?: string;
+  tags?: string[];
   description: (string | JSX.Element)[];
   preview?: JSX.Element;
 };
@@ -60,6 +61,7 @@ function ProjectComp(props: ProjectProps) {
     subtitle,
     year,
     link,
+    tags,
     description,
     preview,
   }: ProjectProps = props;
@@ -91,6 +93,17 @@ function ProjectComp(props: ProjectProps) {
             : <></>
         }
       </div>
+      { tags ? 
+        <div>
+          <span className={projectsStyles.projects__project__tags}>
+            {
+              tags.map((tag, index) => (
+                <span key={index} className={projectsStyles.projects__project__tags__tag}>{tag}</span>
+              ))
+            }
+          </span>
+        </div>
+      : <></> }
       <ul className={projectsStyles.projects__project__description}>
         {description.map((desc, index) => (
           <li key={index}>{desc}</li>
@@ -112,6 +125,7 @@ function ProjectsComp() {
       title={"SimplyFFmpeg (Web)"}
       subtitle={"A full-stack multimedia processor web app built using Bootstrap, Django, and SQLite"}
       year={"2025"}
+      tags={["HTML", "CSS", "Python", "Django", "Bootstrap", "SQLite"]}
       description={[
         "An app designed to provide an easy-to-use, web-based interface for the powerful media processing tool FFmpeg, which is normally complicated to non-technical users, by abstracting essential and most frequently used options.",
         <>This is the web app version of <a href="#Projects__SimplyFFmpeg">SimplyFFmpeg</a>. </>
@@ -128,6 +142,7 @@ function ProjectsComp() {
       title={"SimplyFFmpeg"}
       subtitle={"A multimedia processor desktop app built using Python and PyQt6"}
       year={"2025"}
+      tags={["Python", "PyQt6"]}
       description={[
         "A desktop graphical interface for FFmpeg, a powerful multimedia processing tool, created to alleviate the complexity of the tool and be able to quickly process audio and video files with some degree of customizability."
       ]}
@@ -138,6 +153,7 @@ function ProjectsComp() {
       title={"Easy yt-dlp CLI"}
       subtitle={"An easy-to-use command-line interface that provides abstractions for the essential capabilities of yt-dlp"}
       year={"2025"}
+      tags={["C++"]}
       description={[
         "A command-line interface (CLI) that's meant to simplify the usage of a user's copy of yt-dlp, a feature-rich multimedia downloader, which can be daunting to use."
       ]}
@@ -153,6 +169,7 @@ function ProjectsComp() {
       title={"Choice Places Near Me"}
       subtitle={"A full-stack geospatial web application built using React"}
       year={"2024"}
+      tags={["HTML", "CSS", "JavaScript", "TypeScript", "React", "PostgreSQL", "FastAPI", "Google Maps API"]}
       description={[
         "An interactive place locator with a dynamic map utilizing the Google Maps API, where users can see details about nearby restaurants, cafes, and stores, and know which ones are nearest to their location.",
         "Reviewed and assessed by select sales and technical leads at Navagis (Philippine Branch)."
@@ -163,6 +180,7 @@ function ProjectsComp() {
       title={"Rhythm Strike"}
       subtitle={"A WebGL rhythm game built using TypeScript with the Phaser game engine"}
       year={"2024"}
+      tags={["TypeScript", "Phaser"]}
       description={[
         "\"Rhythm Strike\" is a two-lane rhythm game based on \"Reimu no Oharai Daisakusen\" (霊夢のお祓い大作戦), a mini-game from the mobile game \"Touhou LostWord\" (東方LostWord).",
         "A two-lane rhythm game where notes rush towards the player's position and they must be struck to the beat to gain points.",
@@ -184,6 +202,7 @@ function ProjectsComp() {
       title={"\"Song of the Ancients\" Music Video in C#"}
       subtitle={"A solo music video project built using C#"}
       year={"2023"}
+      tags={["C#"]}
       description={[
         "A music video made as a tribute to the video game \"NieR Replicant\", aiming to capture one of the climaxes of the game's story.",
         "Implemented a custom Particle Generator, a custom 3D Environment with Camera capabilities, and a number of other custom effects and transitions."
@@ -195,6 +214,7 @@ function ProjectsComp() {
       subtitle={"A team technopreneurship venture on a smart OCR for Geodetic Engineers"}
       year={"2023"}
       link={"https://github.com/ENGG-150-Lottie-AI/Lottie-AI"}
+      tags={["Python", "Tesseract OCR"]}
       description={[
         "A text-recognition software for Geodetic engineers that can scan, file, and summarize land title documents.",
         "Outputs a CAD-readable file containing all important details of a land for plotting and data management purposes.",
@@ -209,6 +229,7 @@ function ProjectsComp() {
       link={
         "https://github.com/CS-192-S3-2020-2021-Group-2/Post-Apocalyptic-Survival-Game"
       }
+      tags={["Python", "pyglet"]}
       description={[
         "A text-based \"Choose Your Own Adventure\" RPG game, set in a world overrun by zombies.",
         "The player has just suffered memory loss. Helped by an old friend, it's their task to survive and piece together the player's memories.",
@@ -220,6 +241,7 @@ function ProjectsComp() {
       title={"LAN Chopsticks"}
       subtitle={"A remix of a classic game built using C++"}
       year={"2019"}
+      tags={["C++"]}
       description={[
         "A spinoff of the classic game \"Chopsticks\" with new mechanics with LAN-play capabilities.",
       ]}

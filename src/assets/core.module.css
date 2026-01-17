@@ -547,7 +547,7 @@ p:not(:first-of-type) {
 .__section__container__contents {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  padding-bottom: calc(1.5rem + var(--nav-height));
+  padding-bottom: calc(1.5rem + var(--nav-height) + var(--nav-rise));
   width: 100%;
 }
 
@@ -575,6 +575,6 @@ p:not(:first-of-type) {
     padding: 2rem 0;
   }
   .__section__header {
-    font-size: var(--h2-size);
+    font-size: 250%;
   }
 }

@@ -215,9 +215,9 @@ function FeaturedSkillsComponent() {
       <FeaturedProjectComponent 
         icons={<>
           <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"Python"}><img src={python_logo} /></TooltipComponent>
-            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"CSS"}><FontAwesomeIcon icon={faCss3Alt} size="3x" /></TooltipComponent>
-            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"Windows"}><FontAwesomeIcon icon={faWindows} size="3x" /></TooltipComponent>
-            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"Linux"}><FontAwesomeIcon icon={faLinux} size="3x" /></TooltipComponent>
+            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"CSS"}><FontAwesomeIcon icon={faCss3Alt} /></TooltipComponent>
+            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"Windows"}><FontAwesomeIcon icon={faWindows} /></TooltipComponent>
+            <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"Linux"}><FontAwesomeIcon icon={faLinux} /></TooltipComponent>
         </>}
         title={"SimplyFFmpeg"}
         subtitle={"A multimedia processor desktop app built using Python and PyQt6"}
@@ -228,28 +228,6 @@ function FeaturedSkillsComponent() {
         </>}
         github={"https://github.com/jvmenina/SimplyFFmpeg"}
       />
-      
-      {/* <CardComponent 
-        additionalClassNames={[aboutStyles.about__skills__featured]}
-      >
-        <div className={aboutStyles.about__skills__featured__header}>
-          <div className={aboutStyles.about__skills__featured__icons}>
-            <div className={aboutStyles.about__skills__featured__icons__container}>
-              <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"PostgreSQL"}><img src={postgres_logo} /></TooltipComponent>
-              <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"React"}><FontAwesomeIcon icon={faReact} size="3x" /></TooltipComponent>
-              <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"JavaScript"}><FontAwesomeIcon icon={faJs} size="3x" /></TooltipComponent>
-              <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"HTML"}><FontAwesomeIcon icon={faHtml5} size="3x" /></TooltipComponent>
-              <TooltipComponent classNames={aboutStyles['about__skills__featured__icons__container__sub-container']} tip={"CSS"}><FontAwesomeIcon icon={faCss3Alt} size="3x" /></TooltipComponent>
-            </div>
-          </div>
-          <h4>Choice Places Near Me</h4>
-          <div className={aboutStyles.about__skills__featured__header__subtitle}>A full-stack geospatial web application built using React</div>
-        </div>
-        <div className={joinStyles(coreStyles['__indent-text'], aboutStyles.about__skills__featured__details)}>
-          <p>I built a full-stack interactive place locator using <strong>React</strong>, <strong>Python</strong>, and <strong>PostgreSQL</strong> with the Google Maps API to create a dynamic experience. This project was then reviewed and assessed by select sales and technical leads at Navagis (Philippine Branch).</p>
-          <p>This app is meant to simplify the Google Maps experience by providing users all relevant details about nearby restaurants, cafes, and stores from their set location. The app helps users discover relevant businesses they might want to visit when they are looking for a place to eat or buy supplies.</p>
-        </div>
-      </CardComponent> */}
     </div>
   );
 }
@@ -271,7 +249,7 @@ function SkillsComponent() {
           // createSkillObject((<>Created <CrossSectionAnchor href="#Projects__ytdlp-CLI" targetSection={Section.Projects}>an easy-to-use command-line user interface</CrossSectionAnchor> for yt-dlp, a content downloader which can be daunting to use.</>),["C++"]),
           createSkillObject((<>Created tools that simplify powerful but complex tools, providing better accessiblity and a fast and easy user experience (e.g. SimplyFFmpeg - [<CrossSectionAnchor href="#Projects__SimplyFFmpeg" targetSection={Section.Projects}>Desktop</CrossSectionAnchor>] [<CrossSectionAnchor href="#Projects__SimplyFFmpeg-Web" targetSection={Section.Projects}>Web</CrossSectionAnchor>], <CrossSectionAnchor href="#Projects__ytdlp-CLI" targetSection={Section.Projects}>Easy yt-dlp CLI</CrossSectionAnchor>).</>), ["C++", "Python"]),
           createSkillObject((<>
-            Worked on software development projects with a <strong>team</strong> (e.g. <CrossSectionAnchor href="#Projects__Survival-Game" targetSection={Section.Projects}>Post-apocalyptic Survival Game</CrossSectionAnchor> and <CrossSectionAnchor href="#Projects__Lottie-AI" targetSection={Section.Projects}>Lottie AI</CrossSectionAnchor>).
+            Worked on software development projects with a <strong>team</strong>, while observing the Scrum Agile framework (e.g. <CrossSectionAnchor href="#Projects__Survival-Game" targetSection={Section.Projects}>Post-apocalyptic Survival Game</CrossSectionAnchor> and <CrossSectionAnchor href="#Projects__Lottie-AI" targetSection={Section.Projects}>Lottie AI</CrossSectionAnchor>).
           </>), ["Python", "Team Project"]),
           createSkillObject((<>
             Worked on academic projects using <strong>Machine Learning</strong> models like SVM and Linear Regression with <strong>Python</strong>.

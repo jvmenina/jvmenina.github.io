@@ -85,7 +85,7 @@ export function AppSection({
         <h2 
           className={coreStyles.__section__header}
         >
-          michael:/&gt; <TypewriterComponent 
+          michael:\&gt; <TypewriterComponent 
             text={headingText}
             characterInterval={30}
             animationDelay={250}

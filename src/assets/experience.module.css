@@ -102,7 +102,7 @@
 
   .experiences__experience__details__description {
     border-top: 1px solid var(--c-palette-1);
-    margin-top: 0.5rem;
+    /* margin-top: 0.5rem; */
     padding-top: 1rem;
   }
 }

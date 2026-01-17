@@ -82,14 +82,12 @@
   justify-content: center;
 }
 
-.about__skills__featured__icons__container * {
+.about__skills__featured__icons__container svg,
+.about__skills__featured__icons__container img {
   flex: 1 1 auto;
   color: white;
-}
-
-.about__skills__featured__icons__container img {
-  width: 2.5rem;
-
+  font-size: 40px;
+  width: 40px;
 }
 
 .about__skills__skillset {

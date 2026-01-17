@@ -18,7 +18,8 @@
   --easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
 
   /* Other Constants */
-  --nav-height: 60px;
+  --nav-height: 50px;
+  --nav-rise: 1rem;
   --theme-hue: 40;
   --theme-hue-2: 160;
 

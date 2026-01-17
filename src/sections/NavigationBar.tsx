@@ -80,8 +80,8 @@ export function NavigationBar(
   [
     sectionRefs.about, 
     sectionRefs.academics, 
-    sectionRefs.credentials, 
     sectionRefs.experiences, 
+    sectionRefs.credentials, 
     sectionRefs.header, 
     sectionRefs.projects
   ].forEach((ref) => {
@@ -124,10 +124,10 @@ export function NavigationBar(
         switchTo.academics();
         break;
       case 3:
-        switchTo.credentials();
-        break;
-      case 4:
         switchTo.experiences();
+        break;
+        case 4:
+        switchTo.credentials();
         break;
       case 5:
         switchTo.projects();
@@ -172,8 +172,8 @@ export function NavigationBar(
     {text: "Top"},
     {text: "About Me"},
     {text: "Academics"},
-    {text: "Credentials"},
     {text: "Experience"},
+    {text: "Credentials"},
     {text: "Projects"},
   ];
   
@@ -232,8 +232,8 @@ export function NavigationBar(
             <div className={navStyles["nav__marker"]} style={markerStyle}></div>
           </ul>
         </div>
+        <div className={navStyles.nav__bg}></div>
       </div>
-      <div className={navStyles.nav__bg}></div>
     </nav>
   );
 }
