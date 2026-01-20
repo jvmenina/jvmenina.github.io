@@ -76,9 +76,9 @@ function ExperiencesComp() {
         location={"Taguig City, Philippines"}
         year={"July 2024 - August 2024"}
         description={[
-          "Completed the Google Cloud Digital Leader course.",
-          "Attained credentials on Google Maps Platform Technical and Sales Fundamentals.",
-          "Built a full-stack geospatial web application using Google Maps Platform APIs."
+          <>Completed the <b>Google Cloud Digital Leader</b> course.</>,
+          <>Attained credentials on <b>Google Maps Platform Technical and Sales Fundamentals</b>.</>,
+          <>Built a <b>full-stack geospatial web application</b> using Google Maps Platform APIs.</>,
         ]}
       />
       <ExperienceComp
@@ -88,9 +88,9 @@ function ExperiencesComp() {
         location={"Quezon City, Philippines"}
         year={"September 2021 - May 2022"}
         description={[
-          "Developed Spiking Neural P Systems - computing systems capable of being maximally parallel - that can generate Space-Filling Curves.",
-          <>Assisted in the development of &quot;WebSnapse v2&quot; (<a href="https://www.researchgate.net/figure/A-screen-of-WebSnapse-V2-with-some-new-features-improved-access-to-edit-parts-eg_fig3_380182615" target="_blank" rel="noreferrer">Screenshot</a>) (<a href="https://aclab.dcs.upd.edu.ph/productions/software/websnapse" target="_blank" rel="noreferrer">Details</a>) (<a href="https://github.com/nccruel/websnapse_extended" target="_blank" rel="noreferrer">GitHub</a>), a visual simulator for Spiking Neural P Systems, as a software tester.</>,
-          "Cooperated with fellow researchers by evaluating each others' research projects."
+          <>Developed <b>Spiking Neural P Systems</b> - computing systems capable of being <i>maximally parallel</i> - that can generate Space-Filling Curves.</>,
+          <>Assisted in the development of <b>&quot;WebSnapse v2&quot;</b> (<a href="https://www.researchgate.net/figure/A-screen-of-WebSnapse-V2-with-some-new-features-improved-access-to-edit-parts-eg_fig3_380182615" target="_blank" rel="noreferrer">Screenshot</a>) (<a href="https://aclab.dcs.upd.edu.ph/productions/software/websnapse" target="_blank" rel="noreferrer">Details</a>) (<a href="https://github.com/nccruel/websnapse_extended" target="_blank" rel="noreferrer">GitHub</a>), a visual simulator for <i>Spiking Neural P Systems</i>, as a <b>software tester</b>.</>,
+          <><b>Cooperated with fellow researchers</b> by evaluating each others&apos; research projects.</>,
         ]}
       />
       <ExperienceComp
@@ -101,8 +101,8 @@ function ExperiencesComp() {
         location={"Las Piñas City, Philippines"}
         year={"Novermber 2017 - December 2017"}
         description={[
-          "Engaged in multiple projects involving various fields of Engineering, like Surveying, 3D Designing and Modeling, Computer Programming in C, and Electronics and Circuitry.",
-          "Engaged in team-building activities requiring coordination and cooperation.",
+          <>Engaged in <b>multiple projects</b> involving various fields of Engineering, like Surveying, 3D Designing and Modeling, Computer Programming in C, and Electronics and Circuitry.</>,
+          <>Engaged in <b>team-building activities</b> requiring coordination and cooperation.</>,
         ]}
       />
     </>

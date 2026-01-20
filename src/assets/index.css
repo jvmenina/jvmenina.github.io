@@ -30,12 +30,16 @@
   --c-palette-4:              hsl(var(--theme-hue-2), 50%, 50%);
   --c-palette-white:          hsl(var(--theme-hue), 10%, 95%);
   --c-palette-black:          hsl(var(--theme-hue), 5%, 10%);
+  --c-palette-black--hsl:     var(--theme-hue), 5%, 10%;
   --c-black:                hsl(0, 0%, 10%);
+  --c-black--hsl:             0, 0%, 10%;
 
-  --color-main-bg:    hsl(var(--theme-hue), 10%, 15%);
+  --color-main-bg:            hsl(var(--theme-hue), 10%, 15%);
 
   --color-nav-bg:             var(--c-palette-black);
+  --color-nav-bg--hsl:        var(--c-palette-black--hsl);
   --color-nav-bg-alt:         var(--c-black);
+  --color-nav-bg-alt--hsl:    var(--c-black--hsl);
   --color-nav-text:           var(--c-palette-white);
   --color-nav-highlight:      var(--c-palette-2);
 
@@ -104,5 +108,6 @@ body {
 @media (max-width: 800px) {
   :root {
     --nav-height: 80px;
+    --h4-size: 135%;
   }
 }

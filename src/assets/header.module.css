@@ -166,4 +166,8 @@ h1 > span {
   .header__featured {
     grid-template-columns: 1fr;
   }
+
+  .header__featured__card:hover {
+    transform: scale(1);
+  }
 }

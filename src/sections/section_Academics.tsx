@@ -61,9 +61,9 @@ function ThesisComp() {
         <dt>Description:</dt>
         <dd>
           <p>
-            Generating space-filling curves using a relatively unexplored
-            computing model inspired by biological systems that is capable of
-            maximizing parallelization in hopes of improving computational efficiency in solving difficult computing problems.
+            Generating <b>space-filling curves</b> using a relatively unexplored
+            computing model inspired by biological systems that is capable
+            of <b>maximizing parallelization</b> in hopes of improving computational efficiency in solving difficult computing problems.
           </p>
         </dd>
       </dl>

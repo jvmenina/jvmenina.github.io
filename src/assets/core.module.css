@@ -577,4 +577,8 @@ p:not(:first-of-type) {
   .__section__header {
     font-size: 275%;
   }
+
+  .comp__card:hover .comp__card__bg {
+    opacity: 0.2;
+  }
 }
