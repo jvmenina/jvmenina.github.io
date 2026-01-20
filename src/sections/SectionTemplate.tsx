@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { joinStyles } from "../utils/joinStyles";
 
-import { Blinker, TypewriterComponent } from "../components/AnimationComponents";
+import { TypewriterComponent } from "../components/AnimationComponents";
 
 import coreStyles from "../assets/core.module.css";
 
@@ -89,7 +89,7 @@ export function AppSection({
             text={headingText}
             characterInterval={30}
             animationDelay={250}
-          /><Blinker />
+          />
         </h2>
         <div 
           className={coreStyles["__section__container__contents"]} 

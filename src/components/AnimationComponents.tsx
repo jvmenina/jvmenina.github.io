@@ -137,5 +137,30 @@ export function TypewriterComponent({
     };
   }, [text, characterInterval, animationDelay]);
 
-  return <>{text.slice(0, idx)}</>;
+  const [texts, setTexts] = useState<string[]>([]);
+  useEffect(() => {
+    const spaces = [];
+    for (let i = 0; i < text.length; i++) if (text[i] === " ") spaces.push(i);
+
+    // const texts: string[] = [];
+    let prev = 0;
+    const texts_temp = [];
+    spaces.forEach((spaceIndex) => {
+      texts_temp.push(text.slice(prev, Math.min(idx, spaceIndex+1)));
+      // setTexts((old) => [...old, text.slice(prev, spaceIndex)]);
+      prev = spaceIndex+1;
+    });
+    texts_temp.push(text.slice(prev, idx));
+    // setTexts((old) => [...old, text.slice(prev)]);
+    setTexts(texts_temp);
+  }, [text, idx]);
+
+  // return <>{text.slice(0, idx)}</>;
+  return <>{
+    texts.map((t, i) => (
+      <span style={{display:"inline-block", whiteSpace:"pre"}} key={i}>
+        {t}{i === texts.length - 1 ? (<Blinker />) : <></>}
+      </span>
+    ))
+  }</>;
 }

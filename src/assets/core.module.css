@@ -575,6 +575,6 @@ p:not(:first-of-type) {
     padding: 2rem 0;
   }
   .__section__header {
-    font-size: 250%;
+    font-size: 275%;
   }
 }
