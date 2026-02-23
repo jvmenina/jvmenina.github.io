@@ -255,7 +255,7 @@ function SkillsComponent() {
             Worked on academic projects using <strong>Machine Learning</strong> models like SVM and Linear Regression with <strong>Python</strong>.
           </>), ["Python", "Machine Learning"]),
           createSkillObject((<>
-            Programatically created <CrossSectionAnchor href="#Projects__NieR-MV" targetSection={Section.Projects}>a music video</CrossSectionAnchor> using solely <strong>C#</strong>.
+            Programatically created <CrossSectionAnchor href="#Projects__Music-Video" targetSection={Section.Projects}>music videos</CrossSectionAnchor> using <strong>C#</strong>.
           </>), ["C#"])
         ]}
       />

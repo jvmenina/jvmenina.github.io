@@ -198,14 +198,14 @@ function ProjectsComp() {
       }
     />
     <ProjectComp
-      id={"Projects__NieR-MV"}
-      title={"\"Song of the Ancients\" Music Video in C#"}
-      subtitle={"A solo music video project built using C#"}
+      id={"Projects__Music-Video"}
+      title={"Music Videos in C#"}
+      subtitle={"Multiple music video projects built using C#"}
       year={"2023"}
       tags={["C#"]}
       description={[
-        "A music video made as a tribute to the video game \"NieR Replicant\", aiming to capture one of the climaxes of the game's story.",
-        "Implemented a custom Particle Generator, a custom 3D Environment with Camera capabilities, and a number of other custom effects and transitions."
+        "Finished multiple music video projects, aiming to serve as accompanying graphics to each of their associated songs by displaying lyrics and visual effects in a manner that fits the general theme of a song.",
+        "Implemented a custom Particle Generator, a custom 3D Environment (in a 2D engine) with Camera capabilities, and a number of other custom effects and transitions."
       ]}
     />
     <ProjectComp
