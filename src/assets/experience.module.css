@@ -21,6 +21,7 @@
   grid-area: logo;
   width: 120px;
   align-self: center;
+  border-radius: 100000px;
 }
 
 .experiences__experience__details {
