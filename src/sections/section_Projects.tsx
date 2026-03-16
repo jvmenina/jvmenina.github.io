@@ -67,7 +67,8 @@ function ProjectComp(props: ProjectProps) {
   }: ProjectProps = props;
   // const { containerRef, isVisible } = useElementOnScreen({});
 
-  return (
+  return (<>
+    <NavigationAnchor id={id} />
     <CardComponent
       additionalClassNames={[
         projectsStyles.projects__project,
@@ -75,7 +76,7 @@ function ProjectComp(props: ProjectProps) {
       ]}
       // cardRef={containerRef}
     >
-      <NavigationAnchor id={id} />
+      {/* <NavigationAnchor id={id} /> */}
       <div className={projectsStyles.projects__project__details}>
         <h4 className={projectsStyles.projects__project__details__title}>
           {
@@ -115,11 +116,22 @@ function ProjectComp(props: ProjectProps) {
           : <></>
       }
     </CardComponent>
-  );
+  </>);
 }
 
 function ProjectsComp() {
   return (<>
+    <ProjectComp
+      id={"Projects__Storybrew3D"}
+      title={"Storybrew 3D Engine Library"}
+      subtitle={"An extension engine built on top of a 2D engine using C#"}
+      year={"2026"}
+      tags={["C#"]}
+      description={[
+        "A 3D engine library built for Storybrew, a tool for creating animated backgrounds which only fully supports 2D.", 
+        "The library is complete with 3D camera (including effects), 3D environments with granular object control, and 3D-to-2D object projection capabilities."
+      ]}
+    />
     <ProjectComp
       id={"Projects__SimplyFFmpeg-Web"}
       title={"SimplyFFmpeg (Web)"}
@@ -205,7 +217,7 @@ function ProjectsComp() {
       tags={["C#"]}
       description={[
         "Finished multiple music video projects, aiming to serve as accompanying graphics to each of their associated songs by displaying lyrics and visual effects in a manner that fits the general theme of a song.",
-        "Implemented a custom Particle Generator, a custom 3D Environment (in a 2D engine) with Camera capabilities, and a number of other custom effects and transitions."
+        "Implemented a custom Particle Generator, a partial 3D Environment, and a number of other custom effects and transitions."
       ]}
     />
     <ProjectComp
