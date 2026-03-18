@@ -177,21 +177,10 @@ function ProjectsComp() {
       }
     />
     <ProjectComp
-      id={"Projects__Choice-Places"}
-      title={"Choice Places Near Me"}
-      subtitle={"A full-stack geospatial web application built using React"}
-      year={"2024"}
-      tags={["HTML", "CSS", "JavaScript", "TypeScript", "React", "PostgreSQL", "FastAPI", "Google Maps API"]}
-      description={[
-        "An interactive place locator with a dynamic map utilizing the Google Maps API, where users can see details about nearby restaurants, cafes, and stores, and know which ones are nearest to their location.",
-        "Reviewed and assessed by select sales and technical leads at Navagis (Philippine Branch)."
-      ]}
-    />
-    <ProjectComp
       id={"Projects__Rhythm-Strike"}
       title={"Rhythm Strike"}
       subtitle={"A WebGL rhythm game built using TypeScript with the Phaser game engine"}
-      year={"2024"}
+      year={"2025"}
       tags={["TypeScript", "Phaser"]}
       description={[
         "\"Rhythm Strike\" is a two-lane rhythm game based on \"Reimu no Oharai Daisakusen\" (霊夢のお祓い大作戦), a mini-game from the mobile game \"Touhou LostWord\" (東方LostWord).",
@@ -208,6 +197,17 @@ function ProjectsComp() {
           <ExpandableImage src={reimu_preview_3} alt={"Rhythm Strike Preview #3"} />
         </>
       }
+    />
+    <ProjectComp
+      id={"Projects__Choice-Places"}
+      title={"Choice Places Near Me"}
+      subtitle={"A full-stack geospatial web application built using React"}
+      year={"2024"}
+      tags={["HTML", "CSS", "JavaScript", "TypeScript", "React", "PostgreSQL", "FastAPI", "Google Maps API"]}
+      description={[
+        "An interactive place locator with a dynamic map utilizing the Google Maps API, where users can see details about nearby restaurants, cafes, and stores, and know which ones are nearest to their location.",
+        "Reviewed and assessed by select sales and technical leads at Navagis (Philippine Branch)."
+      ]}
     />
     <ProjectComp
       id={"Projects__Music-Video"}
