@@ -208,7 +208,7 @@ function FeaturedSkillsComponent() {
         subtitle={"A full-stack geospatial web application built using React"}
         details={<>
           <p>I built a full-stack interactive place locator using <strong>React</strong>, <strong>Python</strong>, and <strong>PostgreSQL</strong> with the Google Maps API to create a dynamic experience. This project was then reviewed and assessed by select sales and technical leads at Navagis (Philippine Branch).</p>
-          <p>This app is meant to simplify the Google Maps experience by providing users all relevant details about nearby restaurants, cafes, and stores from their set location. The app helps users discover relevant businesses they might want to visit when they are looking for a place to eat or buy supplies.</p>
+          <p>This app is built on top of the Google Maps API, letting users explore around their area and providing them all relevant details about nearby places of interest from their set location. The app helps users discover relevant businesses they might want to check out and visit.</p>
         </>}
       />
 

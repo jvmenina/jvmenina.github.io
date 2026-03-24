@@ -205,7 +205,7 @@ function ProjectsComp() {
       year={"2024"}
       tags={["HTML", "CSS", "JavaScript", "TypeScript", "React", "PostgreSQL", "FastAPI", "Google Maps API"]}
       description={[
-        "An interactive place locator with a dynamic map utilizing the Google Maps API, where users can see details about nearby restaurants, cafes, and stores, and know which ones are nearest to their location.",
+        "An interactive place locator with a dynamic map utilizing the Google Maps API, where users can explore and discover nearby points of interest, with relevant details like distance, rating, accessibility, and website URL.",
         "Reviewed and assessed by select sales and technical leads at Navagis (Philippine Branch)."
       ]}
     />
