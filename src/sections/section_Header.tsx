@@ -62,7 +62,7 @@ const featuredCardsList = [
 ];
 
 const chipsList = [
-  "Software Developer",
+  "Full-stack Software Developer",
   "Membrane Computing Researcher",
   "Life-long Learner",
 ]
