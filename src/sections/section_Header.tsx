@@ -62,9 +62,9 @@ const featuredCardsList = [
 ];
 
 const chipsList = [
-  "Full-stack Software Developer",
+  "Full-Stack Software Developer",
   "Membrane Computing Researcher",
-  "Life-long Learner",
+  "Lifelong Learner",
 ]
 
 export function HeaderSection(
